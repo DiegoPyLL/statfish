@@ -1,0 +1,49 @@
+id = "P-ANTIBOT-SILENCIO-SIN-JS"
+tipo = "patron"
+titulo = "Filtro de tiempo con un campo que solo llena JS y responde un éxito silencioso"
+aplica_si = "formularios > 0"
+
+[deteccion]
+regex = ['(?i)transcurrido|elapsed|time_?spent|started_?at|tiempo_?minimo', '(?i)honeypot|hp_campo']
+pistas = [
+  "Busca filtros anti-bot por tiempo (menos de N s entre abrir la página y enviar) y trampas (honeypot).",
+  "¿Qué pasa si el campo de tiempo llega vacío, como en un POST sin JavaScript? ¿El servidor lo toma por 0 ms?",
+  "¿El filtro responde un 200 de éxito sin enviar nada? Un usuario real lo tomará por enviado.",
+  "Revisa también a un agente de IA que llena el formulario de una vez y la persona envía enseguida.",
+]
+
+[regla]
+texto = "Sin JavaScript (o si el script no carga) el campo de tiempo llega vacío y el servidor descarta el envío en silencio, con una respuesta de éxito"
+friccion = true
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "La página dice que llegó y no llegó nada."
+
+[[parametros]]
+id = "js_off"
+texto = "JavaScript inactivo"
+p50 = 0.005
+p10 = 0.002
+p90 = 0.015
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "brief_js_falla"
+texto = "El script del formulario no carga"
+p50 = 0.005
+p10 = 0.001
+p90 = 0.02
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "brief_rapido_si_agente"
+texto = "Un agente llena el formulario y la persona lo envía antes del tiempo mínimo"
+p50 = 0.50
+p10 = 0.20
+p90 = 0.80
+fuente = "prior:elicitacion"
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+reglas = ["R21", "R10"]
+issue = "https://github.com/VolutusDevelopment/VolutusLandingPage/issues/74"

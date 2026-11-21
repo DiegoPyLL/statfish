@@ -1,0 +1,14 @@
+id = "N-SIN-GPU-ROMPE"
+tipo = "descartada"
+titulo = "«Sin GPU la portada se rompe»"
+aplica_si = "'webgl' in rasgos"
+como_descartar = "Si hay escena quieta o video de respaldo y la página sigue entera, no es fricción: solo cambia el decorado."
+
+[deteccion]
+regex = ['(?i)webgl', '(?i)prefers-reduced-motion']
+pistas = ["Busca el respaldo sin WebGL o con GPU por software: si existe y la página sigue entera, la hipótesis no aplica."]
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+evidencia = [{ cita = "src/comportamiento/nubes.js:44-49", extracto = "Nada en vivo sin GPU de verdad. Si el pintor dibuja por software, o con" }]

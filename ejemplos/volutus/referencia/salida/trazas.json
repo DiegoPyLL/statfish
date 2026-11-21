@@ -1,0 +1,6490 @@
+[
+ {
+  "id": "U01",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.556,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.31,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U02",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.14,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.362,
+    "prob": 0.54,
+    "accion": "va a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "va a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": 0.916,
+    "prob": 0.55,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.828,
+    "prob": 0.42,
+    "accion": "baja al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "baja al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": 0.787,
+    "prob": 1.0,
+    "accion": "elige WhatsApp y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige WhatsApp y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.931,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "WhatsApp",
+    "sorteo": 0.414,
+    "prob": 0.85,
+    "accion": "se abre WhatsApp con el mensaje escrito y lo envía",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "whatsapp",
+     "se abre WhatsApp con el mensaje escrito y lo envía"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.10602900000000001
+ },
+ {
+  "id": "U03",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.236,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.236,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U04",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.991,
+    "prob": 1.0,
+    "accion": "llega a un artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a un artículo"
+    ]
+   },
+   {
+    "estado": "En un artículo",
+    "sorteo": 0.757,
+    "prob": 0.455,
+    "accion": "termina el artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "termina el artículo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.824,
+    "prob": 0.3,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": 0.785,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.99,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": 0.018,
+    "prob": 0.9831,
+    "accion": "envía: «¡Gracias por escribirnos!»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "envía: «¡Gracias por escribirnos!»"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.13419040634999999
+ },
+ {
+  "id": "U05",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.596,
+    "prob": 1.0,
+    "accion": "llega a un artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a un artículo"
+    ]
+   },
+   {
+    "estado": "En un artículo",
+    "sorteo": 0.893,
+    "prob": 0.455,
+    "accion": "termina el artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "termina el artículo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.049,
+    "prob": 0.7,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.31849999999999995
+ },
+ {
+  "id": "U06",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.688,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.923,
+    "prob": 0.36,
+    "accion": "sigue en la portada",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "sigue en la portada"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.768,
+    "prob": 0.7,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": 0.941,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.046,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": 0.479,
+    "prob": 0.6455,
+    "accion": "envía: «¡Gracias por escribirnos!»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "envía: «¡Gracias por escribirnos!»"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.16265503800000003
+ },
+ {
+  "id": "U07",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.395,
+    "prob": 1.0,
+    "accion": "llega a /servicios/automatizacion-procesos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/automatizacion-procesos",
+    "sorteo": 0.405,
+    "prob": 0.2925,
+    "accion": "calcula un estimado",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado"
+    ]
+   },
+   {
+    "estado": "Estimado",
+    "sorteo": 0.894,
+    "prob": 0.65,
+    "accion": "mira el precio y sigue leyendo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "mira el precio y sigue leyendo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.048,
+    "prob": 0.7,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.13308750000000003
+ },
+ {
+  "id": "U08",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.63,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.398,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U09",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.434,
+    "prob": 1.0,
+    "accion": "llega a /servicios/prospeccion-de-clientes",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/prospeccion-de-clientes",
+    "sorteo": 0.378,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U10",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.622,
+    "prob": 1.0,
+    "accion": "llega a /servicios/prospeccion-de-clientes",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/prospeccion-de-clientes",
+    "sorteo": 0.638,
+    "prob": 0.2925,
+    "accion": "calcula un estimado",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado"
+    ]
+   },
+   {
+    "estado": "Estimado",
+    "sorteo": 0.842,
+    "prob": 0.65,
+    "accion": "mira el precio y sigue leyendo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "mira el precio y sigue leyendo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.707,
+    "prob": 0.3,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": 0.702,
+    "prob": 1.0,
+    "accion": "elige WhatsApp y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige WhatsApp y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.601,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "WhatsApp",
+    "sorteo": 0.68,
+    "prob": 0.765,
+    "accion": "se abre WhatsApp con el mensaje escrito y lo envía",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "whatsapp",
+     "se abre WhatsApp con el mensaje escrito y lo envía"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.04363368750000001
+ },
+ {
+  "id": "U11",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.659,
+    "prob": 1.0,
+    "accion": "llega a /servicios/sistemas-de-gestion",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/sistemas-de-gestion",
+    "sorteo": 0.268,
+    "prob": 0.35,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.35
+ },
+ {
+  "id": "U12",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.766,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.294,
+    "prob": 0.35,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.35
+ },
+ {
+  "id": "U13",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.922,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": 0.777,
+    "prob": 0.8,
+    "accion": "completa el brief y llega a la revisión",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_cliente",
+     "completa el brief y llega a la revisión"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.867,
+    "prob": 1.0,
+    "accion": "sin brief.js no hay validación en el navegador",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "sin brief.js no hay validación en el navegador"
+    ]
+   },
+   {
+    "estado": "Envío del brief",
+    "sorteo": 0.467,
+    "prob": 1.0,
+    "accion": "POST nativo con «transcurrido» vacío: «Recibimos tu brief.» y no llega nada",
+    "regla": "R21",
+    "evidencia": [
+     "src/paginas/Brief.jsx:326",
+     "src/comportamiento/brief/brief.js:640",
+     "src/client.js:299-302",
+     "worker/brief.js:282-285",
+     "worker/brief.js:85"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página dice «Recibimos tu brief.» y no llegó nada.",
+    "arco": [
+     "brief_envio",
+     "POST nativo con «transcurrido» vacío: «Recibimos tu brief.» y no llega nada"
+    ]
+   }
+  ],
+  "desenlace": "perdida_silenciosa",
+  "prob_camino": 0.8
+ },
+ {
+  "id": "U14",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.549,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": 0.087,
+    "prob": 0.4,
+    "accion": "lo llena en dos sesiones y al volver no hay nada guardado",
+    "regla": "R12",
+    "evidencia": [
+     "src/lib/almacen.js:1-3",
+     "src/comportamiento/brief/brief.js:163-166"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": "Avisó que no puede guardar («No cierres la página hasta enviar»).",
+    "arco": [
+     "brief_cliente",
+     "lo llena en dos sesiones y al volver no hay nada guardado"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.4
+ },
+ {
+  "id": "U15",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.213,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": 0.838,
+    "prob": 0.27,
+    "accion": "lee la guía sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la guía sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.194,
+    "prob": 0.9,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.24299999999999997
+ },
+ {
+  "id": "U16",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.252,
+    "prob": 1.0,
+    "accion": "llega a un artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a un artículo"
+    ]
+   },
+   {
+    "estado": "En un artículo",
+    "sorteo": 0.349,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U17",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.542,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.533,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U18",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.171,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": 0.02,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U19",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.537,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": 0.458,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U20",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.351,
+    "prob": 1.0,
+    "accion": "llega a /servicios/prospeccion-de-clientes",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/prospeccion-de-clientes",
+    "sorteo": 0.227,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U21",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.169,
+    "prob": 1.0,
+    "accion": "llega a un artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a un artículo"
+    ]
+   },
+   {
+    "estado": "En un artículo",
+    "sorteo": 0.223,
+    "prob": 0.27,
+    "accion": "va a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "va a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": 0.487,
+    "prob": 0.55,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.896,
+    "prob": 0.42,
+    "accion": "baja al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "baja al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": 0.218,
+    "prob": 1.0,
+    "accion": "envía sin JavaScript: POST nativo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "form",
+     "envía sin JavaScript: POST nativo"
+    ]
+   },
+   {
+    "estado": "Respuesta sin JavaScript",
+    "sorteo": 0.756,
+    "prob": 0.6,
+    "accion": "página «Faltan datos o el correo no es válido…»: se va",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "nojs",
+     "página «Faltan datos o el correo no es válido…»: se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.037422000000000004
+ },
+ {
+  "id": "U22",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.271,
+    "prob": 1.0,
+    "accion": "llega a un artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a un artículo"
+    ]
+   },
+   {
+    "estado": "En un artículo",
+    "sorteo": 0.529,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U23",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.144,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": 0.375,
+    "prob": 0.8,
+    "accion": "completa el brief y llega a la revisión",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_cliente",
+     "completa el brief y llega a la revisión"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.76,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío del brief",
+    "sorteo": 0.901,
+    "prob": 0.4726,
+    "accion": "envía: «Tu número de referencia es B-…»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_envio",
+     "envía: «Tu número de referencia es B-…»"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.37810000000000005
+ },
+ {
+  "id": "U24",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.316,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": 0.811,
+    "prob": 0.39,
+    "accion": "lee la guía sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la guía sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.506,
+    "prob": 0.7,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.27299999999999996
+ },
+ {
+  "id": "U25",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.029,
+    "prob": 1.0,
+    "accion": "llega a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": 0.717,
+    "prob": 0.495,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.759,
+    "prob": 0.42,
+    "accion": "baja al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "baja al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": 0.109,
+    "prob": 1.0,
+    "accion": "elige WhatsApp y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige WhatsApp y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.503,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "WhatsApp",
+    "sorteo": 0.198,
+    "prob": 0.85,
+    "accion": "se abre WhatsApp con el mensaje escrito y lo envía",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "whatsapp",
+     "se abre WhatsApp con el mensaje escrito y lo envía"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.17671499999999998
+ },
+ {
+  "id": "U26",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.004,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": 0.042,
+    "prob": 0.8,
+    "accion": "completa el brief y llega a la revisión",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_cliente",
+     "completa el brief y llega a la revisión"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.649,
+    "prob": 1.0,
+    "accion": "sin brief.js no hay validación en el navegador",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "sin brief.js no hay validación en el navegador"
+    ]
+   },
+   {
+    "estado": "Envío del brief",
+    "sorteo": 0.878,
+    "prob": 1.0,
+    "accion": "POST nativo con «transcurrido» vacío: «Recibimos tu brief.» y no llega nada",
+    "regla": "R21",
+    "evidencia": [
+     "src/paginas/Brief.jsx:326",
+     "src/comportamiento/brief/brief.js:640",
+     "src/client.js:299-302",
+     "worker/brief.js:282-285",
+     "worker/brief.js:85"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página dice «Recibimos tu brief.» y no llegó nada.",
+    "arco": [
+     "brief_envio",
+     "POST nativo con «transcurrido» vacío: «Recibimos tu brief.» y no llega nada"
+    ]
+   }
+  ],
+  "desenlace": "perdida_silenciosa",
+  "prob_camino": 0.8
+ },
+ {
+  "id": "U27",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.221,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.701,
+    "prob": 0.27,
+    "accion": "va a /servicios/prospeccion-de-clientes",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "va a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/prospeccion-de-clientes",
+    "sorteo": 0.018,
+    "prob": 0.45,
+    "accion": "calcula un estimado",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado"
+    ]
+   },
+   {
+    "estado": "Estimado",
+    "sorteo": 0.469,
+    "prob": 0.65,
+    "accion": "mira el precio y sigue leyendo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "mira el precio y sigue leyendo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.976,
+    "prob": 0.1,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": 0.258,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.075,
+    "prob": 0.85,
+    "accion": "«Usa solo letras.»: reescribe el nombre",
+    "regla": "R1",
+    "evidencia": [
+     "src/lib/contacto.js:89-91",
+     "src/client.js:82-85",
+     "worker/index.js:99-101",
+     "src/comportamiento/brief/brief.js:350",
+     "worker/brief.js:292-294"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "en parte"
+    ],
+    "nota_cw": "El aviso dice qué hacer, pero le pide escribir su nombre (o el de su negocio) de otra forma.",
+    "arco": [
+     "validar_nombre",
+     "«Usa solo letras.»: reescribe el nombre"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": 0.542,
+    "prob": 0.9831,
+    "accion": "envía: «¡Gracias por escribirnos!»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "envía: «¡Gracias por escribirnos!»"
+    ]
+   }
+  ],
+  "desenlace": "contacto_con_friccion",
+  "prob_camino": 0.0065992924837125
+ },
+ {
+  "id": "U28",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.251,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.654,
+    "prob": 0.27,
+    "accion": "va a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "va a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": 0.35,
+    "prob": 0.45,
+    "accion": "calcula un estimado",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado"
+    ]
+   },
+   {
+    "estado": "Estimado",
+    "sorteo": 0.3,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: el mensaje llega escrito",
+    "regla": "R14",
+    "evidencia": [
+     "src/comportamiento/estimado.js:61-72"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: el mensaje llega escrito"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": 0.391,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": 0.068,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": 0.681,
+    "prob": 0.9831,
+    "accion": "envía: «¡Gracias por escribirnos!»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "envía: «¡Gracias por escribirnos!»"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.041805472747499996
+ },
+ {
+  "id": "U29",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.213,
+    "prob": 1.0,
+    "accion": "llega a /servicios/automatizacion-procesos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/automatizacion-procesos",
+    "sorteo": 0.548,
+    "prob": 0.55,
+    "accion": "se va sin buscar más",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "se va sin buscar más"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.55
+ },
+ {
+  "id": "U30",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.175,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.756,
+    "prob": 0.27,
+    "accion": "va a /servicios/agentes-ia",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "va a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/agentes-ia",
+    "sorteo": 0.088,
+    "prob": 0.45,
+    "accion": "calcula un estimado",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado"
+    ]
+   },
+   {
+    "estado": "Estimado",
+    "sorteo": 0.401,
+    "prob": 0.65,
+    "accion": "mira el precio y sigue leyendo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "mira el precio y sigue leyendo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.215,
+    "prob": 0.9,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.07107749999999999
+ },
+ {
+  "id": "U31",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.548,
+    "prob": 1.0,
+    "accion": "llega a un artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a un artículo"
+    ]
+   },
+   {
+    "estado": "En un artículo",
+    "sorteo": 0.775,
+    "prob": 0.315,
+    "accion": "termina el artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "termina el artículo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.179,
+    "prob": 0.9,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.2835
+ },
+ {
+  "id": "U32",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.315,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": 0.9,
+    "prob": 0.12,
+    "accion": "no lo termina",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_cliente",
+     "no lo termina"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.11999999999999997
+ },
+ {
+  "id": "U33",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.554,
+    "prob": 1.0,
+    "accion": "llega a un artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a un artículo"
+    ]
+   },
+   {
+    "estado": "En un artículo",
+    "sorteo": 0.712,
+    "prob": 0.315,
+    "accion": "termina el artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "termina el artículo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.19,
+    "prob": 0.9,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.2835
+ },
+ {
+  "id": "U34",
+  "forzada": false,
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": 0.025,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": 0.64,
+    "prob": 0.39,
+    "accion": "va a /servicios/prospeccion-de-clientes",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "va a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/prospeccion-de-clientes",
+    "sorteo": 0.644,
+    "prob": 0.55,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": 0.139,
+    "prob": 0.7,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.15015
+ },
+ {
+  "id": "U23",
+  "forzada": true,
+  "arco": [
+   "brief_envio",
+   "el agente lo llena y la persona envía antes de 8 s: «Recibimos tu brief.» y no llega nada"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": null,
+    "prob": 0.8,
+    "accion": "completa el brief y llega a la revisión",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_cliente",
+     "completa el brief y llega a la revisión"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío del brief",
+    "sorteo": null,
+    "prob": 0.5,
+    "accion": "el agente lo llena y la persona envía antes de 8 s: «Recibimos tu brief.» y no llega nada",
+    "regla": "R10",
+    "evidencia": [
+     "src/lib/brief/reglas.js:38-40",
+     "worker/brief.js:280-285",
+     "src/comportamiento/brief/brief.js:669-680"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La respuesta parece un éxito, sin número de referencia; no llegó nada y lo guardado se borró.",
+    "arco": [
+     "brief_envio",
+     "el agente lo llena y la persona envía antes de 8 s: «Recibimos tu brief.» y no llega nada"
+    ]
+   }
+  ],
+  "desenlace": "perdida_silenciosa",
+  "prob_camino": 0.4
+ },
+ {
+  "id": "U32",
+  "forzada": true,
+  "arco": [
+   "brief_envio",
+   "falla el envío; copia sus respuestas y las manda por correo"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": null,
+    "prob": 0.48,
+    "accion": "completa el brief y llega a la revisión",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_cliente",
+     "completa el brief y llega a la revisión"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío del brief",
+    "sorteo": null,
+    "prob": 0.0503,
+    "accion": "falla el envío; copia sus respuestas y las manda por correo",
+    "regla": "R11",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:408",
+     "src/comportamiento/brief/brief.js:52-53",
+     "src/comportamiento/brief/brief.js:681-684"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": "Falla, pero el aviso dice que las respuestas siguen guardadas y ofrece reintentar o copiarlas.",
+    "arco": [
+     "brief_envio",
+     "falla el envío; copia sus respuestas y las manda por correo"
+    ]
+   }
+  ],
+  "desenlace": "correo_directo",
+  "prob_camino": 0.02412
+ },
+ {
+  "id": "U32",
+  "forzada": true,
+  "arco": [
+   "brief_envio",
+   "falla el envío; sus respuestas siguen guardadas y reintenta"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": null,
+    "prob": 0.48,
+    "accion": "completa el brief y llega a la revisión",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_cliente",
+     "completa el brief y llega a la revisión"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío del brief",
+    "sorteo": null,
+    "prob": 0.2847,
+    "accion": "falla el envío; sus respuestas siguen guardadas y reintenta",
+    "regla": "R11",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:408",
+     "src/comportamiento/brief/brief.js:52-53",
+     "src/comportamiento/brief/brief.js:681-684"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": "Falla, pero el aviso dice que las respuestas siguen guardadas y ofrece reintentar o copiarlas.",
+    "arco": [
+     "brief_envio",
+     "falla el envío; sus respuestas siguen guardadas y reintenta"
+    ]
+   }
+  ],
+  "desenlace": "contacto_con_friccion",
+  "prob_camino": 0.13667999999999997
+ },
+ {
+  "id": "U02",
+  "forzada": true,
+  "arco": [
+   "brief_prospecto",
+   "llena lo obligatorio y llega a la revisión"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.54,
+    "accion": "va a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "va a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": null,
+    "prob": 0.55,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.28,
+    "accion": "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief",
+    "regla": "R9a",
+    "evidencia": [
+     "src/data/paginas-de-servicio.js:66",
+     "src/paginas/Servicio.jsx:89"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief"
+    ]
+   },
+   {
+    "estado": "Brief (prospecto)",
+    "sorteo": null,
+    "prob": 0.45,
+    "accion": "llena lo obligatorio y llega a la revisión",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_prospecto",
+     "llena lo obligatorio y llega a la revisión"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío del brief",
+    "sorteo": null,
+    "prob": 0.9453,
+    "accion": "envía: «Tu número de referencia es B-…»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_envio",
+     "envía: «Tu número de referencia es B-…»"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.0353731455
+ },
+ {
+  "id": "U25",
+  "forzada": true,
+  "arco": [
+   "brief_prospecto",
+   "ve «35 a 45 min» y lo deja para después"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": null,
+    "prob": 0.495,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.28,
+    "accion": "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief",
+    "regla": "R9a",
+    "evidencia": [
+     "src/data/paginas-de-servicio.js:66",
+     "src/paginas/Servicio.jsx:89"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief"
+    ]
+   },
+   {
+    "estado": "Brief (prospecto)",
+    "sorteo": null,
+    "prob": 0.3575,
+    "accion": "ve «35 a 45 min» y lo deja para después",
+    "regla": "R9",
+    "evidencia": [
+     "src/data/paginas-de-servicio.js:66",
+     "src/paginas/Servicio.jsx:89",
+     "src/components/Barra.jsx:158",
+     "src/lib/brief/preguntas.js:89-93"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "sí"
+    ],
+    "nota_cw": "El mismo «Cuéntanos tu proyecto» lleva al formulario en la barra y a un brief de 35 a 45 min en la cabecera; el brief avisa su largo.",
+    "arco": [
+     "brief_prospecto",
+     "ve «35 a 45 min» y lo deja para después"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.0495495
+ },
+ {
+  "id": "U25",
+  "forzada": true,
+  "arco": [
+   "brief_prospecto",
+   "ve «35 a 45 min», vuelve y usa el formulario"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": null,
+    "prob": 0.495,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.28,
+    "accion": "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief",
+    "regla": "R9a",
+    "evidencia": [
+     "src/data/paginas-de-servicio.js:66",
+     "src/paginas/Servicio.jsx:89"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief"
+    ]
+   },
+   {
+    "estado": "Brief (prospecto)",
+    "sorteo": null,
+    "prob": 0.1925,
+    "accion": "ve «35 a 45 min», vuelve y usa el formulario",
+    "regla": "R9",
+    "evidencia": [
+     "src/data/paginas-de-servicio.js:66",
+     "src/paginas/Servicio.jsx:89",
+     "src/components/Barra.jsx:158",
+     "src/lib/brief/preguntas.js:89-93"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "sí"
+    ],
+    "nota_cw": "El mismo «Cuéntanos tu proyecto» lleva al formulario en la barra y a un brief de 35 a 45 min en la cabecera; el brief avisa su largo.",
+    "arco": [
+     "brief_prospecto",
+     "ve «35 a 45 min», vuelve y usa el formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige WhatsApp y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige WhatsApp y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "WhatsApp",
+    "sorteo": null,
+    "prob": 0.85,
+    "accion": "se abre WhatsApp con el mensaje escrito y lo envía",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "whatsapp",
+     "se abre WhatsApp con el mensaje escrito y lo envía"
+    ]
+   }
+  ],
+  "desenlace": "contacto_con_friccion",
+  "prob_camino": 0.022678425
+ },
+ {
+  "id": "U25",
+  "forzada": true,
+  "arco": [
+   "decide",
+   "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": null,
+    "prob": 0.495,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.28,
+    "accion": "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief",
+    "regla": "R9a",
+    "evidencia": [
+     "src/data/paginas-de-servicio.js:66",
+     "src/paginas/Servicio.jsx:89"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief"
+    ]
+   },
+   {
+    "estado": "Brief (prospecto)",
+    "sorteo": null,
+    "prob": 0.3575,
+    "accion": "ve «35 a 45 min» y lo deja para después",
+    "regla": "R9",
+    "evidencia": [
+     "src/data/paginas-de-servicio.js:66",
+     "src/paginas/Servicio.jsx:89",
+     "src/components/Barra.jsx:158",
+     "src/lib/brief/preguntas.js:89-93"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "sí"
+    ],
+    "nota_cw": "El mismo «Cuéntanos tu proyecto» lleva al formulario en la barra y a un brief de 35 a 45 min en la cabecera; el brief avisa su largo.",
+    "arco": [
+     "brief_prospecto",
+     "ve «35 a 45 min» y lo deja para después"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.0495495
+ },
+ {
+  "id": "U24",
+  "forzada": true,
+  "arco": [
+   "decide",
+   "pulsa «Cuéntanos tu proyecto»: va al formulario de la portada"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.39,
+    "accion": "lee la guía sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la guía sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.3,
+    "accion": "pulsa «Cuéntanos tu proyecto»: va al formulario de la portada",
+    "regla": "R8b",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:264",
+     "src/paginas/Inicio.jsx:33",
+     "src/components/Contacto.jsx:159-178"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "pulsa «Cuéntanos tu proyecto»: va al formulario de la portada"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "envía sin JavaScript: POST nativo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "form",
+     "envía sin JavaScript: POST nativo"
+    ]
+   },
+   {
+    "estado": "Respuesta sin JavaScript",
+    "sorteo": null,
+    "prob": 0.6,
+    "accion": "página «Faltan datos o el correo no es válido…»: se va",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "nojs",
+     "página «Faltan datos o el correo no es válido…»: se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.0702
+ },
+ {
+  "id": "U06",
+  "forzada": true,
+  "arco": [
+   "envio_correo",
+   "Resend no responde: 502"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.36,
+    "accion": "sigue en la portada",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "sigue en la portada"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.7,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.0013,
+    "accion": "Resend no responde: 502",
+    "regla": "R5",
+    "evidencia": [
+     "worker/index.js:121-123",
+     "worker/comun.js:163-192"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "Resend no responde: 502"
+    ]
+   },
+   {
+    "estado": "Tras el error",
+    "sorteo": null,
+    "prob": 0.65,
+    "accion": "cree que el sitio falla y se va",
+    "regla": "R5",
+    "evidencia": [
+     "worker/index.js:121-123",
+     "worker/comun.js:163-192"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "tras_error",
+     "cree que el sitio falla y se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.00021187530000000003
+ },
+ {
+  "id": "U19",
+  "forzada": true,
+  "arco": [
+   "envio_correo",
+   "Turnstile no pasa: 403 «No pudimos enviar tu mensaje…»"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.18,
+    "accion": "calcula un estimado de la ley de datos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado de la ley de datos"
+    ]
+   },
+   {
+    "estado": "Estimado de la ley de datos",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: va a la portada",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: va a la portada"
+    ]
+   },
+   {
+    "estado": "Portada, tras «Pedir esta cotización»",
+    "sorteo": null,
+    "prob": 0.75,
+    "accion": "escribe de nuevo lo que necesita",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "ley_a_portada",
+     "escribe de nuevo lo que necesita"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.297,
+    "accion": "Turnstile no pasa: 403 «No pudimos enviar tu mensaje…»",
+    "regla": "R4b",
+    "evidencia": [
+     "worker/comun.js:130-152"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "Mismo aviso que R4; reintentar no sirve si su navegador bloquea la comprobación.",
+    "arco": [
+     "envio_correo",
+     "Turnstile no pasa: 403 «No pudimos enviar tu mensaje…»"
+    ]
+   },
+   {
+    "estado": "Tras el error",
+    "sorteo": null,
+    "prob": 0.4875,
+    "accion": "cree que el sitio falla y se va",
+    "regla": "R4b",
+    "evidencia": [
+     "worker/comun.js:130-152"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "Mismo aviso que R4; reintentar no sirve si su navegador bloquea la comprobación.",
+    "arco": [
+     "tras_error",
+     "cree que el sitio falla y se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.006841209375
+ },
+ {
+  "id": "U06",
+  "forzada": true,
+  "arco": [
+   "envio_correo",
+   "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.36,
+    "accion": "sigue en la portada",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "sigue en la portada"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.7,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»",
+    "regla": "R4",
+    "evidencia": [
+     "src/lib/turnstile.js:53",
+     "src/lib/turnstile.js:27-51",
+     "src/client.js:191-245",
+     "worker/index.js:103-105",
+     "worker/comun.js:137"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve.",
+    "arco": [
+     "envio_correo",
+     "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»"
+    ]
+   },
+   {
+    "estado": "Tras el error",
+    "sorteo": null,
+    "prob": 0.4875,
+    "accion": "cree que el sitio falla y se va",
+    "regla": "R4",
+    "evidencia": [
+     "src/lib/turnstile.js:53",
+     "src/lib/turnstile.js:27-51",
+     "src/client.js:191-245",
+     "worker/index.js:103-105",
+     "worker/comun.js:137"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve.",
+    "arco": [
+     "tras_error",
+     "cree que el sitio falla y se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.0429975
+ },
+ {
+  "id": "U24",
+  "forzada": true,
+  "arco": [
+   "estimado",
+   "pulsa «Pedir esta cotización»: va a la portada"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.26,
+    "accion": "calcula un estimado de la ley de datos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado de la ley de datos"
+    ]
+   },
+   {
+    "estado": "Estimado de la ley de datos",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: va a la portada",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: va a la portada"
+    ]
+   },
+   {
+    "estado": "Portada, tras «Pedir esta cotización»",
+    "sorteo": null,
+    "prob": 0.75,
+    "accion": "escribe de nuevo lo que necesita",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "ley_a_portada",
+     "escribe de nuevo lo que necesita"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "envía sin JavaScript: POST nativo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "form",
+     "envía sin JavaScript: POST nativo"
+    ]
+   },
+   {
+    "estado": "Respuesta sin JavaScript",
+    "sorteo": null,
+    "prob": 0.6,
+    "accion": "página «Faltan datos o el correo no es válido…»: se va",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "nojs",
+     "página «Faltan datos o el correo no es válido…»: se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.04095
+ },
+ {
+  "id": "U34",
+  "forzada": true,
+  "arco": [
+   "form",
+   "el agente rellena el formulario y la persona lo revisa"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.26,
+    "accion": "sigue en la portada",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "sigue en la portada"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.3,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el agente rellena el formulario y la persona lo revisa",
+    "regla": "R15",
+    "evidencia": [
+     "src/components/Contacto.jsx:40-43",
+     "src/components/Contacto.jsx:81-82"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "el agente rellena el formulario y la persona lo revisa"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.3972,
+    "accion": "envía: «¡Gracias por escribirnos!»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "envía: «¡Gracias por escribirnos!»"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.030981912
+ },
+ {
+  "id": "U24",
+  "forzada": true,
+  "arco": [
+   "ley_a_portada",
+   "escribe de nuevo lo que necesita"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.26,
+    "accion": "calcula un estimado de la ley de datos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado de la ley de datos"
+    ]
+   },
+   {
+    "estado": "Estimado de la ley de datos",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: va a la portada",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: va a la portada"
+    ]
+   },
+   {
+    "estado": "Portada, tras «Pedir esta cotización»",
+    "sorteo": null,
+    "prob": 0.75,
+    "accion": "escribe de nuevo lo que necesita",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "ley_a_portada",
+     "escribe de nuevo lo que necesita"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "envía sin JavaScript: POST nativo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "form",
+     "envía sin JavaScript: POST nativo"
+    ]
+   },
+   {
+    "estado": "Respuesta sin JavaScript",
+    "sorteo": null,
+    "prob": 0.6,
+    "accion": "página «Faltan datos o el correo no es válido…»: se va",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "nojs",
+     "página «Faltan datos o el correo no es válido…»: se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.04095
+ },
+ {
+  "id": "U24",
+  "forzada": true,
+  "arco": [
+   "ley_a_portada",
+   "llega a un formulario vacío, sin lo que marcó, y se va"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.26,
+    "accion": "calcula un estimado de la ley de datos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado de la ley de datos"
+    ]
+   },
+   {
+    "estado": "Estimado de la ley de datos",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: va a la portada",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: va a la portada"
+    ]
+   },
+   {
+    "estado": "Portada, tras «Pedir esta cotización»",
+    "sorteo": null,
+    "prob": 0.25,
+    "accion": "llega a un formulario vacío, sin lo que marcó, y se va",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "ley_a_portada",
+     "llega a un formulario vacío, sin lo que marcó, y se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.02275
+ },
+ {
+  "id": "U21",
+  "forzada": true,
+  "arco": [
+   "nojs",
+   "página «Faltan datos o el correo no es válido…»: escribe desde su correo"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a un artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a un artículo"
+    ]
+   },
+   {
+    "estado": "En un artículo",
+    "sorteo": null,
+    "prob": 0.63,
+    "accion": "termina el artículo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "termina el artículo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.7,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "envía sin JavaScript: POST nativo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "form",
+     "envía sin JavaScript: POST nativo"
+    ]
+   },
+   {
+    "estado": "Respuesta sin JavaScript",
+    "sorteo": null,
+    "prob": 0.4,
+    "accion": "página «Faltan datos o el correo no es válido…»: escribe desde su correo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "nojs",
+     "página «Faltan datos o el correo no es válido…»: escribe desde su correo"
+    ]
+   }
+  ],
+  "desenlace": "correo_directo",
+  "prob_camino": 0.1764
+ },
+ {
+  "id": "U29",
+  "forzada": true,
+  "arco": [
+   "nojs",
+   "página «No pudimos enviar tu mensaje. Escríbenos directamente a…»: escribe desde su correo"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /servicios/automatizacion-procesos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/automatizacion-procesos",
+    "sorteo": null,
+    "prob": 0.2025,
+    "accion": "calcula un estimado",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado"
+    ]
+   },
+   {
+    "estado": "Estimado",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: el mensaje llega escrito",
+    "regla": "R14",
+    "evidencia": [
+     "src/comportamiento/estimado.js:61-72"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: el mensaje llega escrito"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "envía sin JavaScript: POST nativo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "form",
+     "envía sin JavaScript: POST nativo"
+    ]
+   },
+   {
+    "estado": "Respuesta sin JavaScript",
+    "sorteo": null,
+    "prob": 0.4,
+    "accion": "página «No pudimos enviar tu mensaje. Escríbenos directamente a…»: escribe desde su correo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "nojs",
+     "página «No pudimos enviar tu mensaje. Escríbenos directamente a…»: escribe desde su correo"
+    ]
+   }
+  ],
+  "desenlace": "correo_directo",
+  "prob_camino": 0.02835
+ },
+ {
+  "id": "U29",
+  "forzada": true,
+  "arco": [
+   "nojs",
+   "página «No pudimos enviar tu mensaje. Escríbenos directamente a…»: se va"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /servicios/automatizacion-procesos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/automatizacion-procesos",
+    "sorteo": null,
+    "prob": 0.2025,
+    "accion": "calcula un estimado",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado"
+    ]
+   },
+   {
+    "estado": "Estimado",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: el mensaje llega escrito",
+    "regla": "R14",
+    "evidencia": [
+     "src/comportamiento/estimado.js:61-72"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: el mensaje llega escrito"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "envía sin JavaScript: POST nativo",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "form",
+     "envía sin JavaScript: POST nativo"
+    ]
+   },
+   {
+    "estado": "Respuesta sin JavaScript",
+    "sorteo": null,
+    "prob": 0.6,
+    "accion": "página «No pudimos enviar tu mensaje. Escríbenos directamente a…»: se va",
+    "regla": "R7",
+    "evidencia": [
+     "src/components/Contacto.jsx:23-25",
+     "worker/index.js:34-40",
+     "worker/comun.js:32-46"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir.",
+    "arco": [
+     "nojs",
+     "página «No pudimos enviar tu mensaje. Escríbenos directamente a…»: se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.04252499999999999
+ },
+ {
+  "id": "U24",
+  "forzada": true,
+  "arco": [
+   "pagina",
+   "calcula un estimado de la ley de datos"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.26,
+    "accion": "calcula un estimado de la ley de datos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado de la ley de datos"
+    ]
+   },
+   {
+    "estado": "Estimado de la ley de datos",
+    "sorteo": null,
+    "prob": 0.65,
+    "accion": "mira el precio y sigue leyendo",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "mira el precio y sigue leyendo"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.7,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.1183
+ },
+ {
+  "id": "U25",
+  "forzada": true,
+  "arco": [
+   "pagina",
+   "el agente usa «estimar_precio» y recibe el estimado"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /servicios/desarrollo-web",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/desarrollo-web",
+    "sorteo": null,
+    "prob": 0.405,
+    "accion": "el agente usa «estimar_precio» y recibe el estimado",
+    "regla": "R16",
+    "evidencia": [
+     "src/comportamiento/estimado.js:78-86"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "el agente usa «estimar_precio» y recibe el estimado"
+    ]
+   },
+   {
+    "estado": "Estimado",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: el mensaje llega escrito",
+    "regla": "R14",
+    "evidencia": [
+     "src/comportamiento/estimado.js:61-72"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: el mensaje llega escrito"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige WhatsApp y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige WhatsApp y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "WhatsApp",
+    "sorteo": null,
+    "prob": 0.85,
+    "accion": "se abre WhatsApp con el mensaje escrito y lo envía",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "whatsapp",
+     "se abre WhatsApp con el mensaje escrito y lo envía"
+    ]
+   }
+  ],
+  "desenlace": "contacto",
+  "prob_camino": 0.12048749999999998
+ },
+ {
+  "id": "U08",
+  "forzada": true,
+  "arco": [
+   "pagina",
+   "va a /ley21719"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.27,
+    "accion": "va a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "va a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.6,
+    "accion": "lee la guía sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la guía sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.9,
+    "accion": "decide no escribir por ahora",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "decide no escribir por ahora"
+    ]
+   }
+  ],
+  "desenlace": "abandono_sin_intento",
+  "prob_camino": 0.14579999999999999
+ },
+ {
+  "id": "U06",
+  "forzada": true,
+  "arco": [
+   "tras_error",
+   "cierra el aviso y vuelve a enviar"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.36,
+    "accion": "sigue en la portada",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "sigue en la portada"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.7,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»",
+    "regla": "R4",
+    "evidencia": [
+     "src/lib/turnstile.js:53",
+     "src/lib/turnstile.js:27-51",
+     "src/client.js:191-245",
+     "worker/index.js:103-105",
+     "worker/comun.js:137"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve.",
+    "arco": [
+     "envio_correo",
+     "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»"
+    ]
+   },
+   {
+    "estado": "Tras el error",
+    "sorteo": null,
+    "prob": 0.25,
+    "accion": "cierra el aviso y vuelve a enviar",
+    "regla": "R4",
+    "evidencia": [
+     "src/lib/turnstile.js:53",
+     "src/lib/turnstile.js:27-51",
+     "src/client.js:191-245",
+     "worker/index.js:103-105",
+     "worker/comun.js:137"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve.",
+    "arco": [
+     "tras_error",
+     "cierra el aviso y vuelve a enviar"
+    ]
+   },
+   {
+    "estado": "Envío por correo (2.º intento)",
+    "sorteo": null,
+    "prob": 0.9731,
+    "accion": "envía: «¡Gracias por escribirnos!»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "envía: «¡Gracias por escribirnos!»"
+    ]
+   }
+  ],
+  "desenlace": "contacto_con_friccion",
+  "prob_camino": 0.02145795309
+ },
+ {
+  "id": "U06",
+  "forzada": true,
+  "arco": [
+   "tras_error",
+   "copia el correo del aviso y escribe desde su correo"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.36,
+    "accion": "sigue en la portada",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "sigue en la portada"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.7,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»",
+    "regla": "R4",
+    "evidencia": [
+     "src/lib/turnstile.js:53",
+     "src/lib/turnstile.js:27-51",
+     "src/client.js:191-245",
+     "worker/index.js:103-105",
+     "worker/comun.js:137"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve.",
+    "arco": [
+     "envio_correo",
+     "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»"
+    ]
+   },
+   {
+    "estado": "Tras el error",
+    "sorteo": null,
+    "prob": 0.2625,
+    "accion": "copia el correo del aviso y escribe desde su correo",
+    "regla": "R4",
+    "evidencia": [
+     "src/lib/turnstile.js:53",
+     "src/lib/turnstile.js:27-51",
+     "src/client.js:191-245",
+     "worker/index.js:103-105",
+     "worker/comun.js:137"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve.",
+    "arco": [
+     "tras_error",
+     "copia el correo del aviso y escribe desde su correo"
+    ]
+   }
+  ],
+  "desenlace": "correo_directo",
+  "prob_camino": 0.023152499999999996
+ },
+ {
+  "id": "U06",
+  "forzada": true,
+  "arco": [
+   "tras_error",
+   "cree que el sitio falla y se va"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.36,
+    "accion": "sigue en la portada",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "sigue en la portada"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.7,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»",
+    "regla": "R4",
+    "evidencia": [
+     "src/lib/turnstile.js:53",
+     "src/lib/turnstile.js:27-51",
+     "src/client.js:191-245",
+     "worker/index.js:103-105",
+     "worker/comun.js:137"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve.",
+    "arco": [
+     "envio_correo",
+     "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»"
+    ]
+   },
+   {
+    "estado": "Tras el error",
+    "sorteo": null,
+    "prob": 0.4875,
+    "accion": "cree que el sitio falla y se va",
+    "regla": "R4",
+    "evidencia": [
+     "src/lib/turnstile.js:53",
+     "src/lib/turnstile.js:27-51",
+     "src/client.js:191-245",
+     "worker/index.js:103-105",
+     "worker/comun.js:137"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve.",
+    "arco": [
+     "tras_error",
+     "cree que el sitio falla y se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.0429975
+ },
+ {
+  "id": "U15",
+  "forzada": true,
+  "arco": [
+   "validar_nombre",
+   "«Usa solo letras.» sobre su nombre bien escrito: se rinde"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.18,
+    "accion": "calcula un estimado de la ley de datos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado de la ley de datos"
+    ]
+   },
+   {
+    "estado": "Estimado de la ley de datos",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: va a la portada",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: va a la portada"
+    ]
+   },
+   {
+    "estado": "Portada, tras «Pedir esta cotización»",
+    "sorteo": null,
+    "prob": 0.75,
+    "accion": "escribe de nuevo lo que necesita",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "ley_a_portada",
+     "escribe de nuevo lo que necesita"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 0.45,
+    "accion": "«Usa solo letras.» sobre su nombre bien escrito: se rinde",
+    "regla": "R1+R2",
+    "evidencia": [
+     "src/lib/contacto.js:89-91",
+     "src/components/Contacto.jsx:121-130",
+     "src/client.js:82-85"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso «Usa solo letras.» contradice lo que ve: su nombre solo tiene letras y un apóstrofo, que la regla quiere aceptar (O'Higgins), y el cambio a ’ no se nota.",
+    "arco": [
+     "validar_nombre",
+     "«Usa solo letras.» sobre su nombre bien escrito: se rinde"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.021262499999999997
+ },
+ {
+  "id": "U14",
+  "forzada": true,
+  "arco": [
+   "validar_nombre",
+   "«Usa solo letras.»: no sabe cómo escribirlo y se va"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "abre el link del brief que le mandó Volutus",
+    "regla": "R17",
+    "evidencia": [
+     "src/comportamiento/brief/brief.js:134-139",
+     "src/comportamiento/brief/brief.js:163"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "abre el link del brief que le mandó Volutus"
+    ]
+   },
+   {
+    "estado": "Brief (cliente)",
+    "sorteo": null,
+    "prob": 0.48,
+    "accion": "completa el brief y llega a la revisión",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "brief_cliente",
+     "completa el brief y llega a la revisión"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 0.15,
+    "accion": "«Usa solo letras.»: no sabe cómo escribirlo y se va",
+    "regla": "R1",
+    "evidencia": [
+     "src/lib/contacto.js:89-91",
+     "src/client.js:82-85",
+     "worker/index.js:99-101",
+     "src/comportamiento/brief/brief.js:350",
+     "worker/brief.js:292-294"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "en parte"
+    ],
+    "nota_cw": "El aviso dice qué hacer, pero le pide escribir su nombre (o el de su negocio) de otra forma.",
+    "arco": [
+     "validar_nombre",
+     "«Usa solo letras.»: no sabe cómo escribirlo y se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.07200000000000001
+ },
+ {
+  "id": "U15",
+  "forzada": true,
+  "arco": [
+   "validar_nombre",
+   "«Usa solo letras.»: quita el apóstrofo y sigue"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /ley21719",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a /ley21719"
+    ]
+   },
+   {
+    "estado": "En /ley21719",
+    "sorteo": null,
+    "prob": 0.18,
+    "accion": "calcula un estimado de la ley de datos",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "calcula un estimado de la ley de datos"
+    ]
+   },
+   {
+    "estado": "Estimado de la ley de datos",
+    "sorteo": null,
+    "prob": 0.35,
+    "accion": "pulsa «Pedir esta cotización»: va a la portada",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "estimado",
+     "pulsa «Pedir esta cotización»: va a la portada"
+    ]
+   },
+   {
+    "estado": "Portada, tras «Pedir esta cotización»",
+    "sorteo": null,
+    "prob": 0.75,
+    "accion": "escribe de nuevo lo que necesita",
+    "regla": "R8",
+    "evidencia": [
+     "src/paginas/Ley21719.jsx:429",
+     "src/paginas/Ley21719.jsx:264",
+     "src/components/Estimado.jsx:48",
+     "src/components/Estimado.jsx:204-207",
+     "src/paginas/Inicio.jsx:33"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "no",
+     "no"
+    ],
+    "nota_cw": "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito.",
+    "arco": [
+     "ley_a_portada",
+     "escribe de nuevo lo que necesita"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige correo y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige correo y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 0.55,
+    "accion": "«Usa solo letras.»: quita el apóstrofo y sigue",
+    "regla": "R1+R2",
+    "evidencia": [
+     "src/lib/contacto.js:89-91",
+     "src/components/Contacto.jsx:121-130",
+     "src/client.js:82-85"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El aviso «Usa solo letras.» contradice lo que ve: su nombre solo tiene letras y un apóstrofo, que la regla quiere aceptar (O'Higgins), y el cambio a ’ no se nota.",
+    "arco": [
+     "validar_nombre",
+     "«Usa solo letras.»: quita el apóstrofo y sigue"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.6916,
+    "accion": "envía: «¡Gracias por escribirnos!»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "envía: «¡Gracias por escribirnos!»"
+    ]
+   }
+  ],
+  "desenlace": "contacto_con_friccion",
+  "prob_camino": 0.017973318825
+ },
+ {
+  "id": "U10",
+  "forzada": true,
+  "arco": [
+   "whatsapp",
+   "WhatsApp no abre desde la app: cambia a correo"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /servicios/prospeccion-de-clientes",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/prospeccion-de-clientes",
+    "sorteo": null,
+    "prob": 0.3575,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.3,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige WhatsApp y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige WhatsApp y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "WhatsApp",
+    "sorteo": null,
+    "prob": 0.05,
+    "accion": "WhatsApp no abre desde la app: cambia a correo",
+    "regla": "R6",
+    "evidencia": [
+     "src/client.js:202-214"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El botón no abre WhatsApp desde el navegador de la app y nada lo avisa.",
+    "arco": [
+     "whatsapp",
+     "WhatsApp no abre desde la app: cambia a correo"
+    ]
+   },
+   {
+    "estado": "Envío por correo",
+    "sorteo": null,
+    "prob": 0.9831,
+    "accion": "envía: «¡Gracias por escribirnos!»",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "envio_correo",
+     "envía: «¡Gracias por escribirnos!»"
+    ]
+   }
+  ],
+  "desenlace": "contacto_con_friccion",
+  "prob_camino": 0.005271765963750001
+ },
+ {
+  "id": "U10",
+  "forzada": true,
+  "arco": [
+   "whatsapp",
+   "WhatsApp no abre desde la app: se va"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /servicios/prospeccion-de-clientes",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la página de su servicio"
+    ]
+   },
+   {
+    "estado": "En /servicios/prospeccion-de-clientes",
+    "sorteo": null,
+    "prob": 0.3575,
+    "accion": "lee la página sin calcular",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "lee la página sin calcular"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.3,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige WhatsApp y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige WhatsApp y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "WhatsApp",
+    "sorteo": null,
+    "prob": 0.05,
+    "accion": "WhatsApp no abre desde la app: se va",
+    "regla": "R6",
+    "evidencia": [
+     "src/client.js:202-214"
+    ],
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "no"
+    ],
+    "nota_cw": "El botón no abre WhatsApp desde el navegador de la app y nada lo avisa.",
+    "arco": [
+     "whatsapp",
+     "WhatsApp no abre desde la app: se va"
+    ]
+   }
+  ],
+  "desenlace": "abandono_por_friccion",
+  "prob_camino": 0.005362500000000001
+ },
+ {
+  "id": "U02",
+  "forzada": true,
+  "arco": [
+   "whatsapp",
+   "se abre WhatsApp pero no lo envía"
+  ],
+  "pasos": [
+   {
+    "estado": "Llegada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "llega a /",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "inicio",
+     "llega a la portada"
+    ]
+   },
+   {
+    "estado": "En /",
+    "sorteo": null,
+    "prob": 0.36,
+    "accion": "sigue en la portada",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "pagina",
+     "sigue en la portada"
+    ]
+   },
+   {
+    "estado": "¿Escribe?",
+    "sorteo": null,
+    "prob": 0.7,
+    "accion": "va al formulario",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "decide",
+     "va al formulario"
+    ]
+   },
+   {
+    "estado": "Formulario de la portada",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "elige WhatsApp y escribe",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "form",
+     "elige WhatsApp y escribe"
+    ]
+   },
+   {
+    "estado": "Validación del nombre",
+    "sorteo": null,
+    "prob": 1.0,
+    "accion": "el nombre pasa",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "validar_nombre",
+     "el nombre pasa"
+    ]
+   },
+   {
+    "estado": "WhatsApp",
+    "sorteo": null,
+    "prob": 0.15,
+    "accion": "se abre WhatsApp pero no lo envía",
+    "regla": null,
+    "evidencia": null,
+    "cw": [
+     "sí",
+     "sí",
+     "sí",
+     "sí"
+    ],
+    "nota_cw": null,
+    "arco": [
+     "whatsapp",
+     "se abre WhatsApp pero no lo envía"
+    ]
+   }
+  ],
+  "desenlace": "no_envia_whatsapp",
+  "prob_camino": 0.03780000000000001
+ }
+]

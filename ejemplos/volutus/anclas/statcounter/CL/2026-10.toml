@@ -1,0 +1,39 @@
+# StatCounter Global Stats, Chile, octubre de 2026. Valores tal como se publican, en %.
+# Consultadas para el caso Volutus. Para otro país o mes, usa la plantilla de URL de cada ancla.
+fuente = "statcounter"
+titulo_fuente = "StatCounter Global Stats"
+pais = "CL"
+pais_nombre = "chile"
+periodo = "2026-10"
+consultado = 2026-11-20
+vigencia_meses = 6
+unidad = "%"
+nota = "Es todo el tráfico web del país, no el de un sitio: un público de nicho puede apartarse bastante."
+
+[[anclas]]
+id = "statcounter-CL-plataforma-2026-10"
+titulo = "Plataforma (escritorio, celular, tablet), Chile, oct-2026"
+url = "https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/chile"
+plantilla_url = "https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/{pais_nombre}"
+valores = { escritorio = 50.05, movil = 49.12, tablet = 0.84 }
+
+[[anclas]]
+id = "statcounter-CL-sistema-movil-2026-10"
+titulo = "Sistema del celular, Chile, oct-2026"
+url = "https://gs.statcounter.com/os-market-share/mobile/chile"
+plantilla_url = "https://gs.statcounter.com/os-market-share/mobile/{pais_nombre}"
+valores = { android = 79.28, ios = 20.72 }
+
+[[anclas]]
+id = "statcounter-CL-sistema-escritorio-2026-10"
+titulo = "Sistema del escritorio, Chile, oct-2026"
+url = "https://gs.statcounter.com/os-market-share/desktop/chile"
+plantilla_url = "https://gs.statcounter.com/os-market-share/desktop/{pais_nombre}"
+valores = { windows = 85.02, macos = 8.80, linux = 5.87 }
+
+[[anclas]]
+id = "statcounter-CL-navegador-2026-10"
+titulo = "Navegador (todas las plataformas), Chile, oct-2026"
+url = "https://gs.statcounter.com/browser-market-share/all/chile"
+plantilla_url = "https://gs.statcounter.com/browser-market-share/all/{pais_nombre}"
+valores = { chrome = 77.32, safari = 9.27, edge = 5.24, opera = 2.69, firefox = 2.54, samsung = 1.73 }

@@ -1,0 +1,225 @@
+# Hallazgos del caso Volutus (etapa 7). Las cifras van con marcadores: `statfish correr` las resuelve
+# desde salida/resultados.json y redacta salida/issues/<id>.md. Los issues se crean solo con la
+# confirmación de quien corre la herramienta; estos cinco ya existen (#74 a #78).
+
+[[hallazgos]]
+id = "H-R21"
+regla = "R21"
+patron = "P-ANTIBOT-SILENCIO-SIN-JS"
+titulo = "Brief sin JavaScript: se descarta en silencio con «Recibimos tu brief.»"
+estado = "issue #74"
+perfiles = ["S6", "S8"]
+commit = "76b713a"
+evidencia = [
+  { cita = "src/paginas/Brief.jsx:326", extracto = "name=\"transcurrido\"" },
+  { cita = "worker/brief.js:282-285", extracto = "const transcurrido = Number(datos.get('transcurrido'))" },
+  { cita = "worker/brief.js:85", extracto = "silencio: 'Recibimos tu brief.'," },
+]
+resumen = "Pérdida silenciosa con respuesta de éxito: {{perfiles.S6.reglas.R21.perdida|mil:1}} de cada 1.000 clientes pierden el brief creyendo que llegó."
+cuerpo = '''
+Hallado en el caso de prueba de Statfish: recorrido del código de `main` @ `{{contexto.repo.commit_corto|texto}}`, {{contexto.corrida.fecha|texto}}, sin cambiar nada del repo.
+
+## Qué pasa
+
+Sin JavaScript, o si `brief.js` no llega a cargar, el brief se envía como formulario nativo. El campo oculto `transcurrido` va vacío, el Worker lo lee como 0 ms, lo toma por un robot apurado y responde **en silencio, con un éxito**:
+
+- `src/paginas/Brief.jsx:326`: `<input type="hidden" name="transcurrido" />`, sin valor en el HTML.
+- `src/comportamiento/brief/brief.js:640`: solo el JS le pone valor.
+- `src/client.js:299-302`: `brief.js` se descarga aparte con `import()`; si falla, el formulario queda nativo.
+- `worker/brief.js:282-285`: `Number('')` da 0, entonces `!(0 >= 8000)` responde `MENSAJES.silencio`.
+- `worker/brief.js:85`: «Recibimos tu brief.», con estado 200.
+
+Lo mismo pasa (R10) si un agente de IA llena el brief por WebMCP y la persona lo envía antes de 8 s desde que abrió la página (`src/lib/brief/reglas.js:38-40`). Ahí, además, el navegador borra lo guardado al recibir el 200 (`src/comportamiento/brief/brief.js:669-680`).
+
+## Quién lo encontró
+
+- **U13:** cliente con el link, Firefox con JavaScript apagado. Completa el brief y ve «Recibimos tu brief.».
+- **U26:** clienta en iPhone con JavaScript desactivado. Mismo desenlace.
+- **U23:** clienta que usa un agente en Chrome. En la traza forzada envía antes de 8 s.
+
+## Impacto (cifras del modelo, no del mercado)
+
+Unos **{{perfiles.S6.reglas.R21.perdida|mil:0}} de cada 1.000 clientes** que llenan el brief lo perderían así. Es poca masa, porque cuántos navegan sin JS o con fallas de carga es un supuesto, pero son clientes y la respuesta les dice lo contrario de lo que pasó.
+
+## Propuesta (para discutir, no implementada)
+
+- [ ] Distinguir «sin JS» de «apurado»: si `transcurrido` llega vacío, responder como el contacto sin JS y no con el silencio.
+- [ ] Que el navegador borre lo guardado solo si la respuesta trae la referencia `B-…` del envío real.
+- [ ] Probar el envío del brief con JS desactivado.
+- [ ] Relacionado (R7): la página sin JS del contacto trae el correo como texto, sin enlace (`worker/comun.js:32-46`), y lo escrito se pierde.
+'''
+
+[[hallazgos]]
+id = "H-R1"
+regla = "R1"
+patron = "P-NOMBRE-SOLO-LETRAS"
+titulo = "El nombre rechaza guion, punto y ’: «Usa solo letras.» (también O'Higgins en iPhone)"
+estado = "issue #75"
+perfiles = ["S1", "S2", "S3", "S4", "S5", "S6", "S7"]
+commit = "76b713a"
+evidencia = [{ cita = "src/lib/contacto.js:89-91", extracto = "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u" }]
+resumen = "La fricción más robusta: entre las tres mayores en el {{robustez.top3_friccion.R1|pct}} de los sorteos; {{reglas.R1.friccion|mil:1}} de cada 1.000 llegan con fricción."
+cuerpo = '''
+Hallado en el caso de prueba de Statfish: recorrido del código de `main` @ `{{contexto.repo.commit_corto|texto}}`, {{contexto.corrida.fecha|texto}}, sin cambiar nada del repo.
+
+## Qué pasa
+
+`NOMBRE_VALIDO` (`src/lib/contacto.js:89-91`) acepta letras, marcas, espacio y el apóstrofo recto. Se aplica en el contacto (`src/client.js:82-85` y `worker/index.js:99-101`) y en el brief (`src/comportamiento/brief/brief.js:350` y `worker/brief.js:292-294`).
+
+1. **En iPhone y iPad no pasa ni «O'Higgins», el ejemplo del propio comentario.** Smart Punctuation, activo por defecto en iOS, convierte `'` en `’` (U+2019), que no es `\p{L}`, ni `\p{M}`, ni `'`. El campo (`src/components/Contacto.jsx:121-130`) no tiene nada que lo evite. **Por confirmar en un iPhone real.**
+2. **Guion y punto.** Jean-Baptiste, Marie-Claire, «Ma. José» o «M. Ignacia» reciben «Usa solo letras.».
+3. **El nombre del negocio en el campo nombre**, como «Taller 2 Ruedas» o «Pinturas & Más», recibe el mismo aviso.
+
+## Quién lo encontró
+
+- **U27:** firma «Marie-Ange» en Safari para macOS. Recibe «Usa solo letras.», cambia su nombre y envía.
+- **U15:** iPhone con apóstrofo en el apellido. En las trazas forzadas, se rinde o quita el apóstrofo.
+- **U21:** sin JS y con guion. El envío nativo responde «Faltan datos o el correo no es válido…».
+
+## Impacto (cifras del modelo, no del mercado)
+
+Es la fricción **más robusta** del modelo: queda entre las tres mayores en el {{robustez.top3_friccion.R1|pct}} de {{robustez.n}} sorteos de los supuestos. Unos {{reglas.R1.friccion|mil:0}} de cada 1.000 visitantes pasan por este aviso antes de contactar, y cerca de {{reglas.R1.perdida|mil:0}} se van. El caso del apóstrofo en iPhone es raro, un {{parametros.nombre_apostrofo.p50|pct}} de los nombres, pero es un error de corrección.
+
+## Propuesta (para discutir, no implementada)
+
+- [ ] Normalizar `’`, `‘` y `ʼ` a `'` antes de validar, en el navegador y en el Worker.
+- [ ] Aceptar guion y punto; quizás también dígitos y `&`.
+- [ ] Si queda algún aviso, que diga qué carácter no se acepta.
+'''
+
+[[hallazgos]]
+id = "H-R4"
+regla = "R4"
+patron = "P-TURNSTILE-SIN-ESPERA"
+titulo = "El envío no espera el token de Turnstile: 403 a quien pega y envía rápido, y a los agentes"
+estado = "issue #76"
+perfiles = ["S1", "S4", "S8"]
+commit = "76b713a"
+evidencia = [
+  { cita = "src/lib/turnstile.js:53", extracto = "form.addEventListener('focusin', montar, { once: true })" },
+  { cita = "worker/comun.js:137", extracto = "if (!token || token.length > 2048 || dominios.length === 0) return false" },
+]
+resumen = "Entre las tres mayores pérdidas en el {{robustez.top3_perdida.R4|pct}} de los sorteos; en los agentes, {{perfiles.S8.reglas.R4.perdida|mil:0}} de cada 1.000 se pierden."
+cuerpo = '''
+Hallado en el caso de prueba de Statfish: recorrido del código de `main` @ `{{contexto.repo.commit_corto|texto}}`, {{contexto.corrida.fecha|texto}}, sin cambiar nada del repo.
+
+## Qué pasa
+
+- Turnstile se descarga **al primer foco** dentro del formulario (`src/lib/turnstile.js:53`), y el widget se monta cuando termina de cargar el script (`src/lib/turnstile.js:27-51`).
+- El envío **no espera el token** (`src/client.js:191-245`). Si alguien envía antes, el Worker recibe `cf-turnstile-response` vacío y responde 403 (`worker/index.js:103-105`, `worker/comun.js:137`).
+- El aviso dice «No pudimos enviar tu mensaje. Escríbenos directamente a contacto@volutus.cl.». No dice que basta reintentar.
+
+Le pasa a quien **pega un texto ya escrito** y envía de inmediato, sobre todo en el celular, y a un **agente de IA** que rellena el formulario por WebMCP: el foco recién cae en «Enviar mensaje» (`src/components/Contacto.jsx:40-43`) y en ese momento empieza a bajar Turnstile.
+
+Que el mensaje sea largo no causa el problema: el token dura 300 s y Cloudflare lo renueva solo (`refresh-expired: auto`, que el sitio no cambia).
+
+## Quién lo encontró
+
+- **U06:** Android y Samsung Internet; llega desde Instagram con el texto en sus notas. En la traza sorteada el token alcanzó a llegar; en las forzadas recibe el 403 y reintenta, escribe al correo o se va.
+- **El perfil de agentes WebMCP.**
+
+## Impacto (cifras del modelo, no del mercado)
+
+Queda entre las tres mayores pérdidas en el {{robustez.top3_perdida.R4|pct}} de {{robustez.n}} sorteos de los supuestos. Cerca de {{reglas.R4.perdida|mil:0}} de cada 1.000 visitantes se van por esto, y en el perfil de agentes, {{perfiles.S8.reglas.R4.perdida|mil:0}} de cada 1.000. **Por confirmar con tiempos reales**: el modelo supone que entre el {{parametros.token_no_listo_rapido_movil.p10|pct:0}} y el {{parametros.token_no_listo_rapido_movil.p90|pct:0}} de quienes pegan y envían en el celular lo hacen antes del token.
+
+## Propuesta (para discutir, no implementada)
+
+- [ ] Al enviar sin token, esperarlo con un tope de unos segundos en lugar de mandar el POST vacío.
+- [ ] O cargar Turnstile antes: al asomar el formulario en pantalla y no al primer foco.
+- [ ] Si igual falla, que el aviso diga primero «Vuelve a enviarlo» y después ofrezca el correo.
+'''
+
+[[hallazgos]]
+id = "H-R9"
+regla = "R9"
+patron = "P-MISMO-TEXTO-DOS-DESTINOS"
+titulo = "«Cuéntanos tu proyecto» lleva al brief de 35 a 45 min en desarrollo web y al formulario en la barra"
+estado = "issue #77"
+perfiles = ["S2", "S1"]
+commit = "76b713a"
+evidencia = [
+  { cita = "src/data/paginas-de-servicio.js:66", extracto = "proyecto: '/brief-web'," },
+  { cita = "src/components/Barra.jsx:158", extracto = "ancla('contacto')}>Cuéntanos tu proyecto</a>" },
+]
+resumen = "La mayor pérdida en el {{robustez.top1_perdida.R9|pct}} de los sorteos; arreglarla baja la pérdida por código de {{hipotesis.base.perdida_por_codigo|pct:2}} a {{hipotesis.r9.perdida_por_codigo|pct:2}}."
+cuerpo = '''
+Hallado en el caso de prueba de Statfish: recorrido del código de `main` @ `{{contexto.repo.commit_corto|texto}}`, {{contexto.corrida.fecha|texto}}, sin cambiar nada del repo.
+
+## Qué pasa
+
+- En `/servicios/desarrollo-web`, el «Cuéntanos tu proyecto» de la cabecera lleva a `/brief-web` (`src/data/paginas-de-servicio.js:66`, `src/paginas/Servicio.jsx:89`). Ese brief tiene 9 partes y toma de 35 a 45 min (`src/lib/brief/preguntas.js:89-93`), y está pensado para clientes que ya recibieron el link.
+- El «Cuéntanos tu proyecto» de la barra lleva al formulario corto de la misma página (`src/components/Barra.jsx:158`).
+- La documentación no coincide: `src/paginas/Brief.jsx:10-12` dice que el brief «No se enlaza desde el sitio», pero `src/lib/meta.js:301-302` y el README dicen que sí.
+
+Es una decisión documentada en el README, no un error. Este issue es para decidirla con datos.
+
+## Quién lo encontró
+
+- **U25:** Antofagasta, listo para encargar su sitio. En las trazas forzadas abre el brief, ve «35 a 45 min» y lo deja para después, o vuelve y usa el formulario.
+- **El perfil de escritorio que busca una página web.**
+
+## Impacto (cifras del modelo, no del mercado)
+
+Es la **mayor pérdida del modelo** en el {{robustez.top1_perdida.R9|pct:0}} de {{robustez.n}} sorteos de los supuestos, y queda entre las tres mayores en el {{robustez.top3_perdida.R9|pct:0}}. Se pierden cerca de {{reglas.R9.perdida|mil:1}} de cada 1.000 visitantes, y {{perfiles.S2.reglas.R9.perdida|mil:0}} de cada 1.000 entre quienes buscan una página web desde el escritorio. Si la cabecera llevara al formulario, la pérdida atribuible al código bajaría de {{hipotesis.base.perdida_por_codigo|pct:2}} a {{hipotesis.r9.perdida_por_codigo|pct:2}} de las visitas. El supuesto que más pesa es cuántos prospectos completan el brief: entre el {{parametros.envia_brief_prospecto.p10|pct:0}} y el {{parametros.envia_brief_prospecto.p90|pct:0}}.
+
+## Propuesta (para discutir, no implementada)
+
+- [ ] Que la cabecera lleve al formulario, como en los otros servicios, y ofrecer el brief después.
+- [ ] O cambiar el texto del botón para que diga lo que abre, por ejemplo «Llena el brief (35 a 45 min)».
+- [ ] Corregir el comentario de `src/paginas/Brief.jsx:10-12`.
+'''
+
+[[hallazgos]]
+id = "H-R8"
+regla = "R8"
+patron = "P-ESTADO-PERDIDO-ENTRE-PAGINAS"
+titulo = "Desde /ley21719, «Pedir esta cotización» llega a un formulario vacío y sin el servicio"
+estado = "issue #78"
+perfiles = ["S5"]
+commit = "76b713a"
+evidencia = [{ cita = "src/paginas/Ley21719.jsx:429", extracto = "<Estimado servicio=\"datos\" contacto=\"/#contacto\" />" }]
+resumen = "Entre quienes buscan la ley de datos, {{perfiles.S5.reglas.R8.friccion|mil:1}} de cada 1.000 reescriben lo marcado y {{perfiles.S5.reglas.R8.perdida|mil:1}} se van."
+cuerpo = '''
+Hallado en el caso de prueba de Statfish: recorrido del código de `main` @ `{{contexto.repo.commit_corto|texto}}`, {{contexto.corrida.fecha|texto}}, sin cambiar nada del repo.
+
+## Qué pasa
+
+- `/ley21719` es la página del servicio «Ley de datos». Tiene estimado, pero no formulario.
+- «Pedir esta cotización» lleva a `/#contacto` (`src/paginas/Ley21719.jsx:429`). Como el formulario no está en la misma página, lo marcado no se escribe en el mensaje (`src/components/Estimado.jsx:48`, `src/components/Estimado.jsx:204-207`).
+- El formulario de la portada llega sin «Adaptarme a la ley de datos» marcado (`src/paginas/Inicio.jsx:33`). Lo mismo pasa con el «Cuéntanos tu proyecto» del cierre (`src/paginas/Ley21719.jsx:264`).
+- En los otros siete servicios, el mensaje llega escrito y el servicio marcado (`src/comportamiento/estimado.js:61-72`, `src/paginas/Servicio.jsx:72-74`).
+
+## Quién lo encontró
+
+- **U24:** Coquimbo, le recomendaron la guía de la ley. En las trazas forzadas calcula el estimado y pulsa «Pedir esta cotización». Llega a un formulario vacío y se va, o reescribe lo que había marcado.
+
+## Impacto (cifras del modelo, no del mercado)
+
+Entre quienes buscan adaptarse a la ley de datos, **{{perfiles.S5.reglas.R8.friccion|mil:0}} de cada 1.000** llegan al contacto después de reescribir lo que habían marcado, y **{{perfiles.S5.reglas.R8.perdida|mil:1}} de cada 1.000 se van**. Cuántos buscan la ley es el supuesto más incierto del modelo, entre el {{intervalos.masa_S5.p5|pct}} y el {{intervalos.masa_S5.p95|pct}} de las visitas, y la ley rige desde el 1 de diciembre.
+
+## Propuesta (para discutir, no implementada)
+
+- [ ] Poner el formulario de contacto al final de `/ley21719`, con el servicio marcado, como en las páginas de servicio.
+- [ ] O llevar lo marcado en el enlace o en `sessionStorage`, y escribirlo al llegar al formulario de la portada.
+'''
+
+[[hallazgos]]
+id = "H-R7"
+regla = "R7"
+patron = "P-RESPUESTA-SIN-JS-SIN-ENLACE"
+titulo = "Sin JavaScript, la respuesta del contacto trae el correo sin enlace y se pierde lo escrito"
+estado = "confirmado"
+perfiles = ["S7"]
+commit = "76b713a"
+evidencia = [{ cita = "worker/comun.js:32-46", extracto = "function paginaDeRespuesta(mensaje, estado) {" }]
+resumen = "{{reglas.R7.perdida|mil:2}} de cada 1.000 llegadas se pierden; se menciona dentro del issue de R21, sin issue propio."
+
+[[hallazgos]]
+id = "H-WEBMCP"
+patron = "P-WEBMCP-SIN-ORIGIN-TRIAL"
+titulo = "Las anotaciones WebMCP no tienen token de origin trial"
+estado = "confirmado"
+perfiles = ["S8"]
+commit = "76b713a"
+evidencia = [{ cita = "src/components/Contacto.jsx:40-43", extracto = "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo." }]
+resumen = "Hoy casi no afecta a nadie: el perfil de agentes pesa {{perfiles.S8.masa|pct}} de las llegadas. Sin issue."

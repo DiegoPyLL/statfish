@@ -1,0 +1,18 @@
+{
+  "name": "statfish",
+  "owner": {
+    "name": "Diego Peña y Lillo"
+  },
+  "metadata": {
+    "description": "Marketplace del plugin Statfish: usuarios simulados desde el código, con cifras reproducibles.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "statfish",
+      "source": "./plugins/statfish",
+      "description": "Simula usuarios a partir del código de un producto: red de perfiles, cadena de uso, cobertura por pares e informe reproducible.",
+      "version": "0.1.0"
+    }
+  ]
+}

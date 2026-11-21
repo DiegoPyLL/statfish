@@ -1,0 +1,32 @@
+# Contexto de la corrida: lo escribe `statfish contexto` (determinista).
+
+[corrida]
+pregunta = "¿Qué usuarios no logran cotizar ni contactar a Volutus, en qué paso y por qué? ¿Qué entornos técnicos rompen la experiencia?"
+pais = "CL"
+publico = "Dueños de negocios chicos y medianos de Chile, y clientes de Volutus con el link del brief"
+fecha = 2026-11-20
+
+[repo]
+nombre = "VolutusDevelopment/VolutusLandingPage"
+ruta = "../../../Volutus/VolutusLandingPage"
+commit = "76b713a27709786c77c2c219063f92ae0628496a"
+commit_corto = "76b713a"
+cambios_locales = false
+
+[stack]
+rasgos = ["almacenamiento-local", "cloudflare-workers", "movimiento-reducido", "node", "playwright", "post-nativo", "react", "resend", "sin-analitica", "trampa-honeypot", "turnstile", "vite", "webgl", "webmcp", "whatsapp"]
+formularios = 44
+paginas = 12
+origin_trial = false
+idioma = "es-CL"
+archivos = 1233
+
+[stack.lenguajes]
+js = 107
+mjs = 68
+jsx = 59
+css = 33
+html = 27
+json = 3
+jsonc = 1
+py = 1

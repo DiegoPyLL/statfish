@@ -1,0 +1,335 @@
+# Recorrido del código de la landing de Volutus (etapa 1), migrado de docs/caso-volutus/recorrido.md.
+# Cada afirmación lleva su evidencia { cita, extracto }; `statfish evidencia` la verifica contra el commit.
+
+[recorrido]
+regla = "Primero el índice (rutas, formularios, endpoints, límites) y después la lectura dirigida por la pregunta. Sin evidencia no hay hallazgo."
+cambios_en_el_repo = "Ninguno: solo lectura (git status igual antes y después)."
+lineas_leidas_completas = 3239
+bytes_leidos_completos = 142800
+bytes_leidos_total = 235000
+tokens_estimados = "65 a 70 mil"
+codigo_total_lineas = 52872
+codigo_total_bytes = 2150000
+nota = "La lectura dirigida cubrió cerca del 11 % de los bytes de src/, worker/ y scripts/. El resto son escenas del juego, estilos y datos de bocetos y artículos, que no tocan la pregunta."
+
+[[bitacora]]
+paso = "Contexto"
+leido = ["README.md", "CLAUDE.md", "nota del vault 1. Projects/LandingPage/LandingPage.md", "issue #40", "informe de 100.000 perfiles del commit 87e3c0d"]
+lineas = 1000
+bytes = 58000
+
+[[bitacora]]
+paso = "Índice"
+leido = ["src/lib/meta.js", "src/paginas/rutas.js", "public/robots.txt"]
+lineas = 656
+
+[[bitacora]]
+paso = "Formularios"
+leido = ["src/components/Contacto.jsx", "src/lib/contacto.js", "src/lib/servicios.js", "src/client.js", "src/components/Estimado.jsx", "src/comportamiento/estimado.js", "src/lib/precios.js", "src/data/uf.js"]
+lineas = 1555
+
+[[bitacora]]
+paso = "Servidor"
+leido = ["worker/index.js", "worker/comun.js", "worker/brief.js", "wrangler.jsonc"]
+lineas = 822
+
+[[bitacora]]
+paso = "Entorno"
+leido = ["src/lib/turnstile.js", "src/lib/seguridad.js", "src/lib/almacen.js", "src/lib/movimiento.js", "src/lib/campos.js", "src/comportamiento/chat.js", "src/comportamiento/copiar.js"]
+lineas = 266
+
+[[bitacora]]
+paso = "Lectura parcial"
+leido = ["src/comportamiento/brief/brief.js (462 de 781 líneas)", "src/lib/brief/reglas.js", "src/paginas/Brief.jsx", "src/paginas/Ley21719.jsx", "src/paginas/Servicio.jsx", "src/data/paginas-de-servicio.js", "src/comportamiento/nubes.js"]
+lineas = 844
+bytes = 34800
+
+[[bitacora]]
+paso = "Búsquedas"
+leido = ["grep de enlaces a /brief-web", "grep de <Contacto y <Estimado", "grep de toolname", "grep de origin-trial (vacío)", "grep de transcurrido"]
+
+# ------------------------------------------------------------------------------------------------
+# Mapa: superficies, entradas, servidor y entorno.
+# ------------------------------------------------------------------------------------------------
+[[superficies]]
+id = "/"
+que = "Portada: formulario de contacto sin servicio marcado"
+evidencia = [{ cita = "src/paginas/Inicio.jsx:33", extracto = "cierre={<Contacto />}" }]
+
+[[superficies]]
+id = "/servicios/*"
+que = "Siete páginas con un solo marco: estimado y formulario con el servicio ya marcado"
+evidencia = [
+  { cita = "src/paginas/Servicio.jsx:72-74", extracto = "cierre={<Contacto marcado={servicio.opcion} />}" },
+  { cita = "src/paginas/Servicio.jsx:102", extracto = "estimado={<Estimado servicio={servicio.id} />}" },
+]
+
+[[superficies]]
+id = "/servicios/desarrollo-web"
+que = "Su «Cuéntanos tu proyecto» de la cabecera va a /brief-web; el de las demás páginas, a #contacto"
+evidencia = [
+  { cita = "src/data/paginas-de-servicio.js:66", extracto = "proyecto: '/brief-web'," },
+  { cita = "src/paginas/Servicio.jsx:89", extracto = "href={pagina.proyecto ?? '#contacto'}" },
+]
+
+[[superficies]]
+id = "/ley21719"
+que = "La página del servicio «Ley de datos»: tiene estimado, pero no formulario; sus dos llamados van a /#contacto"
+evidencia = [
+  { cita = "src/paginas/Ley21719.jsx:264", extracto = "<a className=\"boton boton-primario\" href=\"/#contacto\">" },
+  { cita = "src/paginas/Ley21719.jsx:429", extracto = "<Estimado servicio=\"datos\" contacto=\"/#contacto\" />" },
+]
+
+[[superficies]]
+id = "artículos"
+que = "13 guías y 1 opinión, con el formulario y el servicio del artículo marcado"
+evidencia = [{ cita = "src/components/Articulo.jsx:48", extracto = "cierre={<Contacto marcado={servicioDeArticulo(PAGINAS[ruta])?.opcion} />}" }]
+
+[[superficies]]
+id = "/brief-web"
+que = "Brief de 9 partes (35 a 45 min), con 2 obligatorios; noindex"
+evidencia = [
+  { cita = "src/lib/meta.js:301-310", extracto = "// El brief que Volutus le manda a un cliente por link (paginas/Brief.jsx)." },
+  { cita = "src/lib/brief/preguntas.js:89-93", extracto = "35 a 45 min" },
+]
+
+[[superficies]]
+id = "fuera de la pregunta"
+que = "/404, /500, /patos, Operación Venganza, /nosotros y /privacidad"
+evidencia = [{ cita = "src/lib/meta.js:288-478", extracto = "'/404': {" }]
+
+[[entradas]]
+id = "contacto"
+que = "POST /api/contacto: «Enviar por» correo o WhatsApp; nombre (60), correo (100, opcional por WhatsApp), servicios (opcional), mensaje (2.000); trampa hp_campo; Turnstile"
+webmcp = "escribir_a_volutus, sin toolautosubmit: la persona envía"
+evidencia = [
+  { cita = "src/components/Contacto.jsx:76-223", extracto = "toolname=\"escribir_a_volutus\"" },
+  { cita = "src/lib/contacto.js:83-91", extracto = "export const LIMITES = { nombre: 60, correo: 100, proyecto: 2000 }" },
+]
+
+[[entradas]]
+id = "estimado"
+que = "Base, extras, urgencia, cuotas y mantención; se calcula en el navegador. «Pedir esta cotización» escribe lo marcado en el mensaje si el formulario está en la misma página"
+webmcp = "estimar_precio, con toolautosubmit y respondWith"
+evidencia = [
+  { cita = "src/components/Estimado.jsx:48", extracto = "const escribeElMensaje = contacto === '#contacto'" },
+  { cita = "src/components/Estimado.jsx:60-67", extracto = "toolname=\"estimar_precio\"" },
+  { cita = "src/comportamiento/estimado.js:61-86", extracto = "// «Pedir esta cotización» deja lo marcado escrito en el mensaje del" },
+]
+
+[[entradas]]
+id = "brief"
+que = "POST /api/brief: unas 85 preguntas en pantallas por ancla; solo nombre y un contacto son obligatorios; se guarda en el navegador; campos ocultos de envío (transcurrido, pantalla, zona…)"
+webmcp = "enviar_brief, sin toolautosubmit"
+evidencia = [
+  { cita = "src/paginas/Brief.jsx:176-184", extracto = "action=\"/api/brief\"" },
+  { cita = "src/paginas/Brief.jsx:322-326", extracto = "<input type=\"hidden\" name=\"dispositivo\" />" },
+  { cita = "src/comportamiento/brief/brief.js:158-176", extracto = "function guardar() {" },
+]
+
+[[entradas]]
+id = "validaciones compartidas"
+que = "El navegador y el Worker aplican las mismas reglas: nombre solo letras, marcas, espacio y apóstrofo recto; correo sin espacios ni separadores; teléfono del brief de 8 a 20 dígitos y signos"
+evidencia = [
+  { cita = "src/lib/contacto.js:6-8", extracto = "* El Worker vuelve a aplicar las reglas porque el endpoint es público. Una" },
+  { cita = "src/lib/contacto.js:89-91", extracto = "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u" },
+  { cita = "src/lib/contacto.js:85-87", extracto = "// Sin espacios ni separadores de direcciones" },
+  { cita = "src/lib/brief/reglas.js:30-32", extracto = "// Dígitos, espacios, guiones y paréntesis, con un «+» delante si es" },
+]
+
+[[servidor]]
+id = "camino común"
+que = "Los dos endpoints recorren el mismo camino: método, mismo origen, límite por IP (antes de leer), tamaño y tipo, trampa, validación, Turnstile y Resend"
+evidencia = [
+  { cita = "worker/comun.js:3-8", extracto = "* Lo que comparten los formularios del Worker: el de contacto (index.js) y" },
+  { cita = "worker/comun.js:76-80", extracto = "export function esMismoOrigen(request) {" },
+  { cita = "worker/comun.js:90-99", extracto = "export async function dentroDelLimite(limite, ip, registro) {" },
+  { cita = "worker/comun.js:107-116", extracto = "export async function leerFormulario(request, tope) {" },
+  { cita = "worker/comun.js:130-152", extracto = "export async function pasaTurnstile(token, ip, env, accion) {" },
+  { cita = "worker/comun.js:163-192", extracto = "export async function enviarCorreo(env, { para, responderA, asunto, texto, adjuntos = [] }, registro) {" },
+]
+
+[[servidor]]
+id = "límites"
+que = "Contacto: 5 por minuto e IP. Brief: 2 por minuto e IP"
+evidencia = [
+  { cita = "wrangler.jsonc:36-41", extracto = "\"ratelimits\": [" },
+  { cita = "wrangler.jsonc:46-50", extracto = "\"name\": \"LIMITE_BRIEF\"," },
+]
+
+[[servidor]]
+id = "trampa y apuro"
+que = "La trampa responde 200 sin enviar nada en los dos endpoints; el brief, además, descarta en silencio un envío de menos de 8 s"
+evidencia = [
+  { cita = "worker/index.js:83-85", extracto = "if (limpiar(datos.get('hp_campo'), 200)) {" },
+  { cita = "worker/brief.js:280-285", extracto = "if (limpiar(datos.get('hp_campo'), 200) || !(transcurrido >= TIEMPO_MINIMO)) {" },
+]
+
+[[servidor]]
+id = "sin token de Turnstile"
+que = "403 «No pudimos enviar tu mensaje. Escríbenos directamente a…» en el contacto y «No pudimos enviar tu brief…» en el brief"
+evidencia = [
+  { cita = "worker/index.js:103-105", extracto = "if (!(await pasaTurnstile(limpiar(datos.get('cf-turnstile-response'), 4096), ip, env, TURNSTILE_ACCION))) {" },
+  { cita = "worker/brief.js:296-298", extracto = "TURNSTILE_ACCION_BRIEF" },
+]
+
+[[servidor]]
+id = "respuesta"
+que = "JSON con JS; una página HTML aparte sin JS"
+evidencia = [{ cita = "worker/comun.js:48-56", extracto = "export function responder(request, mensaje, estado) {" }]
+
+[[entorno]]
+id = "Turnstile"
+que = "El script se descarga al primer foco dentro del formulario y el widget se monta al cargar. El envío no espera el token. El token dura 300 s y se renueva solo (refresh-expired: auto por defecto)"
+evidencia = [
+  { cita = "src/lib/turnstile.js:27-53", extracto = "const montar = () => {" },
+  { cita = "src/client.js:191-245", extracto = "form.addEventListener('submit', async (evento) => {" },
+]
+
+[[entorno]]
+id = "sin JavaScript"
+que = "Contacto: POST nativo sin token, 403 en una página aparte. Brief: POST nativo con transcurrido vacío, que el Worker toma por 0 ms"
+evidencia = [
+  { cita = "src/components/Contacto.jsx:23-25", extracto = "pero el envío exige el token" },
+  { cita = "worker/index.js:34-40", extracto = "**Responde de dos maneras, y las dos hacen falta.**" },
+  { cita = "src/paginas/Brief.jsx:326", extracto = "name=\"transcurrido\"" },
+]
+
+[[entorno]]
+id = "brief.js no carga"
+que = "Se baja con import() solo en su página; si falla, el formulario queda nativo"
+evidencia = [{ cita = "src/client.js:299-302", extracto = "if (form) import('./comportamiento/brief/brief.js').then((modulo) => modulo.default(form))" }]
+
+[[entorno]]
+id = "sin almacenamiento"
+que = "Todo acceso va envuelto; el brief avisa «No cierres la página hasta enviar»"
+evidencia = [
+  { cita = "src/lib/almacen.js:1-3", extracto = "// El almacenamiento del navegador puede no estar (modo privado, cookies" },
+  { cita = "src/comportamiento/brief/brief.js:163-166", extracto = "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio" },
+]
+
+[[entorno]]
+id = "sin GPU, sin WebGL o con movimiento reducido"
+que = "Escena quieta o en video; la página sigue entera"
+evidencia = [
+  { cita = "src/comportamiento/nubes.js:44-59", extracto = "Nada en vivo sin GPU de verdad. Si el pintor dibuja por software, o con" },
+  { cita = "src/lib/movimiento.js:7", extracto = "export const quieto = () => matchMedia('(prefers-reduced-motion: reduce)').matches" },
+]
+
+[[entorno]]
+id = "iPhone y iPad"
+que = "WebKit en todo navegador; el teclado convierte ' en ’ (Smart Punctuation, activo por defecto) y el campo nombre no lo evita"
+evidencia = [{ cita = "src/components/Contacto.jsx:121-130", extracto = "toolparamdescription=\"Nombre de quien escribe\"" }]
+
+[[entorno]]
+id = "WhatsApp"
+que = "window.open a wa.me con el texto armado, antes de cualquier await (por Safari)"
+evidencia = [
+  { cita = "src/client.js:202-214", extracto = "// Antes de cualquier `await`: así Safari lo cuenta como gesto de la" },
+  { cita = "src/lib/contacto.js:39-44", extracto = "export const mensajeDeWhatsapp = ({ nombre, correo, servicios, proyecto }) =>" },
+]
+
+[[entorno]]
+id = "agentes de IA (WebMCP)"
+que = "Anotaciones declarativas en los tres formularios. El sitio no declara token de origin trial (grep origin-trial vacío): en Chrome estable solo responde a quien activa el flag de pruebas"
+evidencia = [{ cita = "src/components/Contacto.jsx:40-43", extracto = "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo." }]
+
+[[entorno]]
+id = "idioma"
+que = "Solo es-CL"
+evidencia = [{ cita = "index.html:2", extracto = "<html lang=\"es-CL\">" }]
+
+[[contenido]]
+id = "servicios y estimados"
+que = "8 servicios en orden de necesidad, que son las opciones del formulario más «Otro…»; cada uno con su estimado en UF con la UF del día. La Ley 21.719 rige desde el 1 de diciembre de 2026"
+evidencia = [
+  { cita = "src/lib/servicios.js:29-144", extracto = "export const SERVICIOS = [" },
+  { cita = "src/lib/servicios.js:157-160", extracto = "export const OPCIONES_DE_CONTACTO = [" },
+  { cita = "src/lib/precios.js:52-150", extracto = "export const ESTIMADOS = {" },
+  { cita = "src/data/uf.js:2", extracto = "export const UF = {" },
+  { cita = "src/paginas/Ley21719.jsx:33", extracto = "{ valor: '1 dic 2026', texto: 'Empieza a regir' }," },
+]
+
+[[inconsistencias]]
+texto = "src/paginas/Brief.jsx:10-12 dice que el brief «No se enlaza desde el sitio», pero la página de desarrollo web lo enlaza, y así lo cuentan src/lib/meta.js:301-302 y el README"
+evidencia = [
+  { cita = "src/paginas/Brief.jsx:10-12", extracto = "* El brief para clientes (/brief-web): el cuestionario de marca y sitio web que" },
+  { cita = "src/data/paginas-de-servicio.js:66", extracto = "proyecto: '/brief-web'," },
+]
+
+# ------------------------------------------------------------------------------------------------
+# Checklist del catálogo (statfish patrones): presente, ausente o no verificable, con evidencia.
+# ------------------------------------------------------------------------------------------------
+[[patrones]]
+id = "P-NOMBRE-SOLO-LETRAS"
+estado = "presente"
+reglas = ["R1", "R1+R2"]
+evidencia = [{ cita = "src/lib/contacto.js:89-91", extracto = "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u" }]
+
+[[patrones]]
+id = "P-TURNSTILE-SIN-ESPERA"
+estado = "presente"
+reglas = ["R4"]
+evidencia = [{ cita = "src/lib/turnstile.js:53", extracto = "form.addEventListener('focusin', montar, { once: true })" }]
+
+[[patrones]]
+id = "P-ANTIBOT-SILENCIO-SIN-JS"
+estado = "presente"
+reglas = ["R21", "R10"]
+evidencia = [{ cita = "worker/brief.js:282-285", extracto = "const transcurrido = Number(datos.get('transcurrido'))" }]
+
+[[patrones]]
+id = "P-ESTADO-PERDIDO-ENTRE-PAGINAS"
+estado = "presente"
+reglas = ["R8"]
+evidencia = [{ cita = "src/paginas/Ley21719.jsx:429", extracto = "<Estimado servicio=\"datos\" contacto=\"/#contacto\" />" }]
+
+[[patrones]]
+id = "P-MISMO-TEXTO-DOS-DESTINOS"
+estado = "presente"
+reglas = ["R9"]
+evidencia = [{ cita = "src/data/paginas-de-servicio.js:66", extracto = "proyecto: '/brief-web'," }]
+
+[[patrones]]
+id = "P-RESPUESTA-SIN-JS-SIN-ENLACE"
+estado = "presente"
+reglas = ["R7"]
+evidencia = [{ cita = "worker/comun.js:32-46", extracto = "function paginaDeRespuesta(mensaje, estado) {" }]
+
+[[patrones]]
+id = "P-WEBMCP-SIN-ORIGIN-TRIAL"
+estado = "presente"
+evidencia = [{ cita = "src/components/Contacto.jsx:40-43", extracto = "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo." }]
+
+# ------------------------------------------------------------------------------------------------
+# Hipótesis que el código descartó: no se proponen de nuevo sin evidencia nueva.
+# ------------------------------------------------------------------------------------------------
+[[descartadas]]
+id = "N-REANUDAR-CUENTA-TIEMPO"
+texto = "Quien retoma el brief otro día cae en el filtro de 8 s"
+por_que = "inicio se guarda junto con las respuestas, así que el tiempo cuenta desde la primera visita"
+evidencia = [
+  { cita = "src/comportamiento/brief/brief.js:139", extracto = "let inicio = guardado?.inicio ?? Date.now()" },
+  { cita = "src/comportamiento/brief/brief.js:163", extracto = "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio" },
+]
+
+[[descartadas]]
+id = "N-TOKEN-VENCE"
+texto = "Un mensaje largo vence el token de Turnstile"
+por_que = "El token dura 300 s y el widget lo renueva solo: el sitio no cambia refresh-expired"
+evidencia = [{ cita = "src/lib/turnstile.js:42-50", extracto = "widget = window.turnstile.render(hueco, {" }]
+
+[[descartadas]]
+id = "N-SIN-GPU-ROMPE"
+texto = "Sin GPU la portada se rompe"
+por_que = "Hay video o escena quieta, y la página sigue entera"
+evidencia = [{ cita = "src/comportamiento/nubes.js:44-49", extracto = "Nada en vivo sin GPU de verdad. Si el pintor dibuja por software, o con" }]
+
+[[descartadas]]
+id = "issue-40-tope-500"
+texto = "El mensaje de 500 caracteres queda corto (issue #40)"
+por_que = "Ya está resuelto: el tope es 2.000"
+evidencia = [{ cita = "src/lib/contacto.js:83", extracto = "export const LIMITES = { nombre: 60, correo: 100, proyecto: 2000 }" }]
+
+[no_dice]
+texto = "El código no dice quién llega ni cuántos, desde dónde, con qué urgencia ni qué le importa. Tampoco con qué frecuencia ocurre cada entorno. El sitio declara que no usa analítica, así que no hay datos reales para calibrar: todo eso entra al modelo como anclas públicas o priors con rango."

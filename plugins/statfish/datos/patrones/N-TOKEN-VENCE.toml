@@ -1,0 +1,14 @@
+id = "N-TOKEN-VENCE"
+tipo = "descartada"
+titulo = "«Un mensaje largo vence el token de Turnstile»"
+aplica_si = "'turnstile' in rasgos"
+como_descartar = "Turnstile renueva solo el token vencido (refresh-expired: auto, por defecto). Solo es fricción si el sitio lo cambia a manual o never."
+
+[deteccion]
+regex = ['refresh-expired', 'refreshExpired']
+pistas = ["Busca refresh-expired en la configuración del widget: si no aparece, vale auto y la hipótesis no aplica."]
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+evidencia = [{ cita = "src/lib/turnstile.js:42-50", extracto = "widget = window.turnstile.render(hueco, {" }]

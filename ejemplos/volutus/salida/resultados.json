@@ -1,0 +1,2055 @@
+{
+ "motor": "0.1.0",
+ "modelo": "Volutus, landing: quién no logra cotizar ni contactar",
+ "semilla": 20261120,
+ "rapido": false,
+ "tamanos": {
+  "poblacion": 120000,
+  "representativos": 12,
+  "sorteos_parametros": 200,
+  "usuarios_incertidumbre": 3000,
+  "usuarios_hipotesis": 20000,
+  "candidatos_universo": 60000,
+  "candidatos_por_vuelta": 3000,
+  "universo_arcos": 20000,
+  "trayectorias": 10,
+  "niveles": 4,
+  "usuarios_morris": 2000
+ },
+ "desenlaces": {
+  "contacto": 0.21394470926975082,
+  "contacto_con_friccion": 0.018581117711479866,
+  "correo_directo": 0.003055918154228431,
+  "no_envia_whatsapp": 0.010696578809705419,
+  "abandono_sin_intento": 0.7410038596983168,
+  "abandono_por_friccion": 0.012338575247405103,
+  "perdida_silenciosa": 0.00037924110947916694
+ },
+ "textos_desenlaces": {
+  "contacto": "Contacto sin fricción",
+  "contacto_con_friccion": "Contacto después de una fricción",
+  "correo_directo": "Escribe al correo tras un error",
+  "no_envia_whatsapp": "Abre WhatsApp y no envía",
+  "abandono_sin_intento": "Se va sin intentar contactar",
+  "abandono_por_friccion": "Se va por una fricción del código",
+  "perdida_silenciosa": "Envía y no llega nada (silencio)"
+ },
+ "metricas": {
+  "contacto_total": 0.2355817451354591,
+  "perdida_por_codigo": 0.01271781635688427,
+  "con_friccion": 0.03435485222259257
+ },
+ "textos_metricas": {
+  "contacto_total": "Contacto (todas las vías)",
+  "perdida_por_codigo": "Pérdida atribuible al código",
+  "con_friccion": "Pasa por alguna fricción"
+ },
+ "intervalos": {
+  "contacto_total": {
+   "p5": 0.15614201635544647,
+   "p50": 0.22861650543734563,
+   "p95": 0.30766977527809547
+  },
+  "perdida_por_codigo": {
+   "p5": 0.006468274779724176,
+   "p50": 0.011522258290358602,
+   "p95": 0.02109682893469877
+  },
+  "con_friccion": {
+   "p5": 0.019609714718525312,
+   "p50": 0.03348740507426053,
+   "p95": 0.05444043984833684
+  },
+  "masa_S6": {
+   "p5": 0.009333333333333334,
+   "p50": 0.04533333333333334,
+   "p95": 0.105
+  },
+  "masa_S8": {
+   "p5": 0.0,
+   "p50": 0.0003333333333333333,
+   "p95": 0.0023333333333333335
+  },
+  "masa_S7": {
+   "p5": 0.024333333333333332,
+   "p50": 0.058333333333333334,
+   "p95": 0.114
+  },
+  "masa_S5": {
+   "p5": 0.007,
+   "p50": 0.06333333333333334,
+   "p95": 0.225
+  },
+  "masa_S4": {
+   "p5": 0.07166666666666667,
+   "p50": 0.107,
+   "p95": 0.14433333333333334
+  },
+  "masa_S1": {
+   "p5": 0.292,
+   "p50": 0.38233333333333336,
+   "p95": 0.45466666666666666
+  },
+  "masa_S2": {
+   "p5": 0.027666666666666666,
+   "p50": 0.07866666666666666,
+   "p95": 0.16366666666666665
+  },
+  "masa_S3": {
+   "p5": 0.141,
+   "p50": 0.23666666666666666,
+   "p95": 0.31366666666666665
+  }
+ },
+ "perfiles": {
+  "S1": {
+   "nombre": "Celular o tablet Android",
+   "masa": 0.3658416666666667,
+   "n": 43901,
+   "masa_p5": 0.292,
+   "masa_p95": 0.45466666666666666,
+   "desenlaces": {
+    "contacto": 0.19307471174816304,
+    "contacto_con_friccion": 0.012408360689953761,
+    "correo_directo": 0.002180295536468391,
+    "no_envia_whatsapp": 0.014689136241353836,
+    "abandono_sin_intento": 0.7674184643004035,
+    "abandono_por_friccion": 0.010194968007908534,
+    "perdida_silenciosa": 3.406347577503929e-05
+   },
+   "metricas": {
+    "contacto_total": 0.2076633679745852,
+    "perdida_por_codigo": 0.010229031483683574,
+    "con_friccion": 0.024817687710105726
+   },
+   "reglas": {
+    "R1": {
+     "perdida": 0.0015631770047065858,
+     "friccion": 0.007912393579209578
+    },
+    "R4": {
+     "perdida": 0.0035280149178111126,
+     "friccion": 0.003654776029296023
+    },
+    "R9": {
+     "perdida": 0.004209127255700447,
+     "friccion": 0.001926653031161935
+    },
+    "R6": {
+     "perdida": 0.0004532692585855168,
+     "friccion": 0.00042756290311237203
+    },
+    "R4b": {
+     "perdida": 0.0002888962739884423,
+     "friccion": 0.0002989691381831664
+    },
+    "R11": {
+     "perdida": 0.0,
+     "friccion": 0.00028619515470322895
+    },
+    "R5": {
+     "perdida": 0.00015248329711745824,
+     "friccion": 8.210639075557939e-05
+    },
+    "R21": {
+     "perdida": 3.406347577503929e-05,
+     "friccion": 0.0
+    }
+   }
+  },
+  "S2": {
+   "nombre": "Escritorio, busca una página web",
+   "masa": 0.09015,
+   "n": 10818,
+   "masa_p5": 0.027666666666666666,
+   "masa_p95": 0.16366666666666665,
+   "desenlaces": {
+    "contacto": 0.1840866027718394,
+    "contacto_con_friccion": 0.01765430131189993,
+    "correo_directo": 0.0015995235193549194,
+    "no_envia_whatsapp": 0.006045400490107747,
+    "abandono_sin_intento": 0.7712297968662709,
+    "abandono_por_friccion": 0.019261049021332514,
+    "perdida_silenciosa": 0.0001233260191347753
+   },
+   "metricas": {
+    "contacto_total": 0.20334042760309426,
+    "perdida_por_codigo": 0.019384375040467288,
+    "con_friccion": 0.03863819987172214
+   },
+   "reglas": {
+    "R9": {
+     "perdida": 0.01501468384151456,
+     "friccion": 0.00720814163641356
+    },
+    "R1": {
+     "perdida": 0.0015600478590370264,
+     "friccion": 0.008333637007816827
+    },
+    "R4": {
+     "perdida": 0.00212546217926582,
+     "friccion": 0.0022058028848614157
+    },
+    "R11": {
+     "perdida": 0.0,
+     "friccion": 0.0010202997467401304
+    },
+    "R4b": {
+     "perdida": 0.0003667655742551136,
+     "friccion": 0.00038143378843727633
+    },
+    "R5": {
+     "perdida": 0.00019408956726047575,
+     "friccion": 0.00010450976698641359
+    },
+    "R21": {
+     "perdida": 0.0001233260191347753,
+     "friccion": 0.0
+    }
+   }
+  },
+  "S3": {
+   "nombre": "Escritorio, otros servicios",
+   "masa": 0.23965,
+   "n": 28758,
+   "masa_p5": 0.141,
+   "masa_p95": 0.31366666666666665,
+   "desenlaces": {
+    "contacto": 0.20312651124299758,
+    "contacto_con_friccion": 0.009916887334662589,
+    "correo_directo": 0.001773297413890022,
+    "no_envia_whatsapp": 0.006650438149384452,
+    "abandono_sin_intento": 0.7736697320311539,
+    "abandono_por_friccion": 0.004863133827965792,
+    "perdida_silenciosa": 0.0
+   },
+   "metricas": {
+    "contacto_total": 0.21481669599155018,
+    "perdida_por_codigo": 0.004863133827965792,
+    "con_friccion": 0.016553318576518403
+   },
+   "reglas": {
+    "R1": {
+     "perdida": 0.0015698672021698143,
+     "friccion": 0.008386276941360727
+    },
+    "R4": {
+     "perdida": 0.0026331496472448827,
+     "friccion": 0.002732095243383469
+    },
+    "R4b": {
+     "perdida": 0.00043169527803276105,
+     "friccion": 0.0004488162635295856
+    },
+    "R5": {
+     "perdida": 0.00022842170051819017,
+     "friccion": 0.00012299630027906287
+    }
+   }
+  },
+  "S4": {
+   "nombre": "iPhone o iPad (WebKit, Smart Punctuation)",
+   "masa": 0.09900833333333334,
+   "n": 11881,
+   "masa_p5": 0.07166666666666667,
+   "masa_p95": 0.14433333333333334,
+   "desenlaces": {
+    "contacto": 0.19454351280269455,
+    "contacto_con_friccion": 0.012911065653754569,
+    "correo_directo": 0.002168629651867827,
+    "no_envia_whatsapp": 0.015125947299710705,
+    "abandono_sin_intento": 0.7643941471676973,
+    "abandono_por_friccion": 0.010822387584988966,
+    "perdida_silenciosa": 3.430983923912128e-05
+   },
+   "metricas": {
+    "contacto_total": 0.20962320810831694,
+    "perdida_por_codigo": 0.010856697424228087,
+    "con_friccion": 0.02593639272985048
+   },
+   "reglas": {
+    "R1": {
+     "perdida": 0.001582992169209244,
+     "friccion": 0.00792820893441781
+    },
+    "R4": {
+     "perdida": 0.0035039109074535045,
+     "friccion": 0.0036298012601879434
+    },
+    "R9": {
+     "perdida": 0.00451965546039893,
+     "friccion": 0.002049779760978064
+    },
+    "R6": {
+     "perdida": 0.0004809923405360992,
+     "friccion": 0.0004522808337102313
+    },
+    "R1+R2": {
+     "perdida": 0.0002967645191113963,
+     "friccion": 0.00033458398530889844
+    },
+    "R4b": {
+     "perdida": 0.0002867318191846733,
+     "friccion": 0.00029672709937978526
+    },
+    "R11": {
+     "perdida": 0.0,
+     "friccion": 0.00030682246366559523
+    },
+    "R5": {
+     "perdida": 0.00015134036909516518,
+     "friccion": 8.149096797431757e-05
+    },
+    "R21": {
+     "perdida": 3.430983923912128e-05,
+     "friccion": 0.0
+    }
+   }
+  },
+  "S5": {
+   "nombre": "Negocio ante la Ley 21.719",
+   "masa": 0.09065,
+   "n": 10878,
+   "masa_p5": 0.007,
+   "masa_p95": 0.225,
+   "desenlaces": {
+    "contacto": 0.15355407330580872,
+    "contacto_con_friccion": 0.04520650537355025,
+    "correo_directo": 0.0019180400092817258,
+    "no_envia_whatsapp": 0.011256296494070613,
+    "abandono_sin_intento": 0.7692184638719939,
+    "abandono_por_friccion": 0.018846620945257783,
+    "perdida_silenciosa": 0.0
+   },
+   "metricas": {
+    "contacto_total": 0.2006786186886407,
+    "perdida_por_codigo": 0.018846620945257783,
+    "con_friccion": 0.06597116632808975
+   },
+   "reglas": {
+    "R8": {
+     "perdida": 0.013499179536679024,
+     "friccion": 0.03543118710347916
+    },
+    "R1": {
+     "perdida": 0.0015112255929398788,
+     "friccion": 0.007825298535498156
+    },
+    "R4": {
+     "perdida": 0.0030535580477316984,
+     "friccion": 0.003164908527346953
+    },
+    "R4b": {
+     "perdida": 0.00033269724909759765,
+     "friccion": 0.00034508139531979953
+    },
+    "R6": {
+     "perdida": 0.0002368284955874237,
+     "friccion": 0.00022430183650564973
+    },
+    "R5": {
+     "perdida": 0.0001758190061224239,
+     "friccion": 9.467177252745714e-05
+    },
+    "R1+R2": {
+     "perdida": 3.731301709873138e-05,
+     "friccion": 3.909621215506066e-05
+    }
+   }
+  },
+  "S6": {
+   "nombre": "Cliente con el link del brief",
+   "masa": 0.049541666666666664,
+   "n": 5945,
+   "masa_p5": 0.009333333333333334,
+   "masa_p95": 0.105,
+   "desenlaces": {
+    "contacto": 0.6986983616483705,
+    "contacto_con_friccion": 0.07137676090833221,
+    "correo_directo": 0.0075612104962161615,
+    "no_envia_whatsapp": 0.0,
+    "abandono_sin_intento": 0.19744322960473076,
+    "abandono_por_friccion": 0.01824592094196814,
+    "perdida_silenciosa": 0.0066745164003364135
+   },
+   "metricas": {
+    "contacto_total": 0.7776363330529189,
+    "perdida_por_codigo": 0.024920437342304556,
+    "con_friccion": 0.10385840874685293
+   },
+   "reglas": {
+    "R11": {
+     "perdida": 0.0,
+     "friccion": 0.05040806997476552
+    },
+    "R1": {
+     "perdida": 0.005365180824222049,
+     "friccion": 0.028430411101766296
+    },
+    "R12": {
+     "perdida": 0.0127838519764508,
+     "friccion": 0.0
+    },
+    "R21": {
+     "perdida": 0.0062708158116063905,
+     "friccion": 0.0
+    },
+    "R10": {
+     "perdida": 0.00040370058873002523,
+     "friccion": 0.0
+    },
+    "R1+R2": {
+     "perdida": 9.688814129520604e-05,
+     "friccion": 9.949032800672836e-05
+    }
+   }
+  },
+  "S7": {
+   "nombre": "Entorno restrictivo (sin JS, privacidad estricta o sin almacenamiento)",
+   "masa": 0.06445833333333334,
+   "n": 7735,
+   "masa_p5": 0.024333333333333332,
+   "masa_p95": 0.114,
+   "desenlaces": {
+    "contacto": 0.15761508113909573,
+    "contacto_con_friccion": 0.017485386214250744,
+    "correo_directo": 0.013995680237767422,
+    "no_envia_whatsapp": 0.010244710654458946,
+    "abandono_sin_intento": 0.7697523083386788,
+    "abandono_por_friccion": 0.030596455762185493,
+    "perdida_silenciosa": 0.0003103776535229476
+   },
+   "metricas": {
+    "contacto_total": 0.1890961475911139,
+    "perdida_por_codigo": 0.03090683341570844,
+    "con_friccion": 0.06238789986772661
+   },
+   "reglas": {
+    "R4b": {
+     "perdida": 0.012040486171763407,
+     "friccion": 0.010360407334476797
+    },
+    "R7": {
+     "perdida": 0.008614928419004525,
+     "friccion": 0.005743285612669694
+    },
+    "R1": {
+     "perdida": 0.0015407178614738218,
+     "friccion": 0.007060367393206068
+    },
+    "R4": {
+     "perdida": 0.0028787715695328844,
+     "friccion": 0.0027241923584262273
+    },
+    "R9": {
+     "perdida": 0.003751188063025261,
+     "friccion": 0.001460156788504921
+    },
+    "R8": {
+     "perdida": 0.001307601809954755,
+     "friccion": 0.0028443754244592795
+    },
+    "R11": {
+     "perdida": 0.0,
+     "friccion": 0.0009321495550928863
+    },
+    "R6": {
+     "perdida": 0.0002486873614819,
+     "friccion": 0.00020147174893850003
+    },
+    "R21": {
+     "perdida": 0.0003103776535229476,
+     "friccion": 0.0
+    },
+    "R5": {
+     "perdida": 0.00014694775782350003,
+     "friccion": 7.912571575111562e-05
+    },
+    "R1+R2": {
+     "perdida": 6.7126748125404e-05,
+     "friccion": 7.553452049263093e-05
+    }
+   }
+  },
+  "S8": {
+   "nombre": "Agente de IA por WebMCP",
+   "masa": 0.0007,
+   "n": 84,
+   "masa_p5": 0.0,
+   "masa_p95": 0.0023333333333333335,
+   "desenlaces": {
+    "contacto": 0.11409541862754916,
+    "contacto_con_friccion": 0.04861384181963261,
+    "correo_directo": 0.033987863641194827,
+    "no_envia_whatsapp": 0.007964692720982143,
+    "abandono_sin_intento": 0.7203291517857147,
+    "abandono_por_friccion": 0.07273563542278419,
+    "perdida_silenciosa": 0.0022733959821428567
+   },
+   "metricas": {
+    "contacto_total": 0.19669712408837658,
+    "perdida_por_codigo": 0.07500903140492704,
+    "con_friccion": 0.15761073686575447
+   },
+   "reglas": {
+    "R4": {
+     "perdida": 0.06253590744849674,
+     "friccion": 0.06463134344279192
+    },
+    "R1": {
+     "perdida": 0.004437816964285715,
+     "friccion": 0.01398418767150893
+    },
+    "R9": {
+     "perdida": 0.003612173616071429,
+     "friccion": 0.0009755637389300001
+    },
+    "R8": {
+     "perdida": 0.0016000000000000003,
+     "friccion": 0.00246691425
+    },
+    "R10": {
+     "perdida": 0.0022733959821428567,
+     "friccion": 0.0
+    },
+    "R4b": {
+     "perdida": 0.0003995192989698714,
+     "friccion": 0.0003383412610570955
+    },
+    "R5": {
+     "perdida": 0.000150218094960424,
+     "friccion": 8.088666651715132e-05
+    },
+    "R11": {
+     "perdida": 0.0,
+     "friccion": 0.00012446843002232144
+    }
+   }
+  }
+ },
+ "reglas": {
+  "R1": {
+   "perdida": 0.0017506728639046923,
+   "friccion": 0.00902343236100778,
+   "por_desenlace": {
+    "contacto_con_friccion": 0.00902343236100778,
+    "abandono_por_friccion": 0.0017506728639046923
+   },
+   "texto": "El nombre solo admite letras, marcas, espacio y apóstrofo recto: rechaza guion, punto, dígitos y &",
+   "total": 0.010774105224912473
+  },
+  "R9": {
+   "perdida": 0.0035852552852173826,
+   "friccion": 0.0016524113699755583,
+   "por_desenlace": {
+    "contacto_con_friccion": 0.0016524113699755583,
+    "abandono_por_friccion": 0.0035852552852173826
+   },
+   "texto": "En desarrollo web, «Cuéntanos tu proyecto» de la cabecera abre el brief de 35 a 45 min; el de la barra, el formulario",
+   "total": 0.005237666655192941
+  },
+  "R4": {
+   "perdida": 0.002966396954736137,
+   "friccion": 0.0030577874796185955,
+   "por_desenlace": {
+    "contacto_con_friccion": 0.0014604968116841493,
+    "correo_directo": 0.0015972906679344462,
+    "abandono_por_friccion": 0.002966396954736137
+   },
+   "texto": "Turnstile se descarga al primer foco del formulario y el envío no espera su token: sin token, 403",
+   "total": 0.006024184434354733
+  },
+  "R8": {
+   "perdida": 0.0013091064583332797,
+   "friccion": 0.0033969076501403125,
+   "por_desenlace": {
+    "abandono_por_friccion": 0.0013091064583332797,
+    "contacto_con_friccion": 0.0033969076501403125
+   },
+   "texto": "En /ley21719, «Pedir esta cotización» y «Cuéntanos tu proyecto» llevan a /#contacto: sin lo marcado ni el servicio",
+   "total": 0.004706014108473593
+  },
+  "R4b": {
+   "perdida": 0.001077147164095574,
+   "friccion": 0.0009800319537450084,
+   "por_desenlace": {
+    "correo_directo": 0.0005800023191282662,
+    "abandono_por_friccion": 0.001077147164095574,
+    "contacto_con_friccion": 0.00040002963461674223
+   },
+   "texto": "Turnstile no se resuelve con privacidad estricta: 403",
+   "total": 0.0020571791178405825
+  },
+  "R11": {
+   "perdida": 0.0,
+   "friccion": 0.0027845318499538693,
+   "por_desenlace": {
+    "contacto_con_friccion": 0.002366852072460768,
+    "correo_directo": 0.00041767977749310116
+   },
+   "texto": "En el brief, Turnstile se monta al llegar a la revisión; si falla, las respuestas siguen guardadas",
+   "total": 0.0027845318499538693
+  },
+  "R7": {
+   "perdida": 0.000555303927675,
+   "friccion": 0.0003702026184500007,
+   "por_desenlace": {
+    "correo_directo": 0.0003702026184500007,
+    "abandono_por_friccion": 0.000555303927675
+   },
+   "texto": "Sin JavaScript el envío llega sin token y se rechaza; la respuesta es una página aparte sin enlace al correo",
+   "total": 0.0009255065461250007
+  },
+  "R12": {
+   "perdida": 0.0006333333333333333,
+   "friccion": 0.0,
+   "por_desenlace": {
+    "abandono_por_friccion": 0.0006333333333333333
+   },
+   "texto": "Sin almacenamiento, el brief no se guarda y lo avisa",
+   "total": 0.0006333333333333333
+  },
+  "R21": {
+   "perdida": 0.000357649732291667,
+   "friccion": 0.0,
+   "por_desenlace": {
+    "perdida_silenciosa": 0.000357649732291667
+   },
+   "texto": "Sin JavaScript (o si brief.js no carga) el brief llega con «transcurrido» vacío: se descarta en silencio y la página dice «Recibimos tu brief.»",
+   "total": 0.000357649732291667
+  },
+  "R6": {
+   "perdida": 0.00025094550695945627,
+   "friccion": 0.00023451939125329504,
+   "por_desenlace": {
+    "contacto_con_friccion": 0.00023451939125329504,
+    "abandono_por_friccion": 0.00025094550695945627
+   },
+   "texto": "WhatsApp se abre con window.open; en el navegador de una app puede no abrir",
+   "total": 0.0004854648982127513
+  },
+  "R5": {
+   "perdida": 0.0001685222894119599,
+   "friccion": 9.074277122185177e-05,
+   "por_desenlace": {
+    "correo_directo": 9.074277122185177e-05,
+    "abandono_por_friccion": 0.0001685222894119599
+   },
+   "texto": "Resend no responde: 502 con el correo directo",
+   "total": 0.00025926506063381167
+  },
+  "R1+R2": {
+   "perdida": 4.189146373593752e-05,
+   "friccion": 4.646842034406894e-05,
+   "por_desenlace": {
+    "contacto_con_friccion": 4.646842034406894e-05,
+    "abandono_por_friccion": 4.189146373593752e-05
+   },
+   "texto": "En iPhone y iPad el apóstrofo se escribe ’ (Smart Punctuation) y la regla del nombre lo rechaza",
+   "total": 8.835988408000645e-05
+  },
+  "R10": {
+   "perdida": 2.1591377187499998e-05,
+   "friccion": 0.0,
+   "por_desenlace": {
+    "perdida_silenciosa": 2.1591377187499998e-05
+   },
+   "texto": "El brief enviado antes de 8 s se descarta en silencio con 200 y el navegador borra lo guardado",
+   "total": 2.1591377187499998e-05
+  }
+ },
+ "robustez": {
+  "n": 200,
+  "top1_perdida": {
+   "R9": 0.43,
+   "R4": 0.29,
+   "R1": 0.125,
+   "R8": 0.075,
+   "R4b": 0.04,
+   "R12": 0.025,
+   "R7": 0.01,
+   "R21": 0.005
+  },
+  "top3_perdida": {
+   "R9": 0.83,
+   "R4": 0.755,
+   "R1": 0.5,
+   "R4b": 0.265,
+   "R8": 0.265,
+   "R12": 0.175,
+   "R7": 0.125,
+   "R6": 0.035,
+   "R21": 0.03,
+   "R5": 0.02
+  },
+  "top3_friccion": {
+   "R1": 0.985,
+   "R4": 0.64,
+   "R9": 0.57,
+   "R8": 0.435,
+   "R11": 0.19,
+   "R4b": 0.11,
+   "R7": 0.05,
+   "R12": 0.015,
+   "R21": 0.005
+  }
+ },
+ "morris": [
+  {
+   "parametro": "resuelve_nombre_claro",
+   "rango": [
+    0.7,
+    0.95
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0033181017457919668,
+    "sigma": 0.0013000974093538668
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.003438028127199544,
+    "sigma": 0.0013524416009299525
+   }
+  },
+  {
+   "parametro": "pega_rapido_comparando",
+   "rango": [
+    0.05,
+    0.2
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.003400699662087496,
+    "sigma": 0.0010532239233302495
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0034006996620874743,
+    "sigma": 0.001053223923330247
+   }
+  },
+  {
+   "parametro": "js_off",
+   "rango": [
+    0.002,
+    0.015
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0022742124858759786,
+    "sigma": 0.00040370560512990926
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0024954238376704964,
+    "sigma": 0.00038683019292125515
+   }
+  },
+  {
+   "parametro": "contacta_comparando",
+   "rango": [
+    0.2,
+    0.45
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.036042181468991255,
+    "sigma": 0.0014471393579995268
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.00216963466019068,
+    "sigma": 0.0005368083679796014
+   }
+  },
+  {
+   "parametro": "envia_brief_prospecto",
+   "rango": [
+    0.25,
+    0.65
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.00224386768059841,
+    "sigma": 0.0005565521701019906
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0021562442020628104,
+    "sigma": 0.0005323504523163012
+   }
+  },
+  {
+   "parametro": "token_no_listo_rapido_movil",
+   "rango": [
+    0.15,
+    0.55
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0021359671353082823,
+    "sigma": 0.001399224336732618
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.002135967135308281,
+    "sigma": 0.0013992243367326007
+   }
+  },
+  {
+   "parametro": "abandona_seleccion_perdida",
+   "rango": [
+    0.1,
+    0.45
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.001974042956919252,
+    "sigma": 0.000774887141233967
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0020984389134817453,
+    "sigma": 0.0008255254522275666
+   }
+  },
+  {
+   "parametro": "usa_cta_brief_web",
+   "rango": [
+    0.25,
+    0.55
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.001720633339011317,
+    "sigma": 0.0009543223108413836
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0020468188064340143,
+    "sigma": 0.0009569048831616313
+   }
+  },
+  {
+   "parametro": "correo_directo_tras_error",
+   "rango": [
+    0.2,
+    0.5
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0019292020504326408,
+    "sigma": 0.001099033027963262
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0019292020504325966,
+    "sigma": 0.0010990330279632534
+   }
+  },
+  {
+   "parametro": "pide_cotizacion",
+   "rango": [
+    0.2,
+    0.5
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.02720452796986006,
+    "sigma": 0.004380242723591837
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0019181267579022649,
+    "sigma": 0.000758525956223276
+   }
+  },
+  {
+   "parametro": "nombre_empresa_signos",
+   "rango": [
+    0.01,
+    0.05
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0017515339826025406,
+    "sigma": 0.0009682075274381728
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0018042291123511731,
+    "sigma": 0.0010016341536679188
+   }
+  },
+  {
+   "parametro": "sale_explorando",
+   "rango": [
+    0.4,
+    0.7
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.024320557945199106,
+    "sigma": 0.0037374663647956087
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.001646770023375992,
+    "sigma": 0.0005937190163167578
+   }
+  },
+  {
+   "parametro": "estricta_base",
+   "rango": [
+    0.01,
+    0.06
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0015938177897418526,
+    "sigma": 0.0008109706028579052
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.001593817789741852,
+    "sigma": 0.0008109706028578904
+   }
+  },
+  {
+   "parametro": "reintenta_tras_403",
+   "rango": [
+    0.1,
+    0.4
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0015073572781480762,
+    "sigma": 0.0007239178449981225
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0015073572781481184,
+    "sigma": 0.0007239178449981028
+   }
+  },
+  {
+   "parametro": "vuelve_al_formulario",
+   "rango": [
+    0.2,
+    0.5
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0012883656238006802,
+    "sigma": 0.0006969996142391358
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0013713552388729437,
+    "sigma": 0.0007427851757912293
+   }
+  },
+  {
+   "parametro": "nombre_guion_punto",
+   "rango": [
+    0.01,
+    0.04
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0011847611794778862,
+    "sigma": 0.0007377575358714928
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.001216970202776385,
+    "sigma": 0.0007632352285708541
+   }
+  },
+  {
+   "parametro": "relacion_cliente_brief",
+   "rango": [
+    0.02,
+    0.1
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.04502642403961993,
+    "sigma": 0.0032910541103509687
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0012074460210205302,
+    "sigma": 0.0002858968888847035
+   }
+  },
+  {
+   "parametro": "turnstile_falla_estricta",
+   "rango": [
+    0.1,
+    0.5
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0011786909638813973,
+    "sigma": 0.0004911969959540821
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0011786909638814263,
+    "sigma": 0.0004911969959540946
+   }
+  },
+  {
+   "parametro": "usa_estimado_ley",
+   "rango": [
+    0.25,
+    0.55
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0016489177018276472,
+    "sigma": 0.0006351465750114835
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0010025272562973115,
+    "sigma": 0.0008784238824247566
+   }
+  },
+  {
+   "parametro": "token_no_listo_rapido_escritorio",
+   "rango": [
+    0.05,
+    0.3
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0006022285074184633,
+    "sigma": 0.0002559567929639119
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0006022285074184924,
+    "sigma": 0.00025595679296391637
+   }
+  },
+  {
+   "parametro": "nombre_apostrofo",
+   "rango": [
+    0.001,
+    0.01
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0003854924675842072,
+    "sigma": 0.00025052457051462747
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.00039713774330174566,
+    "sigma": 0.00025390535770027404
+   }
+  },
+  {
+   "parametro": "resuelve_nombre_opaco",
+   "rango": [
+    0.3,
+    0.8
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.00013107779609385501,
+    "sigma": 8.159071822282524e-05
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.000133522308593841,
+    "sigma": 8.5646237575795e-05
+   }
+  },
+  {
+   "parametro": "movil_si_recomendacion",
+   "rango": [
+    0.55,
+    0.85
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0005364203467192588,
+    "sigma": 6.84682527537476e-05
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 8.663851740976989e-05,
+    "sigma": 6.463867603642922e-05
+   }
+  },
+  {
+   "parametro": "smart_punct_on",
+   "rango": [
+    0.85,
+    0.99
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0,
+    "sigma": 0.0
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0,
+    "sigma": 0.0
+   }
+  }
+ ],
+ "hipotesis": {
+  "base": {
+   "texto": "Hoy (modelo)",
+   "cambios": {},
+   "contacto_total": 0.2374091204010866,
+   "perdida_por_codigo": 0.01296709646487739,
+   "con_friccion": 0.03473921832014579
+  },
+  "r1": {
+   "texto": "R1+R2: aceptar ’, guion y punto en el nombre",
+   "cambios": {
+    "arreglo_r1": true
+   },
+   "contacto_total": 0.2381706167639908,
+   "perdida_por_codigo": 0.012167244266552952,
+   "con_friccion": 0.03008346248086278
+  },
+  "r4": {
+   "texto": "R4: esperar el token antes de enviar",
+   "cambios": {
+    "token_no_listo_rapido_movil": 0.002,
+    "token_no_listo_rapido_escritorio": 0.002,
+    "token_no_listo_normal": 0.002,
+    "token_no_listo_agente": 0.002
+   },
+   "contacto_total": 0.2401969339497727,
+   "perdida_por_codigo": 0.010179282916197574,
+   "con_friccion": 0.02946160431331305
+  },
+  "r8": {
+   "texto": "R8: llevar lo marcado y el servicio desde /ley21719",
+   "cambios": {
+    "arreglo_r8": true
+   },
+   "contacto_total": 0.23856695766507124,
+   "perdida_por_codigo": 0.011743851879016482,
+   "con_friccion": 0.030301712786453175
+  },
+  "r9": {
+   "texto": "R9: «Cuéntanos tu proyecto» de la cabecera al formulario",
+   "cambios": {
+    "usa_cta_brief_web": 0.0
+   },
+   "contacto_total": 0.24051541650580616,
+   "perdida_por_codigo": 0.009437832586906511,
+   "con_friccion": 0.029505348950446673
+  },
+  "r21": {
+   "texto": "R21+R10: el brief sin JS (o apurado) responde como el contacto",
+   "cambios": {
+    "arreglo_r21": true
+   },
+   "contacto_total": 0.23764614804221157,
+   "perdida_por_codigo": 0.012730068823752399,
+   "con_friccion": 0.03473921832014577
+  },
+  "todos": {
+   "texto": "Todos",
+   "cambios": {
+    "arreglo_r1": true,
+    "arreglo_r8": true,
+    "arreglo_r21": true,
+    "token_no_listo_rapido_movil": 0.002,
+    "token_no_listo_rapido_escritorio": 0.002,
+    "token_no_listo_normal": 0.002,
+    "token_no_listo_agente": 0.002,
+    "usa_cta_brief_web": 0.0
+   },
+   "contacto_total": 0.2456004572018386,
+   "perdida_por_codigo": 0.004247077857648538,
+   "con_friccion": 0.014377971988870891
+  }
+ },
+ "cobertura": {
+  "pares": {
+   "factores": [
+    "plataforma",
+    "motor",
+    "navegador_de_app",
+    "canal_envio",
+    "js",
+    "almacenamiento",
+    "movimiento",
+    "gpu",
+    "usuario",
+    "nombre",
+    "ritmo",
+    "privacidad",
+    "destino"
+   ],
+   "universo": 514,
+   "cubiertos": 514,
+   "faltan": []
+  },
+  "arcos": {
+   "universo": 61,
+   "cubiertos_sorteo": 31,
+   "cubiertos_total": 61,
+   "faltan": []
+  },
+  "superficies": {
+   "universo": [
+    "/",
+    "/servicios/desarrollo-web",
+    "/servicios/tiendas-online",
+    "/servicios/sistemas-de-gestion",
+    "/servicios/automatizacion-procesos",
+    "/servicios/agentes-ia",
+    "/servicios/desarrollo-software-a-medida",
+    "/servicios/prospeccion-de-clientes",
+    "/ley21719",
+    "un artículo",
+    "/brief-web",
+    "formulario de contacto",
+    "estimado",
+    "brief",
+    "WhatsApp",
+    "POST /api/contacto",
+    "POST /api/brief",
+    "R13",
+    "R15",
+    "R1",
+    "R1+R2",
+    "R4",
+    "R4b",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R8b",
+    "R9a",
+    "R10",
+    "R11",
+    "R12",
+    "R14",
+    "R16",
+    "R17",
+    "R21"
+   ],
+   "vistas_sorteo": [
+    "/",
+    "/servicios/desarrollo-web",
+    "/servicios/sistemas-de-gestion",
+    "/servicios/automatizacion-procesos",
+    "/servicios/agentes-ia",
+    "/servicios/prospeccion-de-clientes",
+    "/ley21719",
+    "un artículo",
+    "/brief-web",
+    "formulario de contacto",
+    "estimado",
+    "brief",
+    "WhatsApp",
+    "POST /api/contacto",
+    "POST /api/brief",
+    "R13",
+    "R15",
+    "R1",
+    "R7",
+    "R12",
+    "R14",
+    "R17",
+    "R21"
+   ],
+   "vistas_total": [
+    "/",
+    "/servicios/desarrollo-web",
+    "/servicios/sistemas-de-gestion",
+    "/servicios/automatizacion-procesos",
+    "/servicios/agentes-ia",
+    "/servicios/prospeccion-de-clientes",
+    "/ley21719",
+    "un artículo",
+    "/brief-web",
+    "formulario de contacto",
+    "estimado",
+    "brief",
+    "WhatsApp",
+    "POST /api/contacto",
+    "POST /api/brief",
+    "R13",
+    "R15",
+    "R1",
+    "R1+R2",
+    "R4",
+    "R4b",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R8b",
+    "R9a",
+    "R10",
+    "R11",
+    "R12",
+    "R14",
+    "R16",
+    "R17",
+    "R21"
+   ],
+   "faltan_sorteo": [
+    "/servicios/tiendas-online",
+    "/servicios/desarrollo-software-a-medida",
+    "R1+R2",
+    "R4",
+    "R4b",
+    "R5",
+    "R6",
+    "R8",
+    "R9",
+    "R8b",
+    "R9a",
+    "R10",
+    "R11",
+    "R16"
+   ],
+   "faltan_total": [
+    "/servicios/tiendas-online",
+    "/servicios/desarrollo-software-a-medida"
+   ],
+   "clases": 31,
+   "clases_cubiertas": 31,
+   "faltan_por_clase": [
+    {
+     "superficie": "/servicios/tiendas-online",
+     "clase": "página de servicio (src/paginas/Servicio.jsx)",
+     "cubierta_por": [
+      "/servicios/desarrollo-web",
+      "/servicios/sistemas-de-gestion",
+      "/servicios/automatizacion-procesos",
+      "/servicios/agentes-ia",
+      "/servicios/prospeccion-de-clientes"
+     ]
+    },
+    {
+     "superficie": "/servicios/desarrollo-software-a-medida",
+     "clase": "página de servicio (src/paginas/Servicio.jsx)",
+     "cubierta_por": [
+      "/servicios/desarrollo-web",
+      "/servicios/sistemas-de-gestion",
+      "/servicios/automatizacion-procesos",
+      "/servicios/agentes-ia",
+      "/servicios/prospeccion-de-clientes"
+     ]
+    }
+   ]
+  }
+ },
+ "fidelidad": {
+  "declaradas": [
+   {
+    "variable": "Relación: cliente con link",
+    "declarada": 0.05,
+    "muestra": 0.049541666666666664,
+    "n": 120000,
+    "dentro": true
+   },
+   {
+    "variable": "Sin JavaScript",
+    "declarada": 0.005,
+    "muestra": 0.004533333333333334,
+    "n": 120000,
+    "dentro": true
+   },
+   {
+    "variable": "Sin almacenamiento",
+    "declarada": 0.03,
+    "muestra": 0.029675,
+    "n": 120000,
+    "dentro": true
+   },
+   {
+    "variable": "Movimiento reducido",
+    "declarada": 0.05,
+    "muestra": 0.050575,
+    "n": 120000,
+    "dentro": true
+   },
+   {
+    "variable": "Nombre con apóstrofo",
+    "declarada": 0.004,
+    "muestra": 0.0037166666666666667,
+    "n": 120000,
+    "dentro": true
+   },
+   {
+    "variable": "Nombre con guion o punto",
+    "declarada": 0.021,
+    "muestra": 0.021391666666666666,
+    "n": 120000,
+    "dentro": true
+   },
+   {
+    "variable": "iOS, dado celular (ancla)",
+    "declarada": 0.2072,
+    "muestra": 0.20723303133818505,
+    "n": 67330,
+    "dentro": true
+   },
+   {
+    "variable": "Windows, dado escritorio (ancla)",
+    "declarada": 0.8502,
+    "muestra": 0.8512145947109833,
+    "n": 51087,
+    "dentro": true
+   },
+   {
+    "variable": "Celular, dado que llega por Google (ancla)",
+    "declarada": 0.4912,
+    "muestra": 0.4887640449438202,
+    "n": 36490,
+    "dentro": true
+   },
+   {
+    "variable": "Smart Punctuation, dado iOS o iPadOS",
+    "declarada": 0.95,
+    "muestra": 0.9478879860318313,
+    "n": 14891,
+    "dentro": true
+   }
+  ],
+  "automatica": {
+   "revisadas": 192,
+   "fuera": 0,
+   "peor": [
+    {
+     "variable": "navegador",
+     "caso": 4,
+     "valor": "safari",
+     "declarada": 0.8999999999999854,
+     "muestra": 0.9168443496801706,
+     "n": 938,
+     "dentro": true
+    },
+    {
+     "variable": "navegador",
+     "caso": 4,
+     "valor": "chrome",
+     "declarada": 0.09999999999999888,
+     "muestra": 0.08315565031982942,
+     "n": 938,
+     "dentro": true
+    },
+    {
+     "variable": "servicio",
+     "caso": 6,
+     "valor": "automatizacion",
+     "declarada": 0.15985790408525835,
+     "muestra": 0.14733969986357434,
+     "n": 2199,
+     "dentro": true
+    },
+    {
+     "variable": "navegador",
+     "caso": 7,
+     "valor": "firefox",
+     "declarada": 0.2999999999999835,
+     "muestra": 0.28797970187123373,
+     "n": 3153,
+     "dentro": true
+    },
+    {
+     "variable": "navegador",
+     "caso": 7,
+     "valor": "chrome",
+     "declarada": 0.7000000000000167,
+     "muestra": 0.7120202981287662,
+     "n": 3153,
+     "dentro": true
+    },
+    {
+     "variable": "navegador",
+     "caso": 6,
+     "valor": "safari",
+     "declarada": 0.45000000000003176,
+     "muestra": 0.4401978417266187,
+     "n": 4448,
+     "dentro": true
+    },
+    {
+     "variable": "navegador",
+     "caso": 6,
+     "valor": "chrome",
+     "declarada": 0.4800000000000154,
+     "muestra": 0.489658273381295,
+     "n": 4448,
+     "dentro": true
+    },
+    {
+     "variable": "servicio",
+     "caso": 6,
+     "valor": "gestion",
+     "declarada": 0.15985790408525835,
+     "muestra": 0.16871305138699408,
+     "n": 2199,
+     "dentro": true
+    },
+    {
+     "variable": "etapa",
+     "caso": 6,
+     "valor": "comparando",
+     "declarada": 0.34999999999994313,
+     "muestra": 0.35748476936466494,
+     "n": 9192,
+     "dentro": true
+    },
+    {
+     "variable": "sistema",
+     "caso": 3,
+     "valor": "ipados",
+     "declarada": 0.6000000000000155,
+     "muestra": 0.5925457991156032,
+     "n": 1583,
+     "dentro": true
+    }
+   ],
+   "fuera_de_rango": []
+  },
+  "marginales": {
+   "relacion": {
+    "prospecto": 0.9504583333333333,
+    "cliente_brief": 0.049541666666666664
+   },
+   "canal": {
+    "google": 0.3040833333333333,
+    "recomendacion": 0.18955833333333333,
+    "articulo": 0.13346666666666668,
+    "redes": 0.13330833333333333,
+    "ia": 0.11344166666666666,
+    "directo": 0.0766,
+    "link_del_brief": 0.049541666666666664
+   },
+   "dispositivo": {
+    "movil": 0.5610833333333334,
+    "escritorio": 0.425725,
+    "tablet": 0.013191666666666668
+   },
+   "sistema": {
+    "android": 0.4501833333333333,
+    "windows": 0.36238333333333334,
+    "ios": 0.116275,
+    "macos": 0.037066666666666664,
+    "linux": 0.026275,
+    "ipados": 0.007816666666666666
+   },
+   "inapp": {
+    "False": 0.9364583333333333,
+    "True": 0.06354166666666666
+   },
+   "navegador": {
+    "chrome": 0.6812166666666667,
+    "safari": 0.10864166666666666,
+    "webview de la app": 0.06354166666666666,
+    "edge": 0.047641666666666665,
+    "firefox": 0.037208333333333336,
+    "samsung": 0.03140833333333334,
+    "opera": 0.027375,
+    "otro": 0.0029666666666666665
+   },
+   "motor": {
+    "blink": 0.8223833333333334,
+    "webkit": 0.14040833333333333,
+    "gecko": 0.037208333333333336
+   },
+   "movimiento_reducido": {
+    "False": 0.949425,
+    "True": 0.050575
+   },
+   "gpu": {
+    "ok": 0.893675,
+    "lenta": 0.09159166666666667,
+    "sin_webgl": 0.014733333333333333
+   },
+   "js_off": {
+    "False": 0.9954666666666667,
+    "True": 0.004533333333333334
+   },
+   "almacen_bloqueado": {
+    "False": 0.970325,
+    "True": 0.029675
+   },
+   "estricta": {
+    "False": 0.964825,
+    "True": 0.035175
+   },
+   "agente": {
+    "False": 0.99925,
+    "True": 0.00075
+   },
+   "smart_punct": {
+    "False": 0.882375,
+    "True": 0.117625
+   },
+   "nombre_tipo": {
+    "simple": 0.9502583333333333,
+    "empresa_signos": 0.024633333333333333,
+    "guion_punto": 0.021391666666666666,
+    "apostrofo": 0.0037166666666666667
+   },
+   "tamano": {
+    "micro": 0.39976666666666666,
+    "pequena": 0.25064166666666665,
+    "independiente": 0.25000833333333333,
+    "mediana": 0.08041666666666666,
+    "grande": 0.019166666666666665
+   },
+   "servicio": {
+    "web": 0.2818583333333333,
+    "tienda": 0.12599166666666667,
+    "gestion": 0.11633333333333333,
+    "automatizacion": 0.09843333333333333,
+    "datos": 0.097075,
+    "agente": 0.09360833333333334,
+    "app": 0.07629166666666666,
+    "prospeccion": 0.05544166666666667,
+    "no_sabe": 0.054966666666666664
+   },
+   "etapa": {
+    "explorando": 0.4958,
+    "comparando": 0.28789166666666666,
+    "listo": 0.21630833333333332
+   },
+   "pega_rapido": {
+    "False": 0.9028,
+    "True": 0.0972
+   },
+   "canal_envio": {
+    "correo": 0.6577833333333334,
+    "whatsapp": 0.34221666666666667
+   },
+   "destino": {
+    "home": 0.455675,
+    "servicio": 0.23881666666666668,
+    "articulo": 0.22715,
+    "brief": 0.049541666666666664,
+    "ley": 0.028816666666666668
+   },
+   "js_brief_falla": {
+    "False": 0.99045,
+    "True": 0.00955
+   },
+   "rubro": {
+    "comercio": 0.29975,
+    "servicios profesionales": 0.17995833333333333,
+    "gastronomía": 0.10096666666666666,
+    "salud y bienestar": 0.09984166666666666,
+    "construcción": 0.06023333333333333,
+    "manufactura": 0.059975,
+    "educación": 0.05098333333333333,
+    "agro": 0.04975,
+    "transporte": 0.04940833333333333,
+    "turismo": 0.049133333333333334
+   },
+   "region": {
+    "Metropolitana": 0.4518,
+    "Valparaíso": 0.0951,
+    "Biobío": 0.09084166666666667,
+    "Maule": 0.05064166666666667,
+    "Araucanía": 0.04919166666666667,
+    "O'Higgins": 0.048625,
+    "Antofagasta": 0.040183333333333335,
+    "Los Lagos": 0.03999166666666667,
+    "Coquimbo": 0.0393,
+    "Ñuble": 0.020033333333333334,
+    "Los Ríos": 0.019408333333333333,
+    "Tarapacá": 0.014866666666666667,
+    "Atacama": 0.014741666666666667,
+    "Arica y Parinacota": 0.010358333333333334,
+    "Magallanes": 0.0098,
+    "Aysén": 0.005116666666666667
+   },
+   "edad": {
+    "30-44": 0.40034166666666665,
+    "45-59": 0.3285166666666667,
+    "18-29": 0.150675,
+    "60+": 0.12046666666666667
+   },
+   "ruta_servicio": {
+    "/servicios/desarrollo-web": 0.2818583333333333,
+    "/servicios/tiendas-online": 0.12599166666666667,
+    "/servicios/sistemas-de-gestion": 0.11633333333333333,
+    "/servicios/automatizacion-procesos": 0.09843333333333333,
+    "/ley21719": 0.097075,
+    "/servicios/agentes-ia": 0.09360833333333334,
+    "/servicios/desarrollo-software-a-medida": 0.07629166666666666,
+    "/servicios/prospeccion-de-clientes": 0.05544166666666667,
+    "/servicios": 0.054966666666666664
+   }
+  }
+ },
+ "restricciones": {
+  "revisadas": 6,
+  "violaciones": []
+ },
+ "parametros": {
+  "relacion_cliente_brief": {
+   "p50": 0.05,
+   "p10": 0.02,
+   "p90": 0.1,
+   "fuente": "prior:elicitacion",
+   "texto": "Llega un cliente con el link del brief"
+  },
+  "movil_si_redes": {
+   "p50": 0.8,
+   "p10": 0.65,
+   "p90": 0.9,
+   "fuente": "prior:elicitacion",
+   "texto": "Celular, si llega por redes"
+  },
+  "movil_si_recomendacion": {
+   "p50": 0.7,
+   "p10": 0.55,
+   "p90": 0.85,
+   "fuente": "prior:elicitacion",
+   "texto": "Celular, si llega por recomendación"
+  },
+  "inapp_si_redes_movil": {
+   "p50": 0.6,
+   "p10": 0.4,
+   "p90": 0.8,
+   "fuente": "prior:elicitacion",
+   "texto": "Navegador de la app (Instagram, Facebook), si llega por redes en celular"
+  },
+  "movimiento_reducido": {
+   "p50": 0.05,
+   "p10": 0.02,
+   "p90": 0.1,
+   "fuente": "prior:elicitacion",
+   "texto": "Movimiento reducido activo"
+  },
+  "js_off": {
+   "p50": 0.005,
+   "p10": 0.002,
+   "p90": 0.015,
+   "fuente": "prior:elicitacion",
+   "texto": "JavaScript inactivo"
+  },
+  "brief_js_falla": {
+   "p50": 0.005,
+   "p10": 0.001,
+   "p90": 0.02,
+   "fuente": "prior:elicitacion",
+   "texto": "brief.js no carga"
+  },
+  "almacen_bloqueado": {
+   "p50": 0.03,
+   "p10": 0.01,
+   "p90": 0.06,
+   "fuente": "prior:elicitacion",
+   "texto": "Sin almacenamiento del navegador"
+  },
+  "estricta_base": {
+   "p50": 0.03,
+   "p10": 0.01,
+   "p90": 0.06,
+   "fuente": "prior:elicitacion",
+   "texto": "Privacidad estricta (× 5 en Firefox)"
+  },
+  "agente_en_chrome_escritorio": {
+   "p50": 0.002,
+   "p10": 0.0005,
+   "p90": 0.01,
+   "fuente": "prior:elicitacion",
+   "texto": "Agente WebMCP, entre quienes usan Chrome o Edge de escritorio con JS"
+  },
+  "smart_punct_on": {
+   "p50": 0.95,
+   "p10": 0.85,
+   "p90": 0.99,
+   "fuente": "prior:elicitacion",
+   "texto": "Smart Punctuation activo en iOS y iPadOS"
+  },
+  "nombre_apostrofo": {
+   "p50": 0.004,
+   "p10": 0.001,
+   "p90": 0.01,
+   "fuente": "prior:elicitacion",
+   "texto": "Nombre con apóstrofo"
+  },
+  "nombre_guion_punto": {
+   "p50": 0.021,
+   "p10": 0.01,
+   "p90": 0.04,
+   "fuente": "prior:elicitacion",
+   "texto": "Nombre con guion o punto"
+  },
+  "nombre_empresa_signos": {
+   "p50": 0.025,
+   "p10": 0.01,
+   "p90": 0.05,
+   "fuente": "prior:elicitacion",
+   "texto": "Escribe el nombre del negocio, con signos"
+  },
+  "whatsapp_si_movil": {
+   "p50": 0.45,
+   "p10": 0.3,
+   "p90": 0.6,
+   "fuente": "prior:elicitacion",
+   "texto": "Envía por WhatsApp, en celular"
+  },
+  "whatsapp_si_escritorio": {
+   "p50": 0.2,
+   "p10": 0.1,
+   "p90": 0.35,
+   "fuente": "prior:elicitacion",
+   "texto": "Envía por WhatsApp, en escritorio"
+  },
+  "pega_rapido_comparando": {
+   "p50": 0.1,
+   "p10": 0.05,
+   "p90": 0.2,
+   "fuente": "prior:elicitacion",
+   "texto": "Pega y envía rápido, si está comparando (× 0,5 explorando, × 2 listo)"
+  },
+  "sale_explorando": {
+   "p50": 0.55,
+   "p10": 0.4,
+   "p90": 0.7,
+   "fuente": "prior:elicitacion",
+   "texto": "Sale de inmediato, si está explorando"
+  },
+  "sale_comparando": {
+   "p50": 0.35,
+   "p10": 0.2,
+   "p90": 0.5,
+   "fuente": "prior:elicitacion",
+   "texto": "Sale de inmediato, si está comparando"
+  },
+  "sale_listo": {
+   "p50": 0.1,
+   "p10": 0.05,
+   "p90": 0.2,
+   "fuente": "prior:elicitacion",
+   "texto": "Sale de inmediato, si está listo"
+  },
+  "home_a_servicio": {
+   "p50": 0.6,
+   "p10": 0.45,
+   "p90": 0.75,
+   "fuente": "prior:elicitacion",
+   "texto": "De la portada a su servicio"
+  },
+  "articulo_a_servicio": {
+   "p50": 0.3,
+   "p10": 0.15,
+   "p90": 0.45,
+   "fuente": "prior:elicitacion",
+   "texto": "Del artículo a su servicio"
+  },
+  "usa_estimado": {
+   "p50": 0.45,
+   "p10": 0.3,
+   "p90": 0.6,
+   "fuente": "prior:elicitacion",
+   "texto": "Usa el estimado en la página de su servicio"
+  },
+  "usa_estimado_ley": {
+   "p50": 0.4,
+   "p10": 0.25,
+   "p90": 0.55,
+   "fuente": "prior:elicitacion",
+   "texto": "Usa el estimado en /ley21719"
+  },
+  "pide_cotizacion": {
+   "p50": 0.35,
+   "p10": 0.2,
+   "p90": 0.5,
+   "fuente": "prior:elicitacion",
+   "texto": "Pulsa «Pedir esta cotización» tras el estimado"
+  },
+  "contacta_explorando": {
+   "p50": 0.1,
+   "p10": 0.05,
+   "p90": 0.2,
+   "fuente": "prior:elicitacion",
+   "texto": "Escribe, si está explorando"
+  },
+  "contacta_comparando": {
+   "p50": 0.3,
+   "p10": 0.2,
+   "p90": 0.45,
+   "fuente": "prior:elicitacion",
+   "texto": "Escribe, si está comparando"
+  },
+  "contacta_listo": {
+   "p50": 0.7,
+   "p10": 0.55,
+   "p90": 0.85,
+   "fuente": "prior:elicitacion",
+   "texto": "Escribe, si está listo"
+  },
+  "abandona_seleccion_perdida": {
+   "p50": 0.25,
+   "p10": 0.1,
+   "p90": 0.45,
+   "fuente": "prior:elicitacion",
+   "texto": "Se va al perder lo marcado (R8)"
+  },
+  "usa_cta_brief_web": {
+   "p50": 0.4,
+   "p10": 0.25,
+   "p90": 0.55,
+   "fuente": "prior:elicitacion",
+   "texto": "Usa «Cuéntanos tu proyecto» de la cabecera en desarrollo web"
+  },
+  "envia_brief_prospecto": {
+   "p50": 0.45,
+   "p10": 0.25,
+   "p90": 0.65,
+   "fuente": "prior:elicitacion",
+   "texto": "Prospecto que envía el brief"
+  },
+  "vuelve_al_formulario": {
+   "p50": 0.35,
+   "p10": 0.2,
+   "p90": 0.5,
+   "fuente": "prior:elicitacion",
+   "texto": "Vuelve al formulario si deja el brief"
+  },
+  "resuelve_nombre_opaco": {
+   "p50": 0.55,
+   "p10": 0.3,
+   "p90": 0.8,
+   "fuente": "prior:elicitacion",
+   "texto": "Resuelve «Usa solo letras.» cuando no ve qué cambió (’)"
+  },
+  "resuelve_nombre_claro": {
+   "p50": 0.85,
+   "p10": 0.7,
+   "p90": 0.95,
+   "fuente": "prior:elicitacion",
+   "texto": "Resuelve «Usa solo letras.» cuando ve el signo"
+  },
+  "token_no_listo_rapido_movil": {
+   "p50": 0.35,
+   "p10": 0.15,
+   "p90": 0.55,
+   "fuente": "prior:elicitacion",
+   "texto": "Token de Turnstile sin llegar, si pega rápido en celular"
+  },
+  "token_no_listo_rapido_escritorio": {
+   "p50": 0.15,
+   "p10": 0.05,
+   "p90": 0.3,
+   "fuente": "prior:elicitacion",
+   "texto": "Token de Turnstile sin llegar, si pega rápido en escritorio"
+  },
+  "token_no_listo_normal": {
+   "p50": 0.01,
+   "p10": 0.002,
+   "p90": 0.03,
+   "fuente": "prior:elicitacion",
+   "texto": "Token de Turnstile sin llegar, a ritmo normal"
+  },
+  "token_no_listo_agente": {
+   "p50": 0.6,
+   "p10": 0.3,
+   "p90": 0.85,
+   "fuente": "prior:elicitacion",
+   "texto": "Token de Turnstile sin llegar, si un agente rellena y la persona envía"
+  },
+  "turnstile_falla_estricta": {
+   "p50": 0.3,
+   "p10": 0.1,
+   "p90": 0.5,
+   "fuente": "prior:elicitacion",
+   "texto": "Turnstile falla con privacidad estricta"
+  },
+  "turnstile_falla_normal": {
+   "p50": 0.005,
+   "p10": 0.001,
+   "p90": 0.02,
+   "fuente": "prior:elicitacion",
+   "texto": "Turnstile falla sin privacidad estricta"
+  },
+  "reintenta_tras_403": {
+   "p50": 0.25,
+   "p10": 0.1,
+   "p90": 0.4,
+   "fuente": "prior:elicitacion",
+   "texto": "Reintenta tras el 403"
+  },
+  "correo_directo_tras_error": {
+   "p50": 0.35,
+   "p10": 0.2,
+   "p90": 0.5,
+   "fuente": "prior:elicitacion",
+   "texto": "Escribe al correo del aviso tras un error"
+  },
+  "resend_falla": {
+   "p50": 0.002,
+   "p10": 0.0005,
+   "p90": 0.01,
+   "fuente": "prior:elicitacion",
+   "texto": "Resend no responde"
+  },
+  "whatsapp_envia": {
+   "p50": 0.85,
+   "p10": 0.7,
+   "p90": 0.95,
+   "fuente": "prior:elicitacion",
+   "texto": "Envía el WhatsApp que se abrió"
+  },
+  "inapp_falla_whatsapp": {
+   "p50": 0.1,
+   "p10": 0.02,
+   "p90": 0.25,
+   "fuente": "prior:elicitacion",
+   "texto": "WhatsApp no abre desde el navegador de una app"
+  },
+  "cambia_a_correo": {
+   "p50": 0.5,
+   "p10": 0.3,
+   "p90": 0.7,
+   "fuente": "prior:elicitacion",
+   "texto": "Cambia a correo si WhatsApp no abre"
+  },
+  "nojs_correo_directo": {
+   "p50": 0.4,
+   "p10": 0.2,
+   "p90": 0.6,
+   "fuente": "prior:elicitacion",
+   "texto": "Sin JS, escribe al correo de la página de respuesta"
+  },
+  "cliente_completa_brief": {
+   "p50": 0.8,
+   "p10": 0.6,
+   "p90": 0.9,
+   "fuente": "prior:elicitacion",
+   "texto": "Cliente que completa el brief"
+  },
+  "brief_rapido_si_agente": {
+   "p50": 0.5,
+   "p10": 0.2,
+   "p90": 0.8,
+   "fuente": "prior:elicitacion",
+   "texto": "Un agente llena el brief y la persona lo envía antes de 8 s"
+  },
+  "carrera_turnstile_brief": {
+   "p50": 0.05,
+   "p10": 0.01,
+   "p90": 0.15,
+   "fuente": "prior:elicitacion",
+   "texto": "Carrera de Turnstile en la revisión del brief"
+  },
+  "reintenta_brief": {
+   "p50": 0.85,
+   "p10": 0.7,
+   "p90": 0.95,
+   "fuente": "prior:elicitacion",
+   "texto": "Reintenta el brief que falló"
+  },
+  "brief_en_varias_sesiones": {
+   "p50": 0.4,
+   "p10": 0.25,
+   "p90": 0.6,
+   "fuente": "prior:elicitacion",
+   "texto": "Llena el brief en varias sesiones"
+  },
+  "arreglo_r1": {
+   "p50": false,
+   "p10": false,
+   "p90": false,
+   "fuente": "definicion",
+   "texto": "Arreglo de R1+R2: el nombre acepta ’, guion y punto"
+  },
+  "arreglo_r8": {
+   "p50": false,
+   "p10": false,
+   "p90": false,
+   "fuente": "definicion",
+   "texto": "Arreglo de R8: /ley21719 lleva lo marcado y el servicio al formulario"
+  },
+  "arreglo_r21": {
+   "p50": false,
+   "p10": false,
+   "p90": false,
+   "fuente": "definicion",
+   "texto": "Arreglo de R21 y R10: el brief sin JS o apurado responde como el contacto"
+  }
+ },
+ "usuarios": {
+  "total": 34,
+  "representativos": 12,
+  "cobertura": 22,
+  "cobertura_arcos": 0,
+  "por_desenlace": {
+   "abandono_sin_intento": 22,
+   "contacto": 7,
+   "abandono_por_friccion": 2,
+   "perdida_silenciosa": 2,
+   "contacto_con_friccion": 1
+  }
+ }
+}

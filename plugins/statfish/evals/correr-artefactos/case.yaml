@@ -1,0 +1,31 @@
+schema_version: "1.0"
+name: correr-artefactos
+description: El agente corre una corrida con el motor y deja informe, manifiesto y salidas, y reporta una cifra copiada del informe.
+tags: [artefactos, comandos]
+runs: 1
+context:
+  scaffold_script: scaffold.sh
+execution:
+  prompt: >-
+    En ./corrida hay un modelo de Statfish listo. Córrelo con el motor en modo rápido y dime la pérdida
+    que da el informe.
+  max_turns: 8
+  timeout_seconds: 300
+  allowed_tools: [Skill, Bash, Read, Glob, Grep]
+graders:
+  - type: tool_used
+    name: corre-el-motor
+    tool: Bash
+    input_match: correr
+  - type: file_exists
+    name: deja-el-informe
+    path: corrida/informe.md
+  - type: file_exists
+    name: deja-el-manifiesto
+    path: corrida/manifiesto.json
+  - type: file_exists
+    name: deja-los-resultados
+    path: corrida/salida/resultados.json
+  - type: regex
+    name: reporta-una-cifra
+    pattern: '\d+,\d+ ?%'

@@ -1,0 +1,18 @@
+# Estado de WebMCP (anotaciones declarativas para agentes de IA en formularios web).
+fuente = "webmcp"
+titulo_fuente = "Estado de WebMCP"
+pais = ""
+periodo = "2026-11"
+consultado = 2026-11-20
+vigencia_meses = 2
+unidad = "estado"
+nota = "Cambia rápido: revisar antes de cada corrida que modele agentes."
+
+[[anclas]]
+id = "webmcp-estado-2026-11"
+titulo = "WebMCP: origin trial de Chrome (149 a 156, extendido a 162) y de Edge; Safari se opone"
+url = "https://www.spronta.com/blog/state-of-webmcp-july-2026/"
+plantilla_url = "https://nohacks.co/blog/what-is-webmcp"
+valores = {}
+estado = "Origin trial en Chrome y Edge; sin token de origin trial, en Chrome estable solo responde con el flag de pruebas. Safari se opone."
+fuentes_secundarias = ["https://nohacks.co/blog/what-is-webmcp"]

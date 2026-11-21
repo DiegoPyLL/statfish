@@ -1,0 +1,890 @@
+{
+ "S1": {
+  "n": 21896,
+  "reglas": [
+   [
+    "R1:friccion",
+    7.58
+   ],
+   [
+    "R9:perdida",
+    4.01
+   ],
+   [
+    "R4:friccion",
+    3.58
+   ],
+   [
+    "R4:perdida",
+    3.45
+   ],
+   [
+    "R9:friccion",
+    1.84
+   ]
+  ],
+  "atributos": {
+   "canal": [
+    [
+     "google",
+     0.27
+    ],
+    [
+     "recomendacion",
+     0.244
+    ],
+    [
+     "redes",
+     0.198
+    ]
+   ],
+   "dispositivo": [
+    [
+     "movil",
+     0.992
+    ],
+    [
+     "tablet",
+     0.008
+    ]
+   ],
+   "servicio": [
+    [
+     "web",
+     0.27
+    ],
+    [
+     "tienda",
+     0.146
+    ],
+    [
+     "gestion",
+     0.14
+    ]
+   ],
+   "destino": [
+    [
+     "home",
+     0.522
+    ],
+    [
+     "servicio",
+     0.264
+    ],
+    [
+     "articulo",
+     0.214
+    ]
+   ],
+   "etapa": [
+    [
+     "explorando",
+     0.526
+    ],
+    [
+     "comparando",
+     0.3
+    ],
+    [
+     "listo",
+     0.174
+    ]
+   ],
+   "canal_envio": [
+    [
+     "correo",
+     0.551
+    ],
+    [
+     "whatsapp",
+     0.449
+    ]
+   ],
+   "tamano": [
+    [
+     "micro",
+     0.406
+    ],
+    [
+     "independiente",
+     0.255
+    ],
+    [
+     "pequena",
+     0.243
+    ]
+   ]
+  }
+ },
+ "S2": {
+  "n": 5496,
+  "reglas": [
+   [
+    "R9:perdida",
+    14.95
+   ],
+   [
+    "R1:friccion",
+    8.4
+   ],
+   [
+    "R9:friccion",
+    7.18
+   ],
+   [
+    "R4:friccion",
+    2.19
+   ],
+   [
+    "R4:perdida",
+    2.11
+   ]
+  ],
+  "atributos": {
+   "canal": [
+    [
+     "google",
+     0.384
+    ],
+    [
+     "articulo",
+     0.167
+    ],
+    [
+     "ia",
+     0.152
+    ]
+   ],
+   "dispositivo": [
+    [
+     "escritorio",
+     1.0
+    ]
+   ],
+   "servicio": [
+    [
+     "web",
+     1.0
+    ]
+   ],
+   "destino": [
+    [
+     "home",
+     0.41
+    ],
+    [
+     "servicio",
+     0.315
+    ],
+    [
+     "articulo",
+     0.275
+    ]
+   ],
+   "etapa": [
+    [
+     "explorando",
+     0.529
+    ],
+    [
+     "comparando",
+     0.306
+    ],
+    [
+     "listo",
+     0.165
+    ]
+   ],
+   "canal_envio": [
+    [
+     "correo",
+     0.803
+    ],
+    [
+     "whatsapp",
+     0.197
+    ]
+   ],
+   "tamano": [
+    [
+     "micro",
+     0.418
+    ],
+    [
+     "independiente",
+     0.354
+    ],
+    [
+     "pequena",
+     0.175
+    ]
+   ]
+  }
+ },
+ "S3": {
+  "n": 14287,
+  "reglas": [
+   [
+    "R1:friccion",
+    8.03
+   ],
+   [
+    "R4:friccion",
+    2.78
+   ],
+   [
+    "R4:perdida",
+    2.68
+   ],
+   [
+    "R1:perdida",
+    1.51
+   ],
+   [
+    "R4b:friccion",
+    0.45
+   ]
+  ],
+  "atributos": {
+   "canal": [
+    [
+     "google",
+     0.393
+    ],
+    [
+     "articulo",
+     0.165
+    ],
+    [
+     "ia",
+     0.145
+    ]
+   ],
+   "dispositivo": [
+    [
+     "escritorio",
+     1.0
+    ]
+   ],
+   "servicio": [
+    [
+     "tienda",
+     0.206
+    ],
+    [
+     "gestion",
+     0.184
+    ],
+    [
+     "automatizacion",
+     0.157
+    ]
+   ],
+   "destino": [
+    [
+     "home",
+     0.436
+    ],
+    [
+     "servicio",
+     0.293
+    ],
+    [
+     "articulo",
+     0.271
+    ]
+   ],
+   "etapa": [
+    [
+     "explorando",
+     0.531
+    ],
+    [
+     "comparando",
+     0.3
+    ],
+    [
+     "listo",
+     0.169
+    ]
+   ],
+   "canal_envio": [
+    [
+     "correo",
+     0.803
+    ],
+    [
+     "whatsapp",
+     0.197
+    ]
+   ],
+   "tamano": [
+    [
+     "micro",
+     0.4
+    ],
+    [
+     "pequena",
+     0.265
+    ],
+    [
+     "independiente",
+     0.23
+    ]
+   ]
+  }
+ },
+ "S4": {
+  "n": 5932,
+  "reglas": [
+   [
+    "R1:friccion",
+    7.23
+   ],
+   [
+    "R9:perdida",
+    4.28
+   ],
+   [
+    "R4:friccion",
+    3.75
+   ],
+   [
+    "R4:perdida",
+    3.62
+   ],
+   [
+    "R9:friccion",
+    1.95
+   ]
+  ],
+  "atributos": {
+   "canal": [
+    [
+     "google",
+     0.275
+    ],
+    [
+     "recomendacion",
+     0.243
+    ],
+    [
+     "redes",
+     0.191
+    ]
+   ],
+   "dispositivo": [
+    [
+     "movil",
+     0.96
+    ],
+    [
+     "tablet",
+     0.04
+    ]
+   ],
+   "servicio": [
+    [
+     "web",
+     0.273
+    ],
+    [
+     "tienda",
+     0.148
+    ],
+    [
+     "gestion",
+     0.145
+    ]
+   ],
+   "destino": [
+    [
+     "home",
+     0.515
+    ],
+    [
+     "servicio",
+     0.269
+    ],
+    [
+     "articulo",
+     0.216
+    ]
+   ],
+   "etapa": [
+    [
+     "explorando",
+     0.509
+    ],
+    [
+     "comparando",
+     0.309
+    ],
+    [
+     "listo",
+     0.182
+    ]
+   ],
+   "canal_envio": [
+    [
+     "correo",
+     0.551
+    ],
+    [
+     "whatsapp",
+     0.449
+    ]
+   ],
+   "tamano": [
+    [
+     "micro",
+     0.402
+    ],
+    [
+     "independiente",
+     0.254
+    ],
+    [
+     "pequena",
+     0.249
+    ]
+   ]
+  }
+ },
+ "S5": {
+  "n": 5447,
+  "reglas": [
+   [
+    "R8:friccion",
+    35.46
+   ],
+   [
+    "R8:perdida",
+    13.51
+   ],
+   [
+    "R1:friccion",
+    8.2
+   ],
+   [
+    "R4:friccion",
+    3.03
+   ],
+   [
+    "R4:perdida",
+    2.93
+   ]
+  ],
+  "atributos": {
+   "canal": [
+    [
+     "google",
+     0.311
+    ],
+    [
+     "recomendacion",
+     0.202
+    ],
+    [
+     "redes",
+     0.141
+    ]
+   ],
+   "dispositivo": [
+    [
+     "movil",
+     0.581
+    ],
+    [
+     "escritorio",
+     0.41
+    ],
+    [
+     "tablet",
+     0.008
+    ]
+   ],
+   "servicio": [
+    [
+     "datos",
+     1.0
+    ]
+   ],
+   "destino": [
+    [
+     "home",
+     0.47
+    ],
+    [
+     "ley",
+     0.296
+    ],
+    [
+     "articulo",
+     0.234
+    ]
+   ],
+   "etapa": [
+    [
+     "explorando",
+     0.517
+    ],
+    [
+     "comparando",
+     0.302
+    ],
+    [
+     "listo",
+     0.181
+    ]
+   ],
+   "canal_envio": [
+    [
+     "correo",
+     0.648
+    ],
+    [
+     "whatsapp",
+     0.352
+    ]
+   ],
+   "tamano": [
+    [
+     "micro",
+     0.382
+    ],
+    [
+     "pequena",
+     0.322
+    ],
+    [
+     "independiente",
+     0.147
+    ]
+   ]
+  }
+ },
+ "S6": {
+  "n": 3032,
+  "reglas": [
+   [
+    "R11:friccion",
+    50.4
+   ],
+   [
+    "R1:friccion",
+    29.07
+   ],
+   [
+    "R12:perdida",
+    11.48
+   ],
+   [
+    "R21:perdida",
+    6.86
+   ],
+   [
+    "R1:perdida",
+    5.46
+   ]
+  ],
+  "atributos": {
+   "canal": [
+    [
+     "link_del_brief",
+     1.0
+    ]
+   ],
+   "dispositivo": [
+    [
+     "escritorio",
+     0.6
+    ],
+    [
+     "movil",
+     0.301
+    ],
+    [
+     "tablet",
+     0.098
+    ]
+   ],
+   "servicio": [
+    [
+     "web",
+     1.0
+    ]
+   ],
+   "destino": [
+    [
+     "brief",
+     1.0
+    ]
+   ],
+   "etapa": [
+    [
+     "listo",
+     1.0
+    ]
+   ],
+   "canal_envio": [
+    [
+     "correo",
+     0.704
+    ],
+    [
+     "whatsapp",
+     0.296
+    ]
+   ],
+   "tamano": [
+    [
+     "micro",
+     0.401
+    ],
+    [
+     "independiente",
+     0.252
+    ],
+    [
+     "pequena",
+     0.239
+    ]
+   ]
+  }
+ },
+ "S7": {
+  "n": 3874,
+  "reglas": [
+   [
+    "R4b:perdida",
+    11.67
+   ],
+   [
+    "R4b:friccion",
+    10.03
+   ],
+   [
+    "R7:perdida",
+    8.87
+   ],
+   [
+    "R1:friccion",
+    7.63
+   ],
+   [
+    "R7:friccion",
+    5.91
+   ]
+  ],
+  "atributos": {
+   "canal": [
+    [
+     "google",
+     0.316
+    ],
+    [
+     "recomendacion",
+     0.201
+    ],
+    [
+     "redes",
+     0.142
+    ]
+   ],
+   "dispositivo": [
+    [
+     "movil",
+     0.552
+    ],
+    [
+     "escritorio",
+     0.441
+    ],
+    [
+     "tablet",
+     0.007
+    ]
+   ],
+   "servicio": [
+    [
+     "web",
+     0.24
+    ],
+    [
+     "tienda",
+     0.14
+    ],
+    [
+     "gestion",
+     0.111
+    ]
+   ],
+   "destino": [
+    [
+     "home",
+     0.484
+    ],
+    [
+     "servicio",
+     0.247
+    ],
+    [
+     "articulo",
+     0.24
+    ]
+   ],
+   "etapa": [
+    [
+     "explorando",
+     0.522
+    ],
+    [
+     "comparando",
+     0.309
+    ],
+    [
+     "listo",
+     0.169
+    ]
+   ],
+   "canal_envio": [
+    [
+     "correo",
+     0.663
+    ],
+    [
+     "whatsapp",
+     0.337
+    ]
+   ],
+   "tamano": [
+    [
+     "micro",
+     0.392
+    ],
+    [
+     "pequena",
+     0.262
+    ],
+    [
+     "independiente",
+     0.247
+    ]
+   ]
+  }
+ },
+ "S8": {
+  "n": 36,
+  "reglas": [
+   [
+    "R4:friccion",
+    70.47
+   ],
+   [
+    "R4:perdida",
+    68.24
+   ],
+   [
+    "R1:friccion",
+    27.68
+   ],
+   [
+    "R1:perdida",
+    9.19
+   ],
+   [
+    "R9:perdida",
+    2.88
+   ]
+  ],
+  "atributos": {
+   "canal": [
+    [
+     "google",
+     0.389
+    ],
+    [
+     "directo",
+     0.167
+    ],
+    [
+     "recomendacion",
+     0.139
+    ]
+   ],
+   "dispositivo": [
+    [
+     "escritorio",
+     1.0
+    ]
+   ],
+   "servicio": [
+    [
+     "web",
+     0.222
+    ],
+    [
+     "agente",
+     0.167
+    ],
+    [
+     "automatizacion",
+     0.167
+    ]
+   ],
+   "destino": [
+    [
+     "home",
+     0.611
+    ],
+    [
+     "servicio",
+     0.194
+    ],
+    [
+     "articulo",
+     0.194
+    ]
+   ],
+   "etapa": [
+    [
+     "explorando",
+     0.417
+    ],
+    [
+     "listo",
+     0.361
+    ],
+    [
+     "comparando",
+     0.222
+    ]
+   ],
+   "canal_envio": [
+    [
+     "correo",
+     0.694
+    ],
+    [
+     "whatsapp",
+     0.306
+    ]
+   ],
+   "tamano": [
+    [
+     "micro",
+     0.417
+    ],
+    [
+     "pequena",
+     0.333
+    ],
+    [
+     "independiente",
+     0.139
+    ]
+   ]
+  }
+ }
+}

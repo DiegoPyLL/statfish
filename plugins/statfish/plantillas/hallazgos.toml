@@ -1,0 +1,19 @@
+# Hallazgos de la corrida (etapa 7). Las cifras van con marcadores {{ruta|filtro}}: ver referencias/informe.md.
+# Un hallazgo con `cuerpo` genera el borrador salida/issues/<id>.md; el issue se crea solo con confirmación.
+#
+# [[hallazgos]]
+# id = "H-R1"
+# regla = "R1"
+# patron = "P-NOMBRE-SOLO-LETRAS"
+# titulo = "…"
+# estado = "nuevo"                  # nuevo | confirmado | issue #N | resuelto | descartado
+# perfiles = ["S1"]
+# commit = "abc1234"
+# evidencia = [{ cita = "src/archivo.js:10-12", extracto = "texto citado" }]
+# resumen = "Entre las tres mayores en el {{robustez.top3_friccion.R1|pct}} de los sorteos."
+# cuerpo = '''
+# ## Qué pasa
+# …
+# ## Impacto (cifras del modelo, no del mercado)
+# {{reglas.R1.friccion|mil:0}} de cada 1.000 llegadas pasan por este aviso.
+# '''

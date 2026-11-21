@@ -1,0 +1,2344 @@
+# Statfish · caso Volutus en el formato de la herramienta.
+#
+# Es la traducción declarativa de referencia/modelo.py (el script del caso). Con la semilla 20261120
+# da las mismas cifras que ese script: el orden de las ramas, de los parámetros y de las
+# distribuciones importa, porque fija el orden de los sorteos y de las sumas.
+
+[modelo]
+nombre = "Volutus, landing: quién no logra cotizar ni contactar"
+descripcion = "Red de perfiles y cadena de uso de la landing de Volutus (VolutusDevelopment/VolutusLandingPage @ 76b713a)."
+nota = "Caso de prueba de la viabilidad. Los priors salen de una sola elicitación del agente que hizo el caso (K = 1), sin mezcla de elicitaciones independientes."
+
+[corrida]
+semilla = 20261120
+uniformes = 26
+poblacion = 120000
+representativos = 12
+sorteos_parametros = 200
+usuarios_incertidumbre = 3000
+usuarios_hipotesis = 20000
+
+[informe]
+titulo = "Volutus: quién no logra cotizar ni contactar"
+metricas_principales = ["contacto_total", "perdida_por_codigo", "con_friccion"]
+
+# ------------------------------------------------------------------------------------------------
+# Parámetros escalares: p50 [p10 – p90]. El orden fija el orden de los sorteos de la incertidumbre.
+# ------------------------------------------------------------------------------------------------
+[[parametros]]
+id = "relacion_cliente_brief"
+texto = "Llega un cliente con el link del brief"
+p50 = 0.05
+p10 = 0.02
+p90 = 0.10
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "movil_si_redes"
+texto = "Celular, si llega por redes"
+p50 = 0.80
+p10 = 0.65
+p90 = 0.90
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "movil_si_recomendacion"
+texto = "Celular, si llega por recomendación"
+p50 = 0.70
+p10 = 0.55
+p90 = 0.85
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "inapp_si_redes_movil"
+texto = "Navegador de la app (Instagram, Facebook), si llega por redes en celular"
+p50 = 0.60
+p10 = 0.40
+p90 = 0.80
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "movimiento_reducido"
+texto = "Movimiento reducido activo"
+p50 = 0.05
+p10 = 0.02
+p90 = 0.10
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "js_off"
+texto = "JavaScript inactivo"
+p50 = 0.005
+p10 = 0.002
+p90 = 0.015
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "brief_js_falla"
+texto = "brief.js no carga"
+p50 = 0.005
+p10 = 0.001
+p90 = 0.02
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "almacen_bloqueado"
+texto = "Sin almacenamiento del navegador"
+p50 = 0.03
+p10 = 0.01
+p90 = 0.06
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "estricta_base"
+texto = "Privacidad estricta (× 5 en Firefox)"
+p50 = 0.03
+p10 = 0.01
+p90 = 0.06
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "agente_en_chrome_escritorio"
+texto = "Agente WebMCP, entre quienes usan Chrome o Edge de escritorio con JS"
+p50 = 0.002
+p10 = 0.0005
+p90 = 0.01
+fuente = "prior:elicitacion"
+anclas = ["webmcp-estado-2026-11"]
+nota = "Sin token de origin trial, WebMCP solo funciona con el flag de pruebas activado."
+
+[[parametros]]
+id = "smart_punct_on"
+texto = "Smart Punctuation activo en iOS y iPadOS"
+p50 = 0.95
+p10 = 0.85
+p90 = 0.99
+fuente = "prior:elicitacion"
+nota = "Viene activo por defecto en iOS: convierte ' en ’."
+
+[[parametros]]
+id = "nombre_apostrofo"
+texto = "Nombre con apóstrofo"
+p50 = 0.004
+p10 = 0.001
+p90 = 0.010
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "nombre_guion_punto"
+texto = "Nombre con guion o punto"
+p50 = 0.021
+p10 = 0.010
+p90 = 0.040
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "nombre_empresa_signos"
+texto = "Escribe el nombre del negocio, con signos"
+p50 = 0.025
+p10 = 0.010
+p90 = 0.050
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "whatsapp_si_movil"
+texto = "Envía por WhatsApp, en celular"
+p50 = 0.45
+p10 = 0.30
+p90 = 0.60
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "whatsapp_si_escritorio"
+texto = "Envía por WhatsApp, en escritorio"
+p50 = 0.20
+p10 = 0.10
+p90 = 0.35
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "pega_rapido_comparando"
+texto = "Pega y envía rápido, si está comparando (× 0,5 explorando, × 2 listo)"
+p50 = 0.10
+p10 = 0.05
+p90 = 0.20
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "sale_explorando"
+texto = "Sale de inmediato, si está explorando"
+p50 = 0.55
+p10 = 0.40
+p90 = 0.70
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "sale_comparando"
+texto = "Sale de inmediato, si está comparando"
+p50 = 0.35
+p10 = 0.20
+p90 = 0.50
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "sale_listo"
+texto = "Sale de inmediato, si está listo"
+p50 = 0.10
+p10 = 0.05
+p90 = 0.20
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "home_a_servicio"
+texto = "De la portada a su servicio"
+p50 = 0.60
+p10 = 0.45
+p90 = 0.75
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "articulo_a_servicio"
+texto = "Del artículo a su servicio"
+p50 = 0.30
+p10 = 0.15
+p90 = 0.45
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "usa_estimado"
+texto = "Usa el estimado en la página de su servicio"
+p50 = 0.45
+p10 = 0.30
+p90 = 0.60
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "usa_estimado_ley"
+texto = "Usa el estimado en /ley21719"
+p50 = 0.40
+p10 = 0.25
+p90 = 0.55
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "pide_cotizacion"
+texto = "Pulsa «Pedir esta cotización» tras el estimado"
+p50 = 0.35
+p10 = 0.20
+p90 = 0.50
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "contacta_explorando"
+texto = "Escribe, si está explorando"
+p50 = 0.10
+p10 = 0.05
+p90 = 0.20
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "contacta_comparando"
+texto = "Escribe, si está comparando"
+p50 = 0.30
+p10 = 0.20
+p90 = 0.45
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "contacta_listo"
+texto = "Escribe, si está listo"
+p50 = 0.70
+p10 = 0.55
+p90 = 0.85
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "abandona_seleccion_perdida"
+texto = "Se va al perder lo marcado (R8)"
+p50 = 0.25
+p10 = 0.10
+p90 = 0.45
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "usa_cta_brief_web"
+texto = "Usa «Cuéntanos tu proyecto» de la cabecera en desarrollo web"
+p50 = 0.40
+p10 = 0.25
+p90 = 0.55
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "envia_brief_prospecto"
+texto = "Prospecto que envía el brief"
+p50 = 0.45
+p10 = 0.25
+p90 = 0.65
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "vuelve_al_formulario"
+texto = "Vuelve al formulario si deja el brief"
+p50 = 0.35
+p10 = 0.20
+p90 = 0.50
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "resuelve_nombre_opaco"
+texto = "Resuelve «Usa solo letras.» cuando no ve qué cambió (’)"
+p50 = 0.55
+p10 = 0.30
+p90 = 0.80
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "resuelve_nombre_claro"
+texto = "Resuelve «Usa solo letras.» cuando ve el signo"
+p50 = 0.85
+p10 = 0.70
+p90 = 0.95
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "token_no_listo_rapido_movil"
+texto = "Token de Turnstile sin llegar, si pega rápido en celular"
+p50 = 0.35
+p10 = 0.15
+p90 = 0.55
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "token_no_listo_rapido_escritorio"
+texto = "Token de Turnstile sin llegar, si pega rápido en escritorio"
+p50 = 0.15
+p10 = 0.05
+p90 = 0.30
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "token_no_listo_normal"
+texto = "Token de Turnstile sin llegar, a ritmo normal"
+p50 = 0.01
+p10 = 0.002
+p90 = 0.03
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "token_no_listo_agente"
+texto = "Token de Turnstile sin llegar, si un agente rellena y la persona envía"
+p50 = 0.60
+p10 = 0.30
+p90 = 0.85
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "turnstile_falla_estricta"
+texto = "Turnstile falla con privacidad estricta"
+p50 = 0.30
+p10 = 0.10
+p90 = 0.50
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "turnstile_falla_normal"
+texto = "Turnstile falla sin privacidad estricta"
+p50 = 0.005
+p10 = 0.001
+p90 = 0.02
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "reintenta_tras_403"
+texto = "Reintenta tras el 403"
+p50 = 0.25
+p10 = 0.10
+p90 = 0.40
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "correo_directo_tras_error"
+texto = "Escribe al correo del aviso tras un error"
+p50 = 0.35
+p10 = 0.20
+p90 = 0.50
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "resend_falla"
+texto = "Resend no responde"
+p50 = 0.002
+p10 = 0.0005
+p90 = 0.01
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "whatsapp_envia"
+texto = "Envía el WhatsApp que se abrió"
+p50 = 0.85
+p10 = 0.70
+p90 = 0.95
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "inapp_falla_whatsapp"
+texto = "WhatsApp no abre desde el navegador de una app"
+p50 = 0.10
+p10 = 0.02
+p90 = 0.25
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "cambia_a_correo"
+texto = "Cambia a correo si WhatsApp no abre"
+p50 = 0.50
+p10 = 0.30
+p90 = 0.70
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "nojs_correo_directo"
+texto = "Sin JS, escribe al correo de la página de respuesta"
+p50 = 0.40
+p10 = 0.20
+p90 = 0.60
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "cliente_completa_brief"
+texto = "Cliente que completa el brief"
+p50 = 0.80
+p10 = 0.60
+p90 = 0.90
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "brief_rapido_si_agente"
+texto = "Un agente llena el brief y la persona lo envía antes de 8 s"
+p50 = 0.50
+p10 = 0.20
+p90 = 0.80
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "carrera_turnstile_brief"
+texto = "Carrera de Turnstile en la revisión del brief"
+p50 = 0.05
+p10 = 0.01
+p90 = 0.15
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "reintenta_brief"
+texto = "Reintenta el brief que falló"
+p50 = 0.85
+p10 = 0.70
+p90 = 0.95
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "brief_en_varias_sesiones"
+texto = "Llena el brief en varias sesiones"
+p50 = 0.40
+p10 = 0.25
+p90 = 0.60
+fuente = "prior:elicitacion"
+
+# Interruptores de las hipótesis: valen false hasta que una hipótesis los prende.
+[[parametros]]
+id = "arreglo_r1"
+texto = "Arreglo de R1+R2: el nombre acepta ’, guion y punto"
+interruptor = true
+
+[[parametros]]
+id = "arreglo_r8"
+texto = "Arreglo de R8: /ley21719 lleva lo marcado y el servicio al formulario"
+interruptor = true
+
+[[parametros]]
+id = "arreglo_r21"
+texto = "Arreglo de R21 y R10: el brief sin JS o apurado responde como el contacto"
+interruptor = true
+
+# ------------------------------------------------------------------------------------------------
+# Distribuciones categóricas: Dirichlet(κ·p). El orden fija el orden de los sorteos.
+# ------------------------------------------------------------------------------------------------
+[[distribuciones]]
+id = "canal"
+texto = "Canal de llegada de un prospecto"
+valores = { google = 0.32, articulo = 0.14, recomendacion = 0.20, redes = 0.14, directo = 0.08, ia = 0.12 }
+kappa = 15
+fuente = "prior:elicitacion"
+nota = "La verificación del caso encontró que la lista sumaba 0,94 y el resto caía en «ia»; se declaró ese 12 %, que es con lo que corrió el modelo."
+
+[[distribuciones]]
+id = "disp_base"
+texto = "Plataforma (todo el tráfico de Chile)"
+valores = { escritorio = 0.5005, movil = 0.4912, tablet = 0.0083 }
+kappa = 200
+fuente = "ancla:statcounter-CL-plataforma-2026-10"
+nota = "Tablet ajustada a 0,83 % para que la suma dé 1 (publicada: 0,84 %)."
+
+[[distribuciones]]
+id = "disp_cliente"
+texto = "Dispositivo de un cliente que abre el brief"
+valores = { escritorio = 0.60, movil = 0.30, tablet = 0.10 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "sistema_movil"
+texto = "Sistema del celular"
+valores = { android = 0.7928, ios = 0.2072 }
+kappa = 200
+fuente = "ancla:statcounter-CL-sistema-movil-2026-10"
+
+[[distribuciones]]
+id = "sistema_escritorio"
+texto = "Sistema del escritorio"
+valores = { windows = 0.8502, macos = 0.0880, linux = 0.0618 }
+kappa = 200
+fuente = "ancla:statcounter-CL-sistema-escritorio-2026-10"
+nota = "Linux absorbe el resto de la lista (publicada: 5,87 %)."
+
+[[distribuciones]]
+id = "sistema_tablet"
+texto = "Sistema de la tablet"
+valores = { ipados = 0.60, android = 0.40 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "nav_android"
+texto = "Navegador en Android"
+valores = { chrome = 0.85, samsung = 0.08, opera = 0.04, firefox = 0.03 }
+kappa = 50
+fuente = "prior:elicitacion"
+anclas = ["statcounter-CL-navegador-2026-10"]
+nota = "Parte del ancla de navegadores (todas las plataformas) y la ajusta por sistema."
+
+[[distribuciones]]
+id = "nav_ios"
+texto = "Navegador en iOS (todos usan WebKit)"
+valores = { safari = 0.82, chrome = 0.15, otro = 0.03 }
+kappa = 30
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "nav_ipados"
+texto = "Navegador en iPadOS"
+valores = { safari = 0.90, chrome = 0.10 }
+kappa = 20
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "nav_windows"
+texto = "Navegador en Windows"
+valores = { chrome = 0.80, edge = 0.13, firefox = 0.04, opera = 0.03 }
+kappa = 50
+fuente = "prior:elicitacion"
+anclas = ["statcounter-CL-navegador-2026-10"]
+nota = "Parte del ancla de navegadores (todas las plataformas) y la ajusta por sistema."
+
+[[distribuciones]]
+id = "nav_macos"
+texto = "Navegador en macOS"
+valores = { safari = 0.45, chrome = 0.48, firefox = 0.07 }
+kappa = 30
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "nav_linux"
+texto = "Navegador en Linux"
+valores = { chrome = 0.70, firefox = 0.30 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "gpu_escritorio"
+texto = "GPU en escritorio"
+valores = { ok = 0.86, lenta = 0.12, sin_webgl = 0.02 }
+kappa = 20
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "gpu_movil"
+texto = "GPU en celular y tablet"
+valores = { ok = 0.92, lenta = 0.07, sin_webgl = 0.01 }
+kappa = 20
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "tamano"
+texto = "Tamaño del negocio"
+valores = { independiente = 0.25, micro = 0.40, pequena = 0.25, mediana = 0.08, grande = 0.02 }
+kappa = 15
+fuente = "prior:elicitacion"
+anclas = ["sii-CL-empresas-tamano-2024"]
+nota = "El SII cuenta empresas con ventas; el público de la landing incluye independientes y se inclina a micro y pequeñas."
+
+[[distribuciones]]
+id = "servicio_base"
+texto = "Servicio que busca (antes de la inclinación por tamaño)"
+valores = { web = 0.25, tienda = 0.13, gestion = 0.12, automatizacion = 0.10, agente = 0.10, app = 0.08, prospeccion = 0.06, datos = 0.10, no_sabe = 0.06 }
+kappa = 12
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "etapa_google"
+valores = { explorando = 0.55, comparando = 0.30, listo = 0.15 }
+kappa = 12
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "etapa_articulo"
+valores = { explorando = 0.70, comparando = 0.22, listo = 0.08 }
+kappa = 12
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "etapa_recomendacion"
+valores = { explorando = 0.35, comparando = 0.35, listo = 0.30 }
+kappa = 12
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "etapa_redes"
+valores = { explorando = 0.65, comparando = 0.25, listo = 0.10 }
+kappa = 12
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "etapa_directo"
+valores = { explorando = 0.40, comparando = 0.35, listo = 0.25 }
+kappa = 12
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "etapa_ia"
+valores = { explorando = 0.45, comparando = 0.35, listo = 0.20 }
+kappa = 12
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "destino_google"
+valores = { servicio = 0.50, home = 0.35, articulo = 0.15 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "destino_articulo"
+valores = { articulo = 1.0 }
+kappa = 1000
+fuente = "definicion"
+
+[[distribuciones]]
+id = "destino_recomendacion"
+valores = { home = 0.75, servicio = 0.25 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "destino_redes"
+valores = { home = 0.70, servicio = 0.20, articulo = 0.10 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "destino_directo"
+valores = { home = 1.0 }
+kappa = 1000
+fuente = "definicion"
+
+[[distribuciones]]
+id = "destino_ia"
+valores = { servicio = 0.50, articulo = 0.30, home = 0.20 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "rubro"
+texto = "Rubro (solo relato)"
+valores = { comercio = 0.30, "servicios profesionales" = 0.18, "gastronomía" = 0.10, "salud y bienestar" = 0.10, "construcción" = 0.06, manufactura = 0.06, transporte = 0.05, "educación" = 0.05, agro = 0.05, turismo = 0.05 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+[[distribuciones]]
+id = "region"
+texto = "Región (solo relato)"
+valores = { Metropolitana = 0.45, "Valparaíso" = 0.095, "Biobío" = 0.09, Maule = 0.05, "Araucanía" = 0.05, "O'Higgins" = 0.05, Coquimbo = 0.04, Antofagasta = 0.04, "Los Lagos" = 0.04, "Ñuble" = 0.02, "Los Ríos" = 0.02, Atacama = 0.015, "Tarapacá" = 0.015, "Arica y Parinacota" = 0.01, Magallanes = 0.01, "Aysén" = 0.005 }
+kappa = 30
+fuente = "prior:elicitacion"
+anclas = ["sii-CL-empresas-tamano-2024", "ine-CL-empresas-activas-2025"]
+nota = "La RM tiene cerca del 43 % de las empresas (SII e INE)."
+
+[[distribuciones]]
+id = "edad"
+texto = "Edad (solo relato)"
+valores = { "18-29" = 0.15, "30-44" = 0.40, "45-59" = 0.33, "60+" = 0.12 }
+kappa = 10
+fuente = "prior:elicitacion"
+
+# ------------------------------------------------------------------------------------------------
+# Red de perfiles. Orden de evaluación = orden de declaración; cada variable aleatoria tiene su
+# uniforme (el índice viene del script del caso).
+# ------------------------------------------------------------------------------------------------
+[[variables]]
+id = "relacion"
+texto = "Prospecto, o cliente con el link del brief"
+valores = ["cliente_brief", "prospecto"]
+uniforme = 0
+soporte = [{ cita = "src/lib/meta.js:301-310", extracto = "// El brief que Volutus le manda a un cliente por link (paginas/Brief.jsx)." }]
+
+  [[variables.casos]]
+  dist = { cliente_brief = "p.relacion_cliente_brief", prospecto = "1 - p.relacion_cliente_brief" }
+
+[[variables]]
+id = "canal"
+texto = "Canal de llegada"
+valores = ["google", "articulo", "recomendacion", "redes", "directo", "ia", "link_del_brief"]
+uniforme = 1
+soporte = [{ cita = "public/robots.txt:4", extracto = "Content-Signal: search=yes, ai-input=yes, ai-train=yes" }]
+
+  [[variables.casos]]
+  si = "relacion == 'cliente_brief'"
+  valor = "'link_del_brief'"
+
+  [[variables.casos]]
+  dist = "canal"
+
+[[variables]]
+id = "dispositivo"
+valores = ["escritorio", "movil", "tablet"]
+uniforme = 2
+soporte = [{ cita = "CLAUDE.md:102-119", extracto = "## 5. Responsive Design" }]
+
+  [[variables.casos]]
+  si = "relacion == 'cliente_brief'"
+  dist = "disp_cliente"
+
+  [[variables.casos]]
+  si = "canal == 'redes'"
+  dist = { movil = "p.movil_si_redes", tablet = "0.01", escritorio = "1 - p.movil_si_redes - 0.01" }
+
+  [[variables.casos]]
+  si = "canal == 'recomendacion'"
+  dist = { movil = "p.movil_si_recomendacion", tablet = "0.01", escritorio = "1 - p.movil_si_recomendacion - 0.01" }
+
+  [[variables.casos]]
+  dist = "disp_base"
+
+[[variables]]
+id = "sistema"
+valores = ["android", "ios", "windows", "macos", "linux", "ipados"]
+uniforme = 3
+soporte = [{ cita = "CLAUDE.md:124", extracto = "El sitio debe funcionar bien en Safari de macOS, iOS y iPadOS" }]
+
+  [[variables.casos]]
+  si = "dispositivo == 'movil'"
+  dist = "sistema_movil"
+
+  [[variables.casos]]
+  si = "dispositivo == 'escritorio'"
+  dist = "sistema_escritorio"
+
+  [[variables.casos]]
+  dist = "sistema_tablet"
+
+[[variables]]
+id = "inapp"
+texto = "Navegador de una app (su propio webview)"
+valores = [true, false]
+uniforme = 5
+soporte = [{ cita = "src/client.js:202-214", extracto = "// Antes de cualquier `await`: así Safari lo cuenta como gesto de la" }]
+
+  [[variables.casos]]
+  si = "relacion == 'prospecto' and canal == 'redes' and dispositivo == 'movil'"
+  prob = "p.inapp_si_redes_movil"
+
+  [[variables.casos]]
+  valor = "False"
+
+[[variables]]
+id = "navegador"
+valores = ["chrome", "samsung", "opera", "firefox", "safari", "otro", "edge", "webview de la app"]
+uniforme = 4
+soporte = [{ cita = "CLAUDE.md:124", extracto = "El sitio debe funcionar bien en Safari de macOS, iOS y iPadOS" }]
+
+  [[variables.casos]]
+  si = "inapp"
+  valor = "'webview de la app'"
+
+  [[variables.casos]]
+  si = "sistema == 'android'"
+  dist = "nav_android"
+
+  [[variables.casos]]
+  si = "sistema == 'ios'"
+  dist = "nav_ios"
+
+  [[variables.casos]]
+  si = "sistema == 'ipados'"
+  dist = "nav_ipados"
+
+  [[variables.casos]]
+  si = "sistema == 'windows'"
+  dist = "nav_windows"
+
+  [[variables.casos]]
+  si = "sistema == 'macos'"
+  dist = "nav_macos"
+
+  [[variables.casos]]
+  dist = "nav_linux"
+
+[[variables]]
+id = "motor"
+texto = "Motor del navegador"
+valores = ["webkit", "gecko", "blink"]
+soporte = [{ cita = "CLAUDE.md:124", extracto = "El sitio debe funcionar bien en Safari de macOS, iOS y iPadOS" }]
+
+  [[variables.casos]]
+  si = "sistema in ('ios', 'ipados')"
+  valor = "'webkit'"
+
+  [[variables.casos]]
+  si = "navegador == 'firefox'"
+  valor = "'gecko'"
+
+  [[variables.casos]]
+  si = "navegador == 'safari'"
+  valor = "'webkit'"
+
+  [[variables.casos]]
+  valor = "'blink'"
+
+[[variables]]
+id = "movimiento_reducido"
+valores = [true, false]
+uniforme = 6
+soporte = [{ cita = "src/lib/movimiento.js:7", extracto = "export const quieto = () => matchMedia('(prefers-reduced-motion: reduce)').matches" }]
+
+  [[variables.casos]]
+  prob = "p.movimiento_reducido"
+
+[[variables]]
+id = "gpu"
+valores = ["ok", "lenta", "sin_webgl"]
+uniforme = 7
+soporte = [{ cita = "src/comportamiento/nubes.js:44-56", extracto = "Nada en vivo sin GPU de verdad." }]
+
+  [[variables.casos]]
+  si = "dispositivo == 'escritorio'"
+  dist = "gpu_escritorio"
+
+  [[variables.casos]]
+  dist = "gpu_movil"
+
+[[variables]]
+id = "js_off"
+texto = "JavaScript inactivo"
+valores = [true, false]
+uniforme = 8
+soporte = [
+  { cita = "src/components/Contacto.jsx:23-25", extracto = "pero el envío exige el token" },
+  { cita = "worker/index.js:34-40", extracto = "**Responde de dos maneras, y las dos hacen falta.**" },
+]
+
+  [[variables.casos]]
+  prob = "p.js_off"
+
+[[variables]]
+id = "almacen_bloqueado"
+valores = [true, false]
+uniforme = 9
+soporte = [{ cita = "src/lib/almacen.js:1-3", extracto = "// El almacenamiento del navegador puede no estar (modo privado, cookies" }]
+
+  [[variables.casos]]
+  prob = "p.almacen_bloqueado"
+
+[[variables]]
+id = "estricta"
+texto = "Privacidad estricta (Firefox estricto, bloqueadores, modo bloqueo)"
+valores = [true, false]
+uniforme = 10
+soporte = [{ cita = "worker/comun.js:130-152", extracto = "export async function pasaTurnstile(token, ip, env, accion) {" }]
+
+  [[variables.casos]]
+  prob = "min(p.estricta_base * (5 if navegador == 'firefox' else 1), 0.9)"
+
+[[variables]]
+id = "agente"
+texto = "Agente de IA por WebMCP"
+valores = [true, false]
+uniforme = 11
+soporte = [{ cita = "src/components/Contacto.jsx:40-43", extracto = "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo." }]
+
+  [[variables.casos]]
+  si = "dispositivo == 'escritorio' and navegador in ('chrome', 'edge') and not inapp and not js_off"
+  prob = "p.agente_en_chrome_escritorio"
+
+  [[variables.casos]]
+  valor = "False"
+
+[[variables]]
+id = "smart_punct"
+texto = "Smart Punctuation (' se escribe ’)"
+valores = [true, false]
+uniforme = 12
+soporte = [{ cita = "src/components/Contacto.jsx:121-130", extracto = "toolparamdescription=\"Nombre de quien escribe\"" }]
+
+  [[variables.casos]]
+  si = "sistema in ('ios', 'ipados')"
+  prob = "p.smart_punct_on"
+
+  [[variables.casos]]
+  valor = "False"
+
+[[variables]]
+id = "nombre_tipo"
+texto = "Tipo de nombre"
+valores = ["apostrofo", "guion_punto", "empresa_signos", "simple"]
+uniforme = 13
+soporte = [{ cita = "src/lib/contacto.js:89-91", extracto = "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u" }]
+
+  [[variables.casos]]
+  dist = { apostrofo = "p.nombre_apostrofo", guion_punto = "p.nombre_guion_punto", empresa_signos = "p.nombre_empresa_signos", simple = "1 - p.nombre_apostrofo - p.nombre_guion_punto - p.nombre_empresa_signos" }
+
+[[variables]]
+id = "tamano"
+texto = "Tamaño del negocio"
+valores = ["independiente", "micro", "pequena", "mediana", "grande"]
+uniforme = 14
+
+  [[variables.casos]]
+  dist = "tamano"
+
+[[variables]]
+id = "servicio"
+texto = "Servicio que busca"
+valores = ["web", "tienda", "gestion", "automatizacion", "agente", "app", "prospeccion", "datos", "no_sabe"]
+uniforme = 15
+soporte = [{ cita = "src/lib/servicios.js:29-144", extracto = "export const SERVICIOS = [" }]
+
+  [[variables.casos]]
+  si = "relacion == 'cliente_brief'"
+  valor = "'web'"
+
+  # La inclinación por tamaño es un prior: multiplica y normaliza.
+  [[variables.casos]]
+  si = "tamano == 'independiente'"
+  dist = "servicio_base"
+  inclinacion = { web = 1.3, tienda = 1.2, gestion = 0.5, automatizacion = 0.7, datos = 0.6 }
+
+  [[variables.casos]]
+  si = "tamano == 'micro'"
+  dist = "servicio_base"
+  inclinacion = {}
+
+  [[variables.casos]]
+  si = "tamano == 'pequena'"
+  dist = "servicio_base"
+  inclinacion = { gestion = 1.5, automatizacion = 1.4, datos = 1.4, web = 0.8 }
+
+  [[variables.casos]]
+  si = "tamano == 'mediana'"
+  dist = "servicio_base"
+  inclinacion = { gestion = 1.7, automatizacion = 1.6, datos = 1.6, web = 0.6, tienda = 0.8, app = 1.3 }
+
+  [[variables.casos]]
+  dist = "servicio_base"
+  inclinacion = { gestion = 1.5, automatizacion = 1.8, datos = 1.8, web = 0.5, tienda = 0.7, app = 1.5, agente = 1.3 }
+
+[[variables]]
+id = "etapa"
+texto = "Etapa de compra"
+valores = ["explorando", "comparando", "listo"]
+uniforme = 16
+
+  [[variables.casos]]
+  si = "relacion == 'cliente_brief'"
+  valor = "'listo'"
+
+  [[variables.casos]]
+  si = "canal == 'google'"
+  dist = "etapa_google"
+
+  [[variables.casos]]
+  si = "canal == 'articulo'"
+  dist = "etapa_articulo"
+
+  [[variables.casos]]
+  si = "canal == 'recomendacion'"
+  dist = "etapa_recomendacion"
+
+  [[variables.casos]]
+  si = "canal == 'redes'"
+  dist = "etapa_redes"
+
+  [[variables.casos]]
+  si = "canal == 'directo'"
+  dist = "etapa_directo"
+
+  [[variables.casos]]
+  dist = "etapa_ia"
+
+[[variables]]
+id = "pega_rapido"
+texto = "Pega un texto preparado y envía rápido"
+valores = [true, false]
+uniforme = 17
+soporte = [{ cita = "src/lib/meta.js:192-198", extracto = "'/articulos/que-preparar-antes-de-cotizar': {" }]
+
+  [[variables.casos]]
+  prob = "min(p.pega_rapido_comparando * (0.5 if etapa == 'explorando' else (1.0 if etapa == 'comparando' else 2.0)), 0.95)"
+
+[[variables]]
+id = "canal_envio"
+texto = "Envía por correo o WhatsApp"
+valores = ["whatsapp", "correo"]
+uniforme = 18
+soporte = [{ cita = "src/components/Contacto.jsx:93-114", extracto = "toolparamdescription=\"Por dónde se envía el mensaje: correo o WhatsApp\"" }]
+
+  [[variables.casos]]
+  si = "dispositivo == 'escritorio'"
+  dist = { whatsapp = "p.whatsapp_si_escritorio", correo = "1 - p.whatsapp_si_escritorio" }
+
+  [[variables.casos]]
+  dist = { whatsapp = "p.whatsapp_si_movil", correo = "1 - p.whatsapp_si_movil" }
+
+# El destino crudo se transforma: «su servicio» de la ley es /ley21719, y quien no sabe qué busca
+# llega a la portada. La probabilidad del destino final suma la de los crudos que llevan a él.
+[[variables]]
+id = "destino"
+texto = "Página a la que llega"
+valores = ["servicio", "home", "articulo", "ley", "brief"]
+uniforme = 19
+soporte = [{ cita = "src/lib/meta.js:39-479", extracto = "export const PAGINAS = {" }]
+
+  [[variables.casos]]
+  si = "relacion == 'cliente_brief'"
+  valor = "'brief'"
+
+  [[variables.casos]]
+  si = "canal == 'google'"
+  dist = "destino_google"
+  transformar = "'ley' if x == 'servicio' and servicio == 'datos' else ('home' if x == 'servicio' and servicio == 'no_sabe' else x)"
+
+  [[variables.casos]]
+  si = "canal == 'articulo'"
+  dist = "destino_articulo"
+  transformar = "'ley' if x == 'servicio' and servicio == 'datos' else ('home' if x == 'servicio' and servicio == 'no_sabe' else x)"
+
+  [[variables.casos]]
+  si = "canal == 'recomendacion'"
+  dist = "destino_recomendacion"
+  transformar = "'ley' if x == 'servicio' and servicio == 'datos' else ('home' if x == 'servicio' and servicio == 'no_sabe' else x)"
+
+  [[variables.casos]]
+  si = "canal == 'redes'"
+  dist = "destino_redes"
+  transformar = "'ley' if x == 'servicio' and servicio == 'datos' else ('home' if x == 'servicio' and servicio == 'no_sabe' else x)"
+
+  [[variables.casos]]
+  si = "canal == 'directo'"
+  dist = "destino_directo"
+  transformar = "'ley' if x == 'servicio' and servicio == 'datos' else ('home' if x == 'servicio' and servicio == 'no_sabe' else x)"
+
+  [[variables.casos]]
+  dist = "destino_ia"
+  transformar = "'ley' if x == 'servicio' and servicio == 'datos' else ('home' if x == 'servicio' and servicio == 'no_sabe' else x)"
+
+[[variables]]
+id = "js_brief_falla"
+texto = "El brief llega sin JS (sin JavaScript o si brief.js no carga)"
+valores = [true, false]
+uniforme = 23
+soporte = [{ cita = "src/client.js:299-302", extracto = "if (form) import('./comportamiento/brief/brief.js').then((modulo) => modulo.default(form))" }]
+
+  [[variables.casos]]
+  si = "js_off"
+  valor = "True"
+
+  [[variables.casos]]
+  prob = "p.brief_js_falla"
+
+[[variables]]
+id = "rubro"
+relato = true
+valores = ["comercio", "servicios profesionales", "gastronomía", "salud y bienestar", "construcción", "manufactura", "transporte", "educación", "agro", "turismo"]
+uniforme = 20
+
+  [[variables.casos]]
+  dist = "rubro"
+
+[[variables]]
+id = "region"
+relato = true
+valores = ["Metropolitana", "Valparaíso", "Biobío", "Maule", "Araucanía", "O'Higgins", "Coquimbo", "Antofagasta", "Los Lagos", "Ñuble", "Los Ríos", "Atacama", "Tarapacá", "Arica y Parinacota", "Magallanes", "Aysén"]
+uniforme = 21
+
+  [[variables.casos]]
+  dist = "region"
+
+[[variables]]
+id = "edad"
+relato = true
+valores = ["18-29", "30-44", "45-59", "60+"]
+uniforme = 22
+
+  [[variables.casos]]
+  dist = "edad"
+
+# Derivada: la ruta de la página de su servicio (para los textos de la cadena).
+[[variables]]
+id = "ruta_servicio"
+valores = ["/servicios/desarrollo-web", "/servicios/tiendas-online", "/servicios/sistemas-de-gestion", "/servicios/automatizacion-procesos", "/servicios/agentes-ia", "/servicios/desarrollo-software-a-medida", "/servicios/prospeccion-de-clientes", "/ley21719", "/servicios"]
+soporte = [{ cita = "src/lib/servicios.js:29-144", extracto = "export const SERVICIOS = [" }]
+
+  [[variables.casos]]
+  si = "servicio == 'web'"
+  valor = "'/servicios/desarrollo-web'"
+
+  [[variables.casos]]
+  si = "servicio == 'tienda'"
+  valor = "'/servicios/tiendas-online'"
+
+  [[variables.casos]]
+  si = "servicio == 'gestion'"
+  valor = "'/servicios/sistemas-de-gestion'"
+
+  [[variables.casos]]
+  si = "servicio == 'automatizacion'"
+  valor = "'/servicios/automatizacion-procesos'"
+
+  [[variables.casos]]
+  si = "servicio == 'agente'"
+  valor = "'/servicios/agentes-ia'"
+
+  [[variables.casos]]
+  si = "servicio == 'app'"
+  valor = "'/servicios/desarrollo-software-a-medida'"
+
+  [[variables.casos]]
+  si = "servicio == 'prospeccion'"
+  valor = "'/servicios/prospeccion-de-clientes'"
+
+  [[variables.casos]]
+  si = "servicio == 'datos'"
+  valor = "'/ley21719'"
+
+  [[variables.casos]]
+  valor = "'/servicios'"
+
+# ------------------------------------------------------------------------------------------------
+# Restricciones duras: ningún usuario puede violarlas.
+# ------------------------------------------------------------------------------------------------
+[[restricciones]]
+texto = "iOS y iPadOS usan WebKit, sea cual sea el navegador"
+expr = "sistema not in ('ios', 'ipados') or motor == 'webkit'"
+evidencia = [{ cita = "CLAUDE.md:124", extracto = "El sitio debe funcionar bien en Safari de macOS, iOS y iPadOS" }]
+
+[[restricciones]]
+texto = "El navegador de una app es su propio webview"
+expr = "not inapp or navegador == 'webview de la app'"
+
+[[restricciones]]
+texto = "Un agente WebMCP exige escritorio, Chrome o Edge, y JS activo"
+expr = "not agente or (dispositivo == 'escritorio' and navegador in ('chrome', 'edge') and not js_off)"
+evidencia = [{ cita = "src/components/Contacto.jsx:40-43", extracto = "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo." }]
+
+[[restricciones]]
+texto = "/brief-web solo se abre con el link: todo el que llega ahí es cliente"
+expr = "destino != 'brief' or relacion == 'cliente_brief'"
+evidencia = [{ cita = "src/lib/meta.js:301-310", extracto = "// El brief que Volutus le manda a un cliente por link (paginas/Brief.jsx)." }]
+
+[[restricciones]]
+texto = "Smart Punctuation solo se modela en iOS y iPadOS"
+expr = "not smart_punct or sistema in ('ios', 'ipados')"
+
+[[restricciones]]
+texto = "«Ley de datos» no tiene página de servicio: su página es /ley21719"
+expr = "not (servicio == 'datos' and destino == 'servicio')"
+evidencia = [{ cita = "src/lib/servicios.js:132-143", extracto = "id: 'datos'," }]
+
+# ------------------------------------------------------------------------------------------------
+# Reglas del código, con evidencia y recorrido cognitivo (¿intenta el efecto correcto?, ¿nota la
+# acción?, ¿la asocia al efecto?, ¿ve el progreso?).
+# ------------------------------------------------------------------------------------------------
+[[reglas]]
+id = "R1"
+texto = "El nombre solo admite letras, marcas, espacio y apóstrofo recto: rechaza guion, punto, dígitos y &"
+friccion = true
+patron = "P-NOMBRE-SOLO-LETRAS"
+cw = ["sí", "sí", "sí", "en parte"]
+nota_cw = "El aviso dice qué hacer, pero le pide escribir su nombre (o el de su negocio) de otra forma."
+evidencia = [
+  { cita = "src/lib/contacto.js:89-91", extracto = "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u" },
+  { cita = "src/client.js:82-85", extracto = "if (campo.name === 'nombre' && !NOMBRE_VALIDO.test(valor)) {" },
+  { cita = "worker/index.js:99-101", extracto = "if (!NOMBRE_VALIDO.test(nombre) || !proyecto || !CORREO_VALIDO.test(correo)) {" },
+  { cita = "src/comportamiento/brief/brief.js:350", extracto = "!NOMBRE_VALIDO.test(n) && ERRORES_BRIEF.nombreInvalido" },
+  { cita = "worker/brief.js:292-294", extracto = "if (!NOMBRE_VALIDO.test(nombre) || !(correo || telefono)" },
+]
+
+[[reglas]]
+id = "R1+R2"
+texto = "En iPhone y iPad el apóstrofo se escribe ’ (Smart Punctuation) y la regla del nombre lo rechaza"
+friccion = true
+patron = "P-NOMBRE-SOLO-LETRAS"
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "El aviso «Usa solo letras.» contradice lo que ve: su nombre solo tiene letras y un apóstrofo, que la regla quiere aceptar (O'Higgins), y el cambio a ’ no se nota."
+evidencia = [
+  { cita = "src/lib/contacto.js:89-91", extracto = "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u" },
+  { cita = "src/components/Contacto.jsx:121-130", extracto = "toolparamdescription=\"Nombre de quien escribe\"" },
+  { cita = "src/client.js:82-85", extracto = "if (campo.name === 'nombre' && !NOMBRE_VALIDO.test(valor)) {" },
+]
+
+[[reglas]]
+id = "R4"
+texto = "Turnstile se descarga al primer foco del formulario y el envío no espera su token: sin token, 403"
+friccion = true
+patron = "P-TURNSTILE-SIN-ESPERA"
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "El aviso no dice que basta reintentar: manda a escribir al correo. La causa, un token que no llegó, no se ve."
+evidencia = [
+  { cita = "src/lib/turnstile.js:53", extracto = "form.addEventListener('focusin', montar, { once: true })" },
+  { cita = "src/lib/turnstile.js:27-51", extracto = "script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'" },
+  { cita = "src/client.js:191-245", extracto = "form.addEventListener('submit', async (evento) => {" },
+  { cita = "worker/index.js:103-105", extracto = "if (!(await pasaTurnstile(limpiar(datos.get('cf-turnstile-response'), 4096), ip, env, TURNSTILE_ACCION))) {" },
+  { cita = "worker/comun.js:137", extracto = "if (!token || token.length > 2048 || dominios.length === 0) return false" },
+]
+
+[[reglas]]
+id = "R4b"
+texto = "Turnstile no se resuelve con privacidad estricta: 403"
+friccion = true
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "Mismo aviso que R4; reintentar no sirve si su navegador bloquea la comprobación."
+evidencia = [{ cita = "worker/comun.js:130-152", extracto = "export async function pasaTurnstile(token, ip, env, accion) {" }]
+
+[[reglas]]
+id = "R5"
+texto = "Resend no responde: 502 con el correo directo"
+friccion = true
+evidencia = [
+  { cita = "worker/index.js:121-123", extracto = "return responder(request, MENSAJES.fallo, 502)" },
+  { cita = "worker/comun.js:163-192", extracto = "export async function enviarCorreo(env, { para, responderA, asunto, texto, adjuntos = [] }, registro) {" },
+]
+
+[[reglas]]
+id = "R6"
+texto = "WhatsApp se abre con window.open; en el navegador de una app puede no abrir"
+friccion = true
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "El botón no abre WhatsApp desde el navegador de la app y nada lo avisa."
+evidencia = [{ cita = "src/client.js:202-214", extracto = "// Antes de cualquier `await`: así Safari lo cuenta como gesto de la" }]
+
+[[reglas]]
+id = "R7"
+texto = "Sin JavaScript el envío llega sin token y se rechaza; la respuesta es una página aparte sin enlace al correo"
+friccion = true
+patron = "P-RESPUESTA-SIN-JS-SIN-ENLACE"
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir."
+evidencia = [
+  { cita = "src/components/Contacto.jsx:23-25", extracto = "pero el envío exige el token" },
+  { cita = "worker/index.js:34-40", extracto = "**Responde de dos maneras, y las dos hacen falta.**" },
+  { cita = "worker/comun.js:32-46", extracto = "function paginaDeRespuesta(mensaje, estado) {" },
+]
+
+[[reglas]]
+id = "R8"
+texto = "En /ley21719, «Pedir esta cotización» y «Cuéntanos tu proyecto» llevan a /#contacto: sin lo marcado ni el servicio"
+friccion = true
+patron = "P-ESTADO-PERDIDO-ENTRE-PAGINAS"
+cw = ["sí", "sí", "no", "no"]
+nota_cw = "«Pedir esta cotización» no lleva lo marcado: llega a un formulario vacío y sin el servicio, cuando en los otros servicios sí llega escrito."
+evidencia = [
+  { cita = "src/paginas/Ley21719.jsx:429", extracto = "<Estimado servicio=\"datos\" contacto=\"/#contacto\" />" },
+  { cita = "src/paginas/Ley21719.jsx:264", extracto = "<a className=\"boton boton-primario\" href=\"/#contacto\">" },
+  { cita = "src/components/Estimado.jsx:48", extracto = "const escribeElMensaje = contacto === '#contacto'" },
+  { cita = "src/components/Estimado.jsx:204-207", extracto = "data-pedir={escribeElMensaje || undefined}" },
+  { cita = "src/paginas/Inicio.jsx:33", extracto = "cierre={<Contacto />}" },
+]
+
+[[reglas]]
+id = "R9"
+texto = "En desarrollo web, «Cuéntanos tu proyecto» de la cabecera abre el brief de 35 a 45 min; el de la barra, el formulario"
+friccion = true
+patron = "P-MISMO-TEXTO-DOS-DESTINOS"
+cw = ["sí", "sí", "no", "sí"]
+nota_cw = "El mismo «Cuéntanos tu proyecto» lleva al formulario en la barra y a un brief de 35 a 45 min en la cabecera; el brief avisa su largo."
+evidencia = [
+  { cita = "src/data/paginas-de-servicio.js:66", extracto = "proyecto: '/brief-web'," },
+  { cita = "src/paginas/Servicio.jsx:89", extracto = "href={pagina.proyecto ?? '#contacto'}" },
+  { cita = "src/components/Barra.jsx:158", extracto = "ancla('contacto')}>Cuéntanos tu proyecto</a>" },
+  { cita = "src/lib/brief/preguntas.js:89-93", extracto = "35 a 45 min" },
+]
+
+[[reglas]]
+id = "R8b"
+texto = "Desde /ley21719 el formulario de la portada llega sin el servicio marcado (el campo es opcional)"
+friccion = false
+evidencia = [
+  { cita = "src/paginas/Ley21719.jsx:264", extracto = "<a className=\"boton boton-primario\" href=\"/#contacto\">" },
+  { cita = "src/paginas/Inicio.jsx:33", extracto = "cierre={<Contacto />}" },
+  { cita = "src/components/Contacto.jsx:159-178", extracto = "{/* Opcional a propósito: sirve para repartir el mensaje, no para" },
+]
+
+[[reglas]]
+id = "R9a"
+texto = "En desarrollo web, la cabecera ofrece el brief como «Cuéntanos tu proyecto»"
+friccion = false
+evidencia = [
+  { cita = "src/data/paginas-de-servicio.js:66", extracto = "proyecto: '/brief-web'," },
+  { cita = "src/paginas/Servicio.jsx:89", extracto = "href={pagina.proyecto ?? '#contacto'}" },
+]
+
+[[reglas]]
+id = "R10"
+texto = "El brief enviado antes de 8 s se descarta en silencio con 200 y el navegador borra lo guardado"
+friccion = true
+patron = "P-ANTIBOT-SILENCIO-SIN-JS"
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "La respuesta parece un éxito, sin número de referencia; no llegó nada y lo guardado se borró."
+evidencia = [
+  { cita = "src/lib/brief/reglas.js:38-40", extracto = "// Menos que esto entre abrir la página y enviar no lo hace una persona: el" },
+  { cita = "worker/brief.js:280-285", extracto = "if (limpiar(datos.get('hp_campo'), 200) || !(transcurrido >= TIEMPO_MINIMO)) {" },
+  { cita = "src/comportamiento/brief/brief.js:669-680", extracto = "if (!respuesta.ok) throw new Error((respuesta.status < 500 && mensaje) || FALLO)" },
+]
+
+[[reglas]]
+id = "R11"
+texto = "En el brief, Turnstile se monta al llegar a la revisión; si falla, las respuestas siguen guardadas"
+friccion = true
+cw = ["sí", "sí", "sí", "sí"]
+nota_cw = "Falla, pero el aviso dice que las respuestas siguen guardadas y ofrece reintentar o copiarlas."
+evidencia = [
+  { cita = "src/comportamiento/brief/brief.js:408", extracto = "turnstile.montar()" },
+  { cita = "src/comportamiento/brief/brief.js:52-53", extracto = "No pudimos enviar tu brief. Tus respuestas siguen guardadas en este equipo" },
+  { cita = "src/comportamiento/brief/brief.js:681-684", extracto = "fallo.querySelector('.brief-fallo-texto').textContent = error.name === 'Error' ? error.message : FALLO" },
+]
+
+[[reglas]]
+id = "R12"
+texto = "Sin almacenamiento, el brief no se guarda y lo avisa"
+friccion = true
+cw = ["sí", "sí", "sí", "sí"]
+nota_cw = "Avisó que no puede guardar («No cierres la página hasta enviar»)."
+evidencia = [
+  { cita = "src/lib/almacen.js:1-3", extracto = "// El almacenamiento del navegador puede no estar (modo privado, cookies" },
+  { cita = "src/comportamiento/brief/brief.js:163-166", extracto = "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio" },
+]
+
+[[reglas]]
+id = "R13"
+texto = "Sin GPU, sin WebGL o con movimiento reducido la escena queda quieta o en video y la página sigue entera"
+friccion = false
+evidencia = [
+  { cita = "src/comportamiento/nubes.js:44-49", extracto = "Nada en vivo sin GPU de verdad. Si el pintor dibuja por software, o con" },
+  { cita = "src/comportamiento/nubes.js:57-59", extracto = "Nada interactivo con movimiento reducido. Pinta un solo fotograma," },
+]
+
+[[reglas]]
+id = "R14"
+texto = "El estimado escribe lo marcado en el mensaje del formulario de la misma página"
+friccion = false
+evidencia = [{ cita = "src/comportamiento/estimado.js:61-72", extracto = "// «Pedir esta cotización» deja lo marcado escrito en el mensaje del" }]
+
+[[reglas]]
+id = "R15"
+texto = "Un agente WebMCP rellena el formulario y deja el foco en «Enviar mensaje»: la persona lo envía"
+friccion = false
+evidencia = [
+  { cita = "src/components/Contacto.jsx:40-43", extracto = "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo." },
+  { cita = "src/components/Contacto.jsx:81-82", extracto = "toolname=\"escribir_a_volutus\"" },
+]
+
+[[reglas]]
+id = "R16"
+texto = "Un agente WebMCP recibe el estimado con respondWith"
+friccion = false
+evidencia = [{ cita = "src/comportamiento/estimado.js:78-86", extracto = "// No hay nada que enviar: Enter en una cantidad no recarga la página. Si" }]
+
+[[reglas]]
+id = "R17"
+texto = "El brief guarda la hora de inicio con las respuestas: quien vuelve no cae en los 8 s"
+friccion = false
+evidencia = [
+  { cita = "src/comportamiento/brief/brief.js:134-139", extracto = "let inicio = guardado?.inicio ?? Date.now()" },
+  { cita = "src/comportamiento/brief/brief.js:163", extracto = "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio" },
+]
+
+[[reglas]]
+id = "R21"
+texto = "Sin JavaScript (o si brief.js no carga) el brief llega con «transcurrido» vacío: se descarta en silencio y la página dice «Recibimos tu brief.»"
+friccion = true
+patron = "P-ANTIBOT-SILENCIO-SIN-JS"
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "La página dice «Recibimos tu brief.» y no llegó nada."
+evidencia = [
+  { cita = "src/paginas/Brief.jsx:326", extracto = "name=\"transcurrido\"" },
+  { cita = "src/comportamiento/brief/brief.js:640", extracto = "campo('transcurrido').value = Date.now() - inicio" },
+  { cita = "src/client.js:299-302", extracto = "if (form) import('./comportamiento/brief/brief.js').then((modulo) => modulo.default(form))" },
+  { cita = "worker/brief.js:282-285", extracto = "const transcurrido = Number(datos.get('transcurrido'))" },
+  { cita = "worker/brief.js:85", extracto = "silencio: 'Recibimos tu brief.'," },
+]
+
+# ------------------------------------------------------------------------------------------------
+# Cadena de uso (Whittaker y Thomason): estados con argumentos, casos (se aplica el primero que
+# calza) y ramas. Un arco es (estado, arco o acción); las rutas concretas son superficies.
+# ------------------------------------------------------------------------------------------------
+[cadena]
+inicio = "inicio"
+profundidad_maxima = 30
+atribuibles = ["abandono_por_friccion", "perdida_silenciosa", "correo_directo", "contacto_con_friccion"]
+perdida = ["abandono_por_friccion", "perdida_silenciosa"]
+con_friccion = { contacto = "contacto_con_friccion" }
+
+[cadena.desenlaces]
+contacto = "Contacto sin fricción"
+contacto_con_friccion = "Contacto después de una fricción"
+correo_directo = "Escribe al correo tras un error"
+no_envia_whatsapp = "Abre WhatsApp y no envía"
+abandono_sin_intento = "Se va sin intentar contactar"
+abandono_por_friccion = "Se va por una fricción del código"
+perdida_silenciosa = "Envía y no llega nada (silencio)"
+
+[[estados]]
+id = "inicio"
+nombre = "Llegada"
+
+  [[estados.casos]]
+  si = "relacion == 'cliente_brief'"
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "brief_cliente"
+    accion = "abre el link del brief que le mandó Volutus"
+    regla = "R17"
+    superficies = ["/brief-web"]
+
+  [[estados.casos]]
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "pagina"
+    con = { donde = "destino", momento = "'llegada'" }
+    accion = "llega a {'/' if destino == 'home' else ('un artículo' if destino == 'articulo' else ('/ley21719' if destino == 'ley' else ruta_servicio))}"
+    arco = "llega a {'la portada' if destino == 'home' else ('un artículo' if destino == 'articulo' else ('/ley21719' if destino == 'ley' else 'la página de su servicio'))}"
+    superficies = ["{'/' if destino == 'home' else ('un artículo' if destino == 'articulo' else ('/ley21719' if destino == 'ley' else ruta_servicio))}"]
+
+[[estados]]
+id = "pagina"
+args = ["donde", "momento"]
+nombre = "En {'/' if donde == 'home' else ('un artículo' if donde == 'articulo' else ('/ley21719' if donde == 'ley' else ruta_servicio))}"
+
+[estados.locales]
+q_sale = "(p.sale_explorando if etapa == 'explorando' else (p.sale_comparando if etapa == 'comparando' else p.sale_listo)) if momento == 'llegada' else 0.0"
+resto = "1 - q_sale"
+
+  [[estados.casos]]
+  si = "donde in ('home', 'articulo')"
+  locales = { q = "0.0 if servicio == 'no_sabe' else (p.home_a_servicio if donde == 'home' else p.articulo_a_servicio)" }
+
+    [[estados.casos.ramas]]
+    prob = "q_sale"
+    va = "FIN:abandono_sin_intento"
+    accion = "se va sin buscar más"
+
+    [[estados.casos.ramas]]
+    prob = "resto * q"
+    va = "pagina"
+    con = { donde = "'ley' if servicio == 'datos' else 'servicio'", momento = "'navegando'" }
+    accion = "va a {'/ley21719' if servicio == 'datos' else ruta_servicio}"
+    arco = "va a {'/ley21719' if servicio == 'datos' else 'la página de su servicio'}"
+    superficies = ["{'/ley21719' if servicio == 'datos' else ruta_servicio}"]
+
+    [[estados.casos.ramas]]
+    prob = "resto * (1 - q)"
+    va = "decide"
+    con = { donde = "donde" }
+    accion = "{'sigue en la portada' if donde == 'home' else 'termina el artículo'}"
+
+  [[estados.casos]]
+  si = "donde == 'servicio'"
+
+    [[estados.casos.ramas]]
+    prob = "q_sale"
+    va = "FIN:abandono_sin_intento"
+    accion = "se va sin buscar más"
+
+    [[estados.casos.ramas]]
+    si = "agente"
+    prob = "resto * p.usa_estimado"
+    va = "estimado"
+    con = { donde = "'servicio'" }
+    accion = "el agente usa «estimar_precio» y recibe el estimado"
+    regla = "R16"
+
+    [[estados.casos.ramas]]
+    si = "not agente"
+    prob = "resto * p.usa_estimado"
+    va = "estimado"
+    con = { donde = "'servicio'" }
+    accion = "calcula un estimado"
+
+    [[estados.casos.ramas]]
+    prob = "resto * (1 - p.usa_estimado)"
+    va = "decide"
+    con = { donde = "'servicio'" }
+    accion = "lee la página sin calcular"
+
+  [[estados.casos]]
+  si = "donde == 'ley'"
+
+    [[estados.casos.ramas]]
+    prob = "q_sale"
+    va = "FIN:abandono_sin_intento"
+    accion = "se va sin buscar más"
+
+    [[estados.casos.ramas]]
+    prob = "resto * p.usa_estimado_ley"
+    va = "estimado"
+    con = { donde = "'ley'" }
+    accion = "calcula un estimado de la ley de datos"
+
+    [[estados.casos.ramas]]
+    prob = "resto * (1 - p.usa_estimado_ley)"
+    va = "decide"
+    con = { donde = "'ley'" }
+    accion = "lee la guía sin calcular"
+
+[[estados]]
+id = "estimado"
+args = ["donde"]
+nombre = "Estimado{' de la ley de datos' if donde == 'ley' else ''}"
+superficies = ["estimado"]
+
+  [[estados.casos]]
+  si = "donde == 'servicio'"
+
+    [[estados.casos.ramas]]
+    prob = "p.pide_cotizacion"
+    va = "form"
+    con = { donde = "'servicio'" }
+    accion = "pulsa «Pedir esta cotización»: el mensaje llega escrito"
+    regla = "R14"
+
+    [[estados.casos.ramas]]
+    prob = "1 - p.pide_cotizacion"
+    va = "decide"
+    con = { donde = "'servicio'" }
+    accion = "mira el precio y sigue leyendo"
+
+  # Hipótesis: /ley21719 lleva lo marcado al formulario, como los otros servicios.
+  [[estados.casos]]
+  si = "p.arreglo_r8"
+
+    [[estados.casos.ramas]]
+    prob = "p.pide_cotizacion"
+    va = "form"
+    con = { donde = "'servicio'" }
+    accion = "pulsa «Pedir esta cotización»: el mensaje llega escrito"
+    regla = "R14"
+
+    [[estados.casos.ramas]]
+    prob = "1 - p.pide_cotizacion"
+    va = "decide"
+    con = { donde = "'ley'" }
+    accion = "mira el precio y sigue leyendo"
+
+  [[estados.casos]]
+
+    [[estados.casos.ramas]]
+    prob = "p.pide_cotizacion"
+    va = "ley_a_portada"
+    accion = "pulsa «Pedir esta cotización»: va a la portada"
+    regla = "R8"
+
+    [[estados.casos.ramas]]
+    prob = "1 - p.pide_cotizacion"
+    va = "decide"
+    con = { donde = "'ley'" }
+    accion = "mira el precio y sigue leyendo"
+
+[[estados]]
+id = "ley_a_portada"
+nombre = "Portada, tras «Pedir esta cotización»"
+
+  [[estados.ramas]]
+  prob = "p.abandona_seleccion_perdida"
+  va = "FIN:abandono_por_friccion"
+  accion = "llega a un formulario vacío, sin lo que marcó, y se va"
+  regla = "R8"
+
+  [[estados.ramas]]
+  prob = "1 - p.abandona_seleccion_perdida"
+  va = "form"
+  con = { donde = "'home'" }
+  accion = "escribe de nuevo lo que necesita"
+  regla = "R8"
+
+[[estados]]
+id = "decide"
+args = ["donde"]
+nombre = "¿Escribe?"
+locales = { q = "p.contacta_explorando if etapa == 'explorando' else (p.contacta_comparando if etapa == 'comparando' else p.contacta_listo)" }
+
+  [[estados.casos]]
+  si = "donde == 'servicio' and servicio == 'web'"
+
+    [[estados.casos.ramas]]
+    prob = "1 - q"
+    va = "FIN:abandono_sin_intento"
+    accion = "decide no escribir por ahora"
+
+    [[estados.casos.ramas]]
+    prob = "q * p.usa_cta_brief_web"
+    va = "brief_prospecto"
+    accion = "pulsa «Cuéntanos tu proyecto» de la cabecera: abre el brief"
+    regla = "R9a"
+
+    [[estados.casos.ramas]]
+    prob = "q * (1 - p.usa_cta_brief_web)"
+    va = "form"
+    con = { donde = "'servicio'" }
+    accion = "baja al formulario"
+
+  # Hipótesis: la guía de la ley trae su propio formulario con el servicio marcado.
+  [[estados.casos]]
+  si = "donde == 'ley' and p.arreglo_r8"
+
+    [[estados.casos.ramas]]
+    prob = "1 - q"
+    va = "FIN:abandono_sin_intento"
+    accion = "decide no escribir por ahora"
+
+    [[estados.casos.ramas]]
+    prob = "q"
+    va = "form"
+    con = { donde = "'servicio'" }
+    accion = "va al formulario de la guía"
+
+  [[estados.casos]]
+  si = "donde == 'ley'"
+
+    [[estados.casos.ramas]]
+    prob = "1 - q"
+    va = "FIN:abandono_sin_intento"
+    accion = "decide no escribir por ahora"
+
+    [[estados.casos.ramas]]
+    prob = "q"
+    va = "form"
+    con = { donde = "'home'" }
+    accion = "pulsa «Cuéntanos tu proyecto»: va al formulario de la portada"
+    regla = "R8b"
+
+  [[estados.casos]]
+
+    [[estados.casos.ramas]]
+    prob = "1 - q"
+    va = "FIN:abandono_sin_intento"
+    accion = "decide no escribir por ahora"
+
+    [[estados.casos.ramas]]
+    prob = "q"
+    va = "form"
+    con = { donde = "donde" }
+    accion = "va al formulario"
+
+[[estados]]
+id = "brief_prospecto"
+nombre = "Brief (prospecto)"
+superficies = ["brief"]
+
+  [[estados.ramas]]
+  prob = "p.envia_brief_prospecto"
+  va = "validar_nombre"
+  con = { siguiente = "'brief_envio'", origen = "'brief'" }
+  accion = "llena lo obligatorio y llega a la revisión"
+
+  [[estados.ramas]]
+  prob = "(1 - p.envia_brief_prospecto) * p.vuelve_al_formulario"
+  va = "form"
+  con = { donde = "'servicio'" }
+  accion = "ve «35 a 45 min», vuelve y usa el formulario"
+  regla = "R9"
+
+  [[estados.ramas]]
+  prob = "(1 - p.envia_brief_prospecto) * (1 - p.vuelve_al_formulario)"
+  va = "FIN:abandono_por_friccion"
+  accion = "ve «35 a 45 min» y lo deja para después"
+  regla = "R9"
+
+[[estados]]
+id = "brief_cliente"
+nombre = "Brief (cliente)"
+superficies = ["brief"]
+locales = { m = "p.brief_en_varias_sesiones if almacen_bloqueado else 0.0", resto = "1 - m" }
+
+  [[estados.ramas]]
+  prob = "m"
+  va = "FIN:abandono_por_friccion"
+  accion = "lo llena en dos sesiones y al volver no hay nada guardado"
+  regla = "R12"
+
+  [[estados.ramas]]
+  prob = "resto * p.cliente_completa_brief"
+  va = "validar_nombre"
+  con = { siguiente = "'brief_envio'", origen = "'brief'" }
+  accion = "completa el brief y llega a la revisión"
+
+  [[estados.ramas]]
+  prob = "resto * (1 - p.cliente_completa_brief)"
+  va = "FIN:abandono_sin_intento"
+  accion = "no lo termina"
+
+[[estados]]
+id = "form"
+args = ["donde"]
+nombre = "Formulario{' de la portada' if donde == 'home' else ''}"
+superficies = ["formulario de contacto"]
+
+  [[estados.casos]]
+  si = "js_off"
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "nojs"
+    accion = "envía sin JavaScript: POST nativo"
+    regla = "R7"
+
+  [[estados.casos]]
+  si = "canal_envio == 'whatsapp'"
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "validar_nombre"
+    con = { siguiente = "'whatsapp'", origen = "'form'" }
+    accion = "elige WhatsApp y escribe"
+
+  [[estados.casos]]
+  si = "agente"
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "validar_nombre"
+    con = { siguiente = "'envio_correo'", origen = "'form'" }
+    accion = "el agente rellena el formulario y la persona lo revisa"
+    regla = "R15"
+
+  [[estados.casos]]
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "validar_nombre"
+    con = { siguiente = "'envio_correo'", origen = "'form'" }
+    accion = "elige correo y escribe"
+
+[[estados]]
+id = "validar_nombre"
+args = ["siguiente", "origen"]
+nombre = "Validación del nombre"
+
+  # Hipótesis: el nombre acepta ’, guion y punto.
+  [[estados.casos]]
+  si = "p.arreglo_r1 and nombre_tipo in ('apostrofo', 'guion_punto')"
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "$siguiente"
+    accion = "el nombre pasa"
+
+  [[estados.casos]]
+  si = "origen == 'brief' and js_brief_falla"
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "$siguiente"
+    accion = "sin brief.js no hay validación en el navegador"
+
+  [[estados.casos]]
+  si = "nombre_tipo == 'apostrofo' and smart_punct"
+
+    [[estados.casos.ramas]]
+    prob = "p.resuelve_nombre_opaco"
+    va = "$siguiente"
+    accion = "«Usa solo letras.»: quita el apóstrofo y sigue"
+    regla = "R1+R2"
+
+    [[estados.casos.ramas]]
+    prob = "1 - p.resuelve_nombre_opaco"
+    va = "FIN:abandono_por_friccion"
+    accion = "«Usa solo letras.» sobre su nombre bien escrito: se rinde"
+    regla = "R1+R2"
+
+  [[estados.casos]]
+  si = "nombre_tipo in ('guion_punto', 'empresa_signos')"
+
+    [[estados.casos.ramas]]
+    prob = "p.resuelve_nombre_claro"
+    va = "$siguiente"
+    accion = "«Usa solo letras.»: reescribe el nombre"
+    regla = "R1"
+
+    [[estados.casos.ramas]]
+    prob = "1 - p.resuelve_nombre_claro"
+    va = "FIN:abandono_por_friccion"
+    accion = "«Usa solo letras.»: no sabe cómo escribirlo y se va"
+    regla = "R1"
+
+  [[estados.casos]]
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "$siguiente"
+    accion = "el nombre pasa"
+
+[[estados]]
+id = "whatsapp"
+nombre = "WhatsApp"
+superficies = ["WhatsApp"]
+locales = { f = "p.inapp_falla_whatsapp if inapp else 0.0", resto = "1 - f" }
+
+  [[estados.ramas]]
+  prob = "f * p.cambia_a_correo"
+  va = "envio_correo"
+  accion = "WhatsApp no abre desde la app: cambia a correo"
+  regla = "R6"
+
+  [[estados.ramas]]
+  prob = "f * (1 - p.cambia_a_correo)"
+  va = "FIN:abandono_por_friccion"
+  accion = "WhatsApp no abre desde la app: se va"
+  regla = "R6"
+
+  [[estados.ramas]]
+  prob = "resto * p.whatsapp_envia"
+  va = "FIN:contacto"
+  accion = "se abre WhatsApp con el mensaje escrito y lo envía"
+
+  [[estados.ramas]]
+  prob = "resto * (1 - p.whatsapp_envia)"
+  va = "FIN:no_envia_whatsapp"
+  accion = "se abre WhatsApp pero no lo envía"
+
+[[estados]]
+id = "envio_correo"
+args = ["intento"]
+por_defecto = { intento = 1 }
+nombre = "Envío por correo{' (2.º intento)' if intento == 2 else ''}"
+superficies = ["POST /api/contacto"]
+
+[estados.locales]
+tn = "(p.token_no_listo_agente if intento == 1 else 0.02) if agente else (((p.token_no_listo_rapido_movil if dispositivo != 'escritorio' else p.token_no_listo_rapido_escritorio) if intento == 1 else 0.02) if pega_rapido else (p.token_no_listo_normal if intento == 1 else 0.002))"
+tf = "p.turnstile_falla_estricta if estricta else p.turnstile_falla_normal"
+rf = "p.resend_falla"
+
+  [[estados.ramas]]
+  prob = "(1 - tn) * (1 - tf) * (1 - rf)"
+  va = "FIN:contacto"
+  accion = "envía: «¡Gracias por escribirnos!»"
+
+  [[estados.ramas]]
+  prob = "tn"
+  va = "tras_error"
+  con = { intento = "intento", causa = "'R4'" }
+  accion = "envía antes de que llegue el token: 403 «No pudimos enviar tu mensaje…»"
+  regla = "R4"
+
+  [[estados.ramas]]
+  prob = "(1 - tn) * tf"
+  va = "tras_error"
+  con = { intento = "intento", causa = "'R4b'" }
+  accion = "Turnstile no pasa: 403 «No pudimos enviar tu mensaje…»"
+  regla = "R4b"
+
+  [[estados.ramas]]
+  prob = "(1 - tn) * (1 - tf) * rf"
+  va = "tras_error"
+  con = { intento = "2", causa = "'R5'" }
+  accion = "Resend no responde: 502"
+  regla = "R5"
+
+[[estados]]
+id = "tras_error"
+args = ["intento", "causa"]
+nombre = "Tras el error"
+locales = { r = "p.reintenta_tras_403 if intento == 1 else 0.0", c = "p.correo_directo_tras_error" }
+
+  [[estados.ramas]]
+  prob = "r"
+  va = "envio_correo"
+  con = { intento = "2" }
+  accion = "cierra el aviso y vuelve a enviar"
+  regla = "{causa}"
+
+  [[estados.ramas]]
+  prob = "(1 - r) * c"
+  va = "FIN:correo_directo"
+  accion = "copia el correo del aviso y escribe desde su correo"
+  regla = "{causa}"
+
+  [[estados.ramas]]
+  prob = "(1 - r) * (1 - c)"
+  va = "FIN:abandono_por_friccion"
+  accion = "cree que el sitio falla y se va"
+  regla = "{causa}"
+
+[[estados]]
+id = "nojs"
+nombre = "Respuesta sin JavaScript"
+superficies = ["POST /api/contacto"]
+
+[estados.locales]
+aviso = "'página «No pudimos enviar tu mensaje. Escríbenos directamente a…»' if (nombre_tipo == 'simple' or (nombre_tipo == 'apostrofo' and not smart_punct)) else 'página «Faltan datos o el correo no es válido…»'"
+c = "p.nojs_correo_directo"
+
+  [[estados.ramas]]
+  prob = "c"
+  va = "FIN:correo_directo"
+  accion = "{aviso}: escribe desde su correo"
+  regla = "R7"
+
+  [[estados.ramas]]
+  prob = "1 - c"
+  va = "FIN:abandono_por_friccion"
+  accion = "{aviso}: se va"
+  regla = "R7"
+
+[[estados]]
+id = "brief_envio"
+nombre = "Envío del brief"
+superficies = ["POST /api/brief"]
+
+  # Hipótesis: sin JS el brief responde como el contacto, con el correo directo.
+  [[estados.casos]]
+  si = "js_brief_falla and p.arreglo_r21"
+
+    [[estados.casos.ramas]]
+    prob = "p.nojs_correo_directo"
+    va = "FIN:correo_directo"
+    accion = "página con el correo: escribe desde su correo"
+    regla = "R21"
+
+    [[estados.casos.ramas]]
+    prob = "1 - p.nojs_correo_directo"
+    va = "FIN:abandono_por_friccion"
+    accion = "página con el correo: se va"
+    regla = "R21"
+
+  [[estados.casos]]
+  si = "js_brief_falla"
+
+    [[estados.casos.ramas]]
+    prob = "1.0"
+    va = "FIN:perdida_silenciosa"
+    accion = "POST nativo con «transcurrido» vacío: «Recibimos tu brief.» y no llega nada"
+    regla = "R21"
+
+  [[estados.casos]]
+
+  [estados.casos.locales]
+  a = "p.brief_rapido_si_agente if agente else 0.0"
+  resto = "1 - a"
+  cr = "p.carrera_turnstile_brief"
+  tf = "p.turnstile_falla_estricta if estricta else p.turnstile_falla_normal"
+  e = "cr + (1 - cr) * tf"
+  rb = "p.reintenta_brief"
+
+    [[estados.casos.ramas]]
+    si = "not p.arreglo_r21"
+    prob = "a"
+    va = "FIN:perdida_silenciosa"
+    accion = "el agente lo llena y la persona envía antes de 8 s: «Recibimos tu brief.» y no llega nada"
+    regla = "R10"
+
+    # Hipótesis: el apuro deja de ser silencioso; un aviso visible y el reintento llega.
+    [[estados.casos.ramas]]
+    si = "p.arreglo_r21"
+    prob = "a"
+    va = "FIN:contacto"
+    accion = "aviso visible: espera y reintenta"
+    regla = "R10"
+
+    [[estados.casos.ramas]]
+    prob = "resto * (1 - e)"
+    va = "FIN:contacto"
+    accion = "envía: «Tu número de referencia es B-…»"
+
+    [[estados.casos.ramas]]
+    prob = "resto * e * rb"
+    va = "FIN:contacto"
+    accion = "falla el envío; sus respuestas siguen guardadas y reintenta"
+    regla = "R11"
+
+    [[estados.casos.ramas]]
+    prob = "resto * e * (1 - rb)"
+    va = "FIN:correo_directo"
+    accion = "falla el envío; copia sus respuestas y las manda por correo"
+    regla = "R11"
+
+# ------------------------------------------------------------------------------------------------
+# Métricas: sumas de desenlaces.
+# ------------------------------------------------------------------------------------------------
+[[metricas]]
+id = "contacto_total"
+texto = "Contacto (todas las vías)"
+expr = "contacto + contacto_con_friccion + correo_directo"
+
+[[metricas]]
+id = "perdida_por_codigo"
+texto = "Pérdida atribuible al código"
+expr = "abandono_por_friccion + perdida_silenciosa"
+
+[[metricas]]
+id = "con_friccion"
+texto = "Pasa por alguna fricción"
+expr = "abandono_por_friccion + perdida_silenciosa + correo_directo + contacto_con_friccion"
+
+# ------------------------------------------------------------------------------------------------
+# Perfiles: regiones de la red. Se aplica el primero que calza; el informe los lista por id.
+# ------------------------------------------------------------------------------------------------
+[[perfiles]]
+id = "S6"
+nombre = "Cliente con el link del brief"
+si = "relacion == 'cliente_brief'"
+
+[[perfiles]]
+id = "S8"
+nombre = "Agente de IA por WebMCP"
+si = "agente"
+
+[[perfiles]]
+id = "S7"
+nombre = "Entorno restrictivo (sin JS, privacidad estricta o sin almacenamiento)"
+si = "js_off or estricta or almacen_bloqueado"
+
+[[perfiles]]
+id = "S5"
+nombre = "Negocio ante la Ley 21.719"
+si = "servicio == 'datos'"
+
+[[perfiles]]
+id = "S4"
+nombre = "iPhone o iPad (WebKit, Smart Punctuation)"
+si = "sistema in ('ios', 'ipados')"
+
+[[perfiles]]
+id = "S1"
+nombre = "Celular o tablet Android"
+si = "sistema == 'android'"
+
+[[perfiles]]
+id = "S2"
+nombre = "Escritorio, busca una página web"
+si = "servicio == 'web'"
+
+[[perfiles]]
+id = "S3"
+nombre = "Escritorio, otros servicios"
+si = "True"
+
+# ------------------------------------------------------------------------------------------------
+# Cobertura: 13 factores (todos sus pares), superficies con su clase y la red aplanada q.
+# ------------------------------------------------------------------------------------------------
+[[factores]]
+id = "plataforma"
+expr = "'android' if sistema == 'android' else ('ios_ipados' if sistema in ('ios', 'ipados') else ('macos' if sistema == 'macos' else 'windows_linux'))"
+
+[[factores]]
+id = "motor"
+expr = "motor"
+
+[[factores]]
+id = "navegador_de_app"
+expr = "inapp"
+
+[[factores]]
+id = "canal_envio"
+expr = "canal_envio"
+
+[[factores]]
+id = "js"
+expr = "'inactivo' if js_off else 'activo'"
+
+[[factores]]
+id = "almacenamiento"
+expr = "'bloqueado' if almacen_bloqueado else 'ok'"
+
+[[factores]]
+id = "movimiento"
+expr = "'reducido' if movimiento_reducido else 'normal'"
+
+[[factores]]
+id = "gpu"
+expr = "gpu"
+
+[[factores]]
+id = "usuario"
+expr = "'agente' if agente else 'persona'"
+
+[[factores]]
+id = "nombre"
+expr = "'simple' if nombre_tipo == 'simple' else ('apostrofo' if nombre_tipo == 'apostrofo' else 'otros_signos')"
+
+[[factores]]
+id = "ritmo"
+expr = "'pega_rapido' if pega_rapido else 'normal'"
+
+[[factores]]
+id = "privacidad"
+expr = "'estricta' if estricta else 'normal'"
+
+[[factores]]
+id = "destino"
+expr = "destino"
+
+[[superficies]]
+id = "/"
+clase = "portada"
+
+[[superficies]]
+id = "/servicios/desarrollo-web"
+clase = "página de servicio (src/paginas/Servicio.jsx)"
+
+[[superficies]]
+id = "/servicios/tiendas-online"
+clase = "página de servicio (src/paginas/Servicio.jsx)"
+
+[[superficies]]
+id = "/servicios/sistemas-de-gestion"
+clase = "página de servicio (src/paginas/Servicio.jsx)"
+
+[[superficies]]
+id = "/servicios/automatizacion-procesos"
+clase = "página de servicio (src/paginas/Servicio.jsx)"
+
+[[superficies]]
+id = "/servicios/agentes-ia"
+clase = "página de servicio (src/paginas/Servicio.jsx)"
+
+[[superficies]]
+id = "/servicios/desarrollo-software-a-medida"
+clase = "página de servicio (src/paginas/Servicio.jsx)"
+
+[[superficies]]
+id = "/servicios/prospeccion-de-clientes"
+clase = "página de servicio (src/paginas/Servicio.jsx)"
+
+[[superficies]]
+id = "/ley21719"
+clase = "/ley21719"
+
+[[superficies]]
+id = "un artículo"
+clase = "artículo (src/components/Articulo.jsx)"
+
+[[superficies]]
+id = "/brief-web"
+clase = "/brief-web"
+
+[[superficies]]
+id = "formulario de contacto"
+clase = "formulario de contacto"
+
+[[superficies]]
+id = "estimado"
+clase = "estimado"
+
+[[superficies]]
+id = "brief"
+clase = "brief"
+
+[[superficies]]
+id = "WhatsApp"
+clase = "WhatsApp"
+
+[[superficies]]
+id = "POST /api/contacto"
+clase = "POST /api/contacto"
+
+[[superficies]]
+id = "POST /api/brief"
+clase = "POST /api/brief"
+
+# Dos reglas que valen por el usuario, sin una rama propia.
+[[superficies]]
+id = "R13"
+clase = "regla R13"
+usuario = "gpu != 'ok' or movimiento_reducido"
+
+[[superficies]]
+id = "R15"
+clase = "regla R15"
+usuario = "agente"
+
+[cobertura]
+candidatos_universo = 60000
+candidatos_por_vuelta = 3000
+universo_arcos = 20000
+
+# q: la misma red con lo raro inflado, para generar candidatos de cobertura.
+[cobertura.aplanada.parametros]
+relacion_cliente_brief = 0.25
+inapp_si_redes_movil = 0.6
+movimiento_reducido = 0.3
+js_off = 0.15
+brief_js_falla = 0.1
+almacen_bloqueado = 0.2
+estricta_base = 0.2
+agente_en_chrome_escritorio = 0.5
+nombre_apostrofo = 0.2
+nombre_guion_punto = 0.15
+nombre_empresa_signos = 0.15
+pega_rapido_comparando = 0.3
+whatsapp_si_escritorio = 0.4
+
+[cobertura.aplanada.distribuciones]
+disp_base = { escritorio = 0.45, movil = 0.45, tablet = 0.10 }
+sistema_movil = { android = 0.5, ios = 0.5 }
+sistema_escritorio = { windows = 0.5, macos = 0.35, linux = 0.15 }
+nav_android = { chrome = 0.6, samsung = 0.15, opera = 0.1, firefox = 0.15 }
+nav_windows = { chrome = 0.5, edge = 0.25, firefox = 0.15, opera = 0.1 }
+nav_macos = { safari = 0.4, chrome = 0.4, firefox = 0.2 }
+gpu_escritorio = { ok = 0.4, lenta = 0.3, sin_webgl = 0.3 }
+gpu_movil = { ok = 0.4, lenta = 0.3, sin_webgl = 0.3 }
+canal = { google = 0.2, articulo = 0.2, recomendacion = 0.15, redes = 0.2, directo = 0.1, ia = 0.15 }
+servicio_base = "uniforme"
+destino_google = "uniforme"
+destino_recomendacion = "uniforme"
+destino_redes = "uniforme"
+destino_ia = "uniforme"
+
+# ------------------------------------------------------------------------------------------------
+# Fidelidad del generador (además de la revisión automática de cada caso).
+# ------------------------------------------------------------------------------------------------
+[[fidelidad]]
+texto = "Relación: cliente con link"
+expr = "relacion == 'cliente_brief'"
+declarada = "p.relacion_cliente_brief"
+
+[[fidelidad]]
+texto = "Sin JavaScript"
+expr = "js_off"
+declarada = "p.js_off"
+
+[[fidelidad]]
+texto = "Sin almacenamiento"
+expr = "almacen_bloqueado"
+declarada = "p.almacen_bloqueado"
+
+[[fidelidad]]
+texto = "Movimiento reducido"
+expr = "movimiento_reducido"
+declarada = "p.movimiento_reducido"
+
+[[fidelidad]]
+texto = "Nombre con apóstrofo"
+expr = "nombre_tipo == 'apostrofo'"
+declarada = "p.nombre_apostrofo"
+
+[[fidelidad]]
+texto = "Nombre con guion o punto"
+expr = "nombre_tipo == 'guion_punto'"
+declarada = "p.nombre_guion_punto"
+
+[[fidelidad]]
+texto = "iOS, dado celular (ancla)"
+expr = "sistema == 'ios'"
+dado = "dispositivo == 'movil'"
+declarada = "d.sistema_movil.ios"
+
+[[fidelidad]]
+texto = "Windows, dado escritorio (ancla)"
+expr = "sistema == 'windows'"
+dado = "dispositivo == 'escritorio'"
+declarada = "d.sistema_escritorio.windows"
+
+[[fidelidad]]
+texto = "Celular, dado que llega por Google (ancla)"
+expr = "dispositivo == 'movil'"
+dado = "canal == 'google'"
+declarada = "d.disp_base.movil"
+
+[[fidelidad]]
+texto = "Smart Punctuation, dado iOS o iPadOS"
+expr = "smart_punct"
+dado = "sistema in ('ios', 'ipados')"
+declarada = "p.smart_punct_on"
+
+# ------------------------------------------------------------------------------------------------
+# Sensibilidad: Morris sobre 24 supuestos (el orden fija los sorteos).
+# ------------------------------------------------------------------------------------------------
+[sensibilidad]
+parametros = ["movil_si_recomendacion", "relacion_cliente_brief", "nombre_apostrofo", "smart_punct_on", "resuelve_nombre_opaco", "nombre_guion_punto", "nombre_empresa_signos", "resuelve_nombre_claro", "pega_rapido_comparando", "token_no_listo_rapido_movil", "token_no_listo_rapido_escritorio", "reintenta_tras_403", "correo_directo_tras_error", "usa_estimado_ley", "pide_cotizacion", "abandona_seleccion_perdida", "usa_cta_brief_web", "envia_brief_prospecto", "vuelve_al_formulario", "estricta_base", "turnstile_falla_estricta", "js_off", "contacta_comparando", "sale_explorando"]
+metricas = ["contacto_total", "perdida_por_codigo"]
+ordenar_por = "perdida_por_codigo"
+trayectorias = 10
+niveles = 4
+usuarios = 2000
+
+# ------------------------------------------------------------------------------------------------
+# Hipótesis: qué cambia si se arregla cada fricción (solo cambios de parámetros).
+# ------------------------------------------------------------------------------------------------
+[[hipotesis]]
+id = "r1"
+texto = "R1+R2: aceptar ’, guion y punto en el nombre"
+cambios = { arreglo_r1 = true }
+
+[[hipotesis]]
+id = "r4"
+texto = "R4: esperar el token antes de enviar"
+cambios = { token_no_listo_rapido_movil = 0.002, token_no_listo_rapido_escritorio = 0.002, token_no_listo_normal = 0.002, token_no_listo_agente = 0.002 }
+
+[[hipotesis]]
+id = "r8"
+texto = "R8: llevar lo marcado y el servicio desde /ley21719"
+cambios = { arreglo_r8 = true }
+
+[[hipotesis]]
+id = "r9"
+texto = "R9: «Cuéntanos tu proyecto» de la cabecera al formulario"
+cambios = { usa_cta_brief_web = 0.0 }
+
+[[hipotesis]]
+id = "r21"
+texto = "R21+R10: el brief sin JS (o apurado) responde como el contacto"
+cambios = { arreglo_r21 = true }
+
+[[hipotesis]]
+id = "todos"
+texto = "Todos"
+cambios = { arreglo_r1 = true, arreglo_r8 = true, arreglo_r21 = true, token_no_listo_rapido_movil = 0.002, token_no_listo_rapido_escritorio = 0.002, token_no_listo_normal = 0.002, token_no_listo_agente = 0.002, usa_cta_brief_web = 0.0 }
+
+# ------------------------------------------------------------------------------------------------
+# Nombres sintéticos (no son personas reales): cada caso sortea, en orden, de sus listas.
+# ------------------------------------------------------------------------------------------------
+[nombres.listas]
+persona = ["Camila", "Javiera", "Francisca", "Constanza", "Valentina", "Daniela", "Carolina", "Paula", "Marcela", "Lorena", "Patricia", "Claudia", "Fernanda", "Catalina", "Rocío", "Ximena", "Gloria", "Andrea", "Pamela", "Macarena", "Matías", "Sebastián", "Diego", "Felipe", "Cristóbal", "Nicolás", "Rodrigo", "Gonzalo", "Patricio", "Mauricio", "Jorge", "Luis", "Claudio", "Andrés", "Tomás", "Ignacio", "Marcelo", "Héctor", "Raúl", "Esteban"]
+apellido = ["González", "Muñoz", "Rojas", "Díaz", "Pérez", "Soto", "Contreras", "Silva", "Martínez", "Sepúlveda", "Morales", "Rodríguez", "López", "Fuentes", "Hernández", "Torres", "Araya", "Flores", "Espinoza", "Valenzuela", "Castillo", "Tapia", "Reyes", "Gutiérrez", "Castro", "Pizarro", "Álvarez", "Vásquez", "Sánchez", "Fernández"]
+apellido_apostrofo = ["O'Ryan", "D'Alessandro", "O'Kuinghttons", "D'Amico", "O'Brien", "D'Angelo", "D'Etigny", "O'Neill"]
+nombre_guion_punto = ["Jean-Baptiste", "Marie-Claire", "Ma. José", "M. Ignacia", "Ana-María", "Jean-Pierre", "Ma. Paz", "Marie-Ange", "Ma. Fernanda"]
+empresa = ["Ferretería Hnos. Soto", "Pinturas & Más", "Taller 2 Ruedas", "Dulces Doña Rosa Ltda.", "Clínica Dental Sonrisa+"]
+
+[[nombres.casos]]
+si = "nombre_tipo == 'apostrofo'"
+sorteos = ["nombre:persona", "apellido:apellido", "apellido:apellido_apostrofo"]
+plantilla = "{nombre} {apellido}"
+
+[[nombres.casos]]
+si = "nombre_tipo == 'guion_punto'"
+sorteos = ["nombre:persona", "apellido:apellido", "nombre:nombre_guion_punto"]
+plantilla = "{nombre} {apellido}"
+
+[[nombres.casos]]
+si = "nombre_tipo == 'empresa_signos'"
+sorteos = ["nombre:persona", "apellido:apellido", "empresa:empresa"]
+plantilla = "{empresa}"
+
+[[nombres.casos]]
+sorteos = ["nombre:persona", "apellido:apellido"]
+plantilla = "{nombre} {apellido}"

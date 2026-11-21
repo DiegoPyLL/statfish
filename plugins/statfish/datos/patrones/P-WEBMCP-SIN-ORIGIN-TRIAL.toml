@@ -1,0 +1,33 @@
+id = "P-WEBMCP-SIN-ORIGIN-TRIAL"
+tipo = "patron"
+titulo = "Anotaciones WebMCP sin token de origin trial: hoy casi nadie las usa"
+aplica_si = "'webmcp' in rasgos and not origin_trial"
+
+[deteccion]
+regex = ['toolname=', '(?i)origin-trial']
+pistas = [
+  "Busca un <meta http-equiv=\"origin-trial\"> o el encabezado Origin-Trial: sin token, en Chrome estable las anotaciones solo responden con el flag de pruebas.",
+  "Revisa toolautosubmit: sin él, el agente rellena y la persona envía (y puede aparecer la carrera de Turnstile).",
+  "Consulta el estado de WebMCP antes de dar masa a los agentes: cambia rápido (ancla webmcp-estado-*).",
+]
+
+[regla]
+texto = "El sitio declara herramientas WebMCP pero no un token de origin trial: en Chrome estable casi nadie puede usarlas"
+friccion = false
+cw = ["sí", "no", "sí", "sí"]
+nota_cw = "Un agente sin el flag de pruebas no ve las herramientas."
+
+[[parametros]]
+id = "agente_en_chrome_escritorio"
+texto = "Agente WebMCP entre quienes usan Chrome o Edge de escritorio con JS"
+p50 = 0.002
+p10 = 0.0005
+p90 = 0.01
+fuente = "prior:elicitacion"
+anclas = ["webmcp-estado-2026-11"]
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+reglas = ["R15", "R16"]
+nota = "Sin issue: hoy no afecta a nadie."

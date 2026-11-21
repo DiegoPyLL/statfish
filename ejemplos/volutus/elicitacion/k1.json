@@ -1,0 +1,588 @@
+{
+ "elicitador": {
+  "k": 1,
+  "quien": "el agente que hizo el caso Volutus, en una sola conversación",
+  "fecha": "2026-11-20",
+  "nota": "Caso de viabilidad: una sola elicitación, sin contexto limpio ni independencia. Con el plugin, cada k sale de una llamada aparte al agente statfish:elicitador."
+ },
+ "parametros": {
+  "relacion_cliente_brief": {
+   "p10": 0.02,
+   "p50": 0.05,
+   "p90": 0.1,
+   "razon": "Llega un cliente con el link del brief"
+  },
+  "movil_si_redes": {
+   "p10": 0.65,
+   "p50": 0.8,
+   "p90": 0.9,
+   "razon": "Celular, si llega por redes"
+  },
+  "movil_si_recomendacion": {
+   "p10": 0.55,
+   "p50": 0.7,
+   "p90": 0.85,
+   "razon": "Celular, si llega por recomendación"
+  },
+  "inapp_si_redes_movil": {
+   "p10": 0.4,
+   "p50": 0.6,
+   "p90": 0.8,
+   "razon": "Navegador de la app (Instagram, Facebook), si llega por redes en celular"
+  },
+  "movimiento_reducido": {
+   "p10": 0.02,
+   "p50": 0.05,
+   "p90": 0.1,
+   "razon": "Movimiento reducido activo"
+  },
+  "js_off": {
+   "p10": 0.002,
+   "p50": 0.005,
+   "p90": 0.015,
+   "razon": "JavaScript inactivo"
+  },
+  "brief_js_falla": {
+   "p10": 0.001,
+   "p50": 0.005,
+   "p90": 0.02,
+   "razon": "brief.js no carga"
+  },
+  "almacen_bloqueado": {
+   "p10": 0.01,
+   "p50": 0.03,
+   "p90": 0.06,
+   "razon": "Sin almacenamiento del navegador"
+  },
+  "estricta_base": {
+   "p10": 0.01,
+   "p50": 0.03,
+   "p90": 0.06,
+   "razon": "Privacidad estricta (× 5 en Firefox)"
+  },
+  "agente_en_chrome_escritorio": {
+   "p10": 0.0005,
+   "p50": 0.002,
+   "p90": 0.01,
+   "razon": "Agente WebMCP, entre quienes usan Chrome o Edge de escritorio con JS"
+  },
+  "smart_punct_on": {
+   "p10": 0.85,
+   "p50": 0.95,
+   "p90": 0.99,
+   "razon": "Smart Punctuation activo en iOS y iPadOS"
+  },
+  "nombre_apostrofo": {
+   "p10": 0.001,
+   "p50": 0.004,
+   "p90": 0.01,
+   "razon": "Nombre con apóstrofo"
+  },
+  "nombre_guion_punto": {
+   "p10": 0.01,
+   "p50": 0.021,
+   "p90": 0.04,
+   "razon": "Nombre con guion o punto"
+  },
+  "nombre_empresa_signos": {
+   "p10": 0.01,
+   "p50": 0.025,
+   "p90": 0.05,
+   "razon": "Escribe el nombre del negocio, con signos"
+  },
+  "whatsapp_si_movil": {
+   "p10": 0.3,
+   "p50": 0.45,
+   "p90": 0.6,
+   "razon": "Envía por WhatsApp, en celular"
+  },
+  "whatsapp_si_escritorio": {
+   "p10": 0.1,
+   "p50": 0.2,
+   "p90": 0.35,
+   "razon": "Envía por WhatsApp, en escritorio"
+  },
+  "pega_rapido_comparando": {
+   "p10": 0.05,
+   "p50": 0.1,
+   "p90": 0.2,
+   "razon": "Pega y envía rápido, si está comparando (× 0,5 explorando, × 2 listo)"
+  },
+  "sale_explorando": {
+   "p10": 0.4,
+   "p50": 0.55,
+   "p90": 0.7,
+   "razon": "Sale de inmediato, si está explorando"
+  },
+  "sale_comparando": {
+   "p10": 0.2,
+   "p50": 0.35,
+   "p90": 0.5,
+   "razon": "Sale de inmediato, si está comparando"
+  },
+  "sale_listo": {
+   "p10": 0.05,
+   "p50": 0.1,
+   "p90": 0.2,
+   "razon": "Sale de inmediato, si está listo"
+  },
+  "home_a_servicio": {
+   "p10": 0.45,
+   "p50": 0.6,
+   "p90": 0.75,
+   "razon": "De la portada a su servicio"
+  },
+  "articulo_a_servicio": {
+   "p10": 0.15,
+   "p50": 0.3,
+   "p90": 0.45,
+   "razon": "Del artículo a su servicio"
+  },
+  "usa_estimado": {
+   "p10": 0.3,
+   "p50": 0.45,
+   "p90": 0.6,
+   "razon": "Usa el estimado en la página de su servicio"
+  },
+  "usa_estimado_ley": {
+   "p10": 0.25,
+   "p50": 0.4,
+   "p90": 0.55,
+   "razon": "Usa el estimado en /ley21719"
+  },
+  "pide_cotizacion": {
+   "p10": 0.2,
+   "p50": 0.35,
+   "p90": 0.5,
+   "razon": "Pulsa «Pedir esta cotización» tras el estimado"
+  },
+  "contacta_explorando": {
+   "p10": 0.05,
+   "p50": 0.1,
+   "p90": 0.2,
+   "razon": "Escribe, si está explorando"
+  },
+  "contacta_comparando": {
+   "p10": 0.2,
+   "p50": 0.3,
+   "p90": 0.45,
+   "razon": "Escribe, si está comparando"
+  },
+  "contacta_listo": {
+   "p10": 0.55,
+   "p50": 0.7,
+   "p90": 0.85,
+   "razon": "Escribe, si está listo"
+  },
+  "abandona_seleccion_perdida": {
+   "p10": 0.1,
+   "p50": 0.25,
+   "p90": 0.45,
+   "razon": "Se va al perder lo marcado (R8)"
+  },
+  "usa_cta_brief_web": {
+   "p10": 0.25,
+   "p50": 0.4,
+   "p90": 0.55,
+   "razon": "Usa «Cuéntanos tu proyecto» de la cabecera en desarrollo web"
+  },
+  "envia_brief_prospecto": {
+   "p10": 0.25,
+   "p50": 0.45,
+   "p90": 0.65,
+   "razon": "Prospecto que envía el brief"
+  },
+  "vuelve_al_formulario": {
+   "p10": 0.2,
+   "p50": 0.35,
+   "p90": 0.5,
+   "razon": "Vuelve al formulario si deja el brief"
+  },
+  "resuelve_nombre_opaco": {
+   "p10": 0.3,
+   "p50": 0.55,
+   "p90": 0.8,
+   "razon": "Resuelve «Usa solo letras.» cuando no ve qué cambió (’)"
+  },
+  "resuelve_nombre_claro": {
+   "p10": 0.7,
+   "p50": 0.85,
+   "p90": 0.95,
+   "razon": "Resuelve «Usa solo letras.» cuando ve el signo"
+  },
+  "token_no_listo_rapido_movil": {
+   "p10": 0.15,
+   "p50": 0.35,
+   "p90": 0.55,
+   "razon": "Token de Turnstile sin llegar, si pega rápido en celular"
+  },
+  "token_no_listo_rapido_escritorio": {
+   "p10": 0.05,
+   "p50": 0.15,
+   "p90": 0.3,
+   "razon": "Token de Turnstile sin llegar, si pega rápido en escritorio"
+  },
+  "token_no_listo_normal": {
+   "p10": 0.002,
+   "p50": 0.01,
+   "p90": 0.03,
+   "razon": "Token de Turnstile sin llegar, a ritmo normal"
+  },
+  "token_no_listo_agente": {
+   "p10": 0.3,
+   "p50": 0.6,
+   "p90": 0.85,
+   "razon": "Token de Turnstile sin llegar, si un agente rellena y la persona envía"
+  },
+  "turnstile_falla_estricta": {
+   "p10": 0.1,
+   "p50": 0.3,
+   "p90": 0.5,
+   "razon": "Turnstile falla con privacidad estricta"
+  },
+  "turnstile_falla_normal": {
+   "p10": 0.001,
+   "p50": 0.005,
+   "p90": 0.02,
+   "razon": "Turnstile falla sin privacidad estricta"
+  },
+  "reintenta_tras_403": {
+   "p10": 0.1,
+   "p50": 0.25,
+   "p90": 0.4,
+   "razon": "Reintenta tras el 403"
+  },
+  "correo_directo_tras_error": {
+   "p10": 0.2,
+   "p50": 0.35,
+   "p90": 0.5,
+   "razon": "Escribe al correo del aviso tras un error"
+  },
+  "resend_falla": {
+   "p10": 0.0005,
+   "p50": 0.002,
+   "p90": 0.01,
+   "razon": "Resend no responde"
+  },
+  "whatsapp_envia": {
+   "p10": 0.7,
+   "p50": 0.85,
+   "p90": 0.95,
+   "razon": "Envía el WhatsApp que se abrió"
+  },
+  "inapp_falla_whatsapp": {
+   "p10": 0.02,
+   "p50": 0.1,
+   "p90": 0.25,
+   "razon": "WhatsApp no abre desde el navegador de una app"
+  },
+  "cambia_a_correo": {
+   "p10": 0.3,
+   "p50": 0.5,
+   "p90": 0.7,
+   "razon": "Cambia a correo si WhatsApp no abre"
+  },
+  "nojs_correo_directo": {
+   "p10": 0.2,
+   "p50": 0.4,
+   "p90": 0.6,
+   "razon": "Sin JS, escribe al correo de la página de respuesta"
+  },
+  "cliente_completa_brief": {
+   "p10": 0.6,
+   "p50": 0.8,
+   "p90": 0.9,
+   "razon": "Cliente que completa el brief"
+  },
+  "brief_rapido_si_agente": {
+   "p10": 0.2,
+   "p50": 0.5,
+   "p90": 0.8,
+   "razon": "Un agente llena el brief y la persona lo envía antes de 8 s"
+  },
+  "carrera_turnstile_brief": {
+   "p10": 0.01,
+   "p50": 0.05,
+   "p90": 0.15,
+   "razon": "Carrera de Turnstile en la revisión del brief"
+  },
+  "reintenta_brief": {
+   "p10": 0.7,
+   "p50": 0.85,
+   "p90": 0.95,
+   "razon": "Reintenta el brief que falló"
+  },
+  "brief_en_varias_sesiones": {
+   "p10": 0.25,
+   "p50": 0.4,
+   "p90": 0.6,
+   "razon": "Llena el brief en varias sesiones"
+  }
+ },
+ "distribuciones": {
+  "canal": {
+   "valores": {
+    "google": 0.32,
+    "articulo": 0.14,
+    "recomendacion": 0.2,
+    "redes": 0.14,
+    "directo": 0.08,
+    "ia": 0.12
+   },
+   "kappa": 15.0,
+   "razon": "Canal de llegada de un prospecto"
+  },
+  "disp_cliente": {
+   "valores": {
+    "escritorio": 0.6,
+    "movil": 0.3,
+    "tablet": 0.1
+   },
+   "kappa": 10.0,
+   "razon": "Dispositivo de un cliente que abre el brief"
+  },
+  "sistema_tablet": {
+   "valores": {
+    "ipados": 0.6,
+    "android": 0.4
+   },
+   "kappa": 10.0,
+   "razon": "Sistema de la tablet"
+  },
+  "nav_android": {
+   "valores": {
+    "chrome": 0.85,
+    "samsung": 0.08,
+    "opera": 0.04,
+    "firefox": 0.03
+   },
+   "kappa": 50.0,
+   "razon": "Navegador en Android"
+  },
+  "nav_ios": {
+   "valores": {
+    "safari": 0.82,
+    "chrome": 0.15,
+    "otro": 0.03
+   },
+   "kappa": 30.0,
+   "razon": "Navegador en iOS (todos usan WebKit)"
+  },
+  "nav_ipados": {
+   "valores": {
+    "safari": 0.9,
+    "chrome": 0.1
+   },
+   "kappa": 20.0,
+   "razon": "Navegador en iPadOS"
+  },
+  "nav_windows": {
+   "valores": {
+    "chrome": 0.8,
+    "edge": 0.13,
+    "firefox": 0.04,
+    "opera": 0.03
+   },
+   "kappa": 50.0,
+   "razon": "Navegador en Windows"
+  },
+  "nav_macos": {
+   "valores": {
+    "safari": 0.45,
+    "chrome": 0.48,
+    "firefox": 0.07
+   },
+   "kappa": 30.0,
+   "razon": "Navegador en macOS"
+  },
+  "nav_linux": {
+   "valores": {
+    "chrome": 0.7,
+    "firefox": 0.3
+   },
+   "kappa": 10.0,
+   "razon": "Navegador en Linux"
+  },
+  "gpu_escritorio": {
+   "valores": {
+    "ok": 0.86,
+    "lenta": 0.12,
+    "sin_webgl": 0.02
+   },
+   "kappa": 20.0,
+   "razon": "GPU en escritorio"
+  },
+  "gpu_movil": {
+   "valores": {
+    "ok": 0.92,
+    "lenta": 0.07,
+    "sin_webgl": 0.01
+   },
+   "kappa": 20.0,
+   "razon": "GPU en celular y tablet"
+  },
+  "tamano": {
+   "valores": {
+    "independiente": 0.25,
+    "micro": 0.4,
+    "pequena": 0.25,
+    "mediana": 0.08,
+    "grande": 0.02
+   },
+   "kappa": 15.0,
+   "razon": "Tamaño del negocio"
+  },
+  "servicio_base": {
+   "valores": {
+    "web": 0.25,
+    "tienda": 0.13,
+    "gestion": 0.12,
+    "automatizacion": 0.1,
+    "agente": 0.1,
+    "app": 0.08,
+    "prospeccion": 0.06,
+    "datos": 0.1,
+    "no_sabe": 0.06
+   },
+   "kappa": 12.0,
+   "razon": "Servicio que busca (antes de la inclinación por tamaño)"
+  },
+  "etapa_google": {
+   "valores": {
+    "explorando": 0.55,
+    "comparando": 0.3,
+    "listo": 0.15
+   },
+   "kappa": 12.0,
+   "razon": "etapa_google"
+  },
+  "etapa_articulo": {
+   "valores": {
+    "explorando": 0.7,
+    "comparando": 0.22,
+    "listo": 0.08
+   },
+   "kappa": 12.0,
+   "razon": "etapa_articulo"
+  },
+  "etapa_recomendacion": {
+   "valores": {
+    "explorando": 0.35,
+    "comparando": 0.35,
+    "listo": 0.3
+   },
+   "kappa": 12.0,
+   "razon": "etapa_recomendacion"
+  },
+  "etapa_redes": {
+   "valores": {
+    "explorando": 0.65,
+    "comparando": 0.25,
+    "listo": 0.1
+   },
+   "kappa": 12.0,
+   "razon": "etapa_redes"
+  },
+  "etapa_directo": {
+   "valores": {
+    "explorando": 0.4,
+    "comparando": 0.35,
+    "listo": 0.25
+   },
+   "kappa": 12.0,
+   "razon": "etapa_directo"
+  },
+  "etapa_ia": {
+   "valores": {
+    "explorando": 0.45,
+    "comparando": 0.35,
+    "listo": 0.2
+   },
+   "kappa": 12.0,
+   "razon": "etapa_ia"
+  },
+  "destino_google": {
+   "valores": {
+    "servicio": 0.5,
+    "home": 0.35,
+    "articulo": 0.15
+   },
+   "kappa": 10.0,
+   "razon": "destino_google"
+  },
+  "destino_recomendacion": {
+   "valores": {
+    "home": 0.75,
+    "servicio": 0.25
+   },
+   "kappa": 10.0,
+   "razon": "destino_recomendacion"
+  },
+  "destino_redes": {
+   "valores": {
+    "home": 0.7,
+    "servicio": 0.2,
+    "articulo": 0.1
+   },
+   "kappa": 10.0,
+   "razon": "destino_redes"
+  },
+  "destino_ia": {
+   "valores": {
+    "servicio": 0.5,
+    "articulo": 0.3,
+    "home": 0.2
+   },
+   "kappa": 10.0,
+   "razon": "destino_ia"
+  },
+  "rubro": {
+   "valores": {
+    "comercio": 0.3,
+    "servicios profesionales": 0.18,
+    "gastronomía": 0.1,
+    "salud y bienestar": 0.1,
+    "construcción": 0.06,
+    "manufactura": 0.06,
+    "transporte": 0.05,
+    "educación": 0.05,
+    "agro": 0.05,
+    "turismo": 0.05
+   },
+   "kappa": 10.0,
+   "razon": "Rubro (solo relato)"
+  },
+  "region": {
+   "valores": {
+    "Metropolitana": 0.45,
+    "Valparaíso": 0.095,
+    "Biobío": 0.09,
+    "Maule": 0.05,
+    "Araucanía": 0.05,
+    "O'Higgins": 0.05,
+    "Coquimbo": 0.04,
+    "Antofagasta": 0.04,
+    "Los Lagos": 0.04,
+    "Ñuble": 0.02,
+    "Los Ríos": 0.02,
+    "Atacama": 0.015,
+    "Tarapacá": 0.015,
+    "Arica y Parinacota": 0.01,
+    "Magallanes": 0.01,
+    "Aysén": 0.005
+   },
+   "kappa": 30.0,
+   "razon": "Región (solo relato)"
+  },
+  "edad": {
+   "valores": {
+    "18-29": 0.15,
+    "30-44": 0.4,
+    "45-59": 0.33,
+    "60+": 0.12
+   },
+   "kappa": 10.0,
+   "razon": "Edad (solo relato)"
+  }
+ }
+}

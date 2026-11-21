@@ -1,0 +1,35 @@
+{
+ "motor": "0.1.0",
+ "python": "3.15",
+ "semilla": 20261120,
+ "rapido": false,
+ "fecha": "2026-11-20",
+ "repo": "VolutusDevelopment/VolutusLandingPage",
+ "commit": "76b713a27709786c77c2c219063f92ae0628496a",
+ "entradas": {
+  "contexto.toml": "64b581be9a86b52ccd18da7d428b36aa4892dae3a11ca3b53598847c9172e21d",
+  "recorrido.toml": "1b26bfd4d2f5443e53bb4e4c74f76437bc984b128f38491c68e5ca10b2c148a9",
+  "modelo.toml": "73ccacbec6f9722bb49103ae6ba162ec823106e1309e508f2408c5241917e377",
+  "hallazgos.toml": "d7704576e849714249e730e570e712dd1da92c5688194c3e94d72efffcdb5f4d",
+  "lectura.md": "6d83c3bb4921df0f7d1e6057d5ae1e78d9880a887b22d8b71a8962412b2f3927",
+  "relatos.toml": "3665d62a9b61256f75c8c01556917000229d74c3807d50c73be06c2bc9ac11ed",
+  "anclas/ine/CL/2025.toml": "320dd1bd36b32f7a6de9cea072dc0db96c60840d95a26690f06182867fb4792f",
+  "anclas/sii/CL/2024.toml": "d4adc099c43790f1e8c99751686dcefeea8b5e8e030caec087f198f10c4e5533",
+  "anclas/statcounter/CL/2026-10.toml": "75092902aafc86c0345da65e4578a6bf187f3d44b3a877cb3ca8e929e9a35372",
+  "anclas/webmcp/global/2026-11.toml": "5c648f260186844afc3e56502d4be2215ba9725ab72c23a9d2457a11b1245085",
+  "elicitacion/combinada.json": "efc5c19746e444cc89214da3bfaeed7e94a39626bc33e9c8d9dc235f91e8d158",
+  "elicitacion/k1.json": "7db43ba5d812eb9dfaa5857b2729d2cb6ab23b5dfcba0969ded527a4457f3f96"
+ },
+ "salidas": {
+  "salida/usuarios.json": "fe3a61d27e7e9d59a6674a992917e73fc51ba742294af67e86a927bb7576a358",
+  "salida/trazas.json": "f121be9c4384b552773daca7921a9692016f4d8aaed87849393af0542907c7e9",
+  "salida/resultados.json": "ddfccc6d8d46d6a194b1dc77fb6db930ae0256ff5616080e1408ff25b5c590f9",
+  "salida/evidencia.json": "ae09471c0660f996cf3440157e957f73f49d7803f2be60eef5bf657fc8e267a6",
+  "informe.md": "2f129046143075a28753ae372bb4292d72d34a2212b149edd96944ab52fc429d",
+  "salida/issues/H-R1.md": "3b0d4b61c7bd0f52c18e773e59b7d3c064ae1695e6c7b02129c98db8c13b010c",
+  "salida/issues/H-R21.md": "bb93660a5dbb5e079136a212f8160556e28ec163ca4d6dbf1ed31ca5eb0071e4",
+  "salida/issues/H-R4.md": "2b6998bc2aff7a0da1e4a11f82916a436640a26088a1ab263dca35f1e8817de9",
+  "salida/issues/H-R8.md": "2c2a53538286715a2ffa73076b96d17850e7f584f7e4840bf3dabf580d54db01",
+  "salida/issues/H-R9.md": "1a39b22ca1cb3354bfb8f47fd25f716f8b014c2bd41856efe69bd8580d8abd76"
+ }
+}

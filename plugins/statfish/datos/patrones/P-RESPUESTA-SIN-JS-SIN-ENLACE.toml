@@ -1,0 +1,32 @@
+id = "P-RESPUESTA-SIN-JS-SIN-ENLACE"
+tipo = "patron"
+titulo = "La respuesta sin JS trae el correo sin enlace y se pierde lo escrito"
+aplica_si = "'post-nativo' in rasgos"
+
+[deteccion]
+regex = ['(?i)method=["\x27]post["\x27]', 'mailto:']
+pistas = [
+  "Envía el formulario sin JavaScript (POST nativo) y lee la página de respuesta: ¿el correo de contacto es un enlace?",
+  "¿Se puede volver atrás sin perder lo escrito?",
+]
+
+[regla]
+texto = "Sin JavaScript el envío se rechaza y la página de respuesta trae el correo como texto, sin enlace"
+friccion = true
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "La página de respuesta trae el correo como texto, sin enlace, y lo escrito se pierde al salir."
+
+[[parametros]]
+id = "nojs_correo_directo"
+texto = "Sin JS, escribe al correo de la página de respuesta"
+p50 = 0.40
+p10 = 0.20
+p90 = 0.60
+fuente = "prior:elicitacion"
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+reglas = ["R7"]
+issue = "https://github.com/VolutusDevelopment/VolutusLandingPage/issues/74"
+nota = "Sin issue propio: se menciona en el de R21."

@@ -1,0 +1,47 @@
+id = "P-MISMO-TEXTO-DOS-DESTINOS"
+tipo = "patron"
+titulo = "El mismo texto de botón que lleva a destinos distintos"
+aplica_si = "paginas > 1"
+
+[deteccion]
+regex = []
+pistas = [
+  "Lista los textos de los botones y enlaces principales (cabecera, barra, cierre) con su destino: ¿un mismo texto lleva a dos lugares?",
+  "Si uno de los destinos es largo (un brief, un formulario de muchos pasos), mide cuánto avisa antes de empezar.",
+]
+
+[regla]
+texto = "Un mismo texto de botón lleva a un formulario corto en un lugar y a uno largo en otro"
+friccion = true
+cw = ["sí", "sí", "no", "sí"]
+nota_cw = "El texto no dice a cuál de los dos lleva."
+
+[[parametros]]
+id = "usa_cta_brief_web"
+texto = "Usa el botón que lleva al destino largo"
+p50 = 0.40
+p10 = 0.25
+p90 = 0.55
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "envia_brief_prospecto"
+texto = "Completa el destino largo"
+p50 = 0.45
+p10 = 0.25
+p90 = 0.65
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "vuelve_al_formulario"
+texto = "Vuelve al formulario corto si deja el largo"
+p50 = 0.35
+p10 = 0.20
+p90 = 0.50
+fuente = "prior:elicitacion"
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+reglas = ["R9"]
+issue = "https://github.com/VolutusDevelopment/VolutusLandingPage/issues/77"

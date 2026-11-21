@@ -1,0 +1,65 @@
+id = "P-NOMBRE-SOLO-LETRAS"
+tipo = "patron"
+titulo = "Validación de nombre que rechaza guion, punto o ’ (Smart Punctuation en iOS)"
+aplica_si = "formularios > 0"
+
+[deteccion]
+regex = ['\\p\{L\}', '(?i)nombre[_a-z]*valid|name[_a-z]*valid', '(?i)pattern="\[a-z']
+pistas = [
+  "Busca la regex del campo nombre en el navegador y en el servidor: ¿acepta guion (Jean-Pierre), punto (Ma. Paz) y apóstrofo tipográfico (’)?",
+  "En iPhone y iPad, Smart Punctuation (activo por defecto) convierte ' en ’ al escribir: O'Higgins llega como O’Higgins.",
+  "Prueba el nombre de un negocio con & o dígitos (Taller 2 Ruedas): mucha gente escribe ahí el de su empresa.",
+]
+
+[regla]
+texto = "El nombre solo admite letras, marcas, espacio y apóstrofo recto: rechaza guion, punto, dígitos, & y ’"
+friccion = true
+cw = ["sí", "sí", "sí", "en parte"]
+nota_cw = "El aviso dice qué hacer, pero le pide escribir su nombre de otra forma; con ’ ni siquiera ve qué cambió."
+
+[[parametros]]
+id = "resuelve_nombre_claro"
+texto = "Resuelve el aviso cuando ve el signo que molesta"
+p50 = 0.85
+p10 = 0.70
+p90 = 0.95
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "resuelve_nombre_opaco"
+texto = "Resuelve el aviso cuando no ve qué cambió (’)"
+p50 = 0.55
+p10 = 0.30
+p90 = 0.80
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "nombre_guion_punto"
+texto = "Nombres con guion o punto (Chile)"
+p50 = 0.021
+p10 = 0.010
+p90 = 0.040
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "nombre_apostrofo"
+texto = "Nombres con apóstrofo (Chile)"
+p50 = 0.004
+p10 = 0.001
+p90 = 0.010
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "nombre_empresa_signos"
+texto = "Escribe el nombre del negocio, con signos"
+p50 = 0.025
+p10 = 0.010
+p90 = 0.050
+fuente = "prior:elicitacion"
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+reglas = ["R1", "R1+R2"]
+issue = "https://github.com/VolutusDevelopment/VolutusLandingPage/issues/75"
+fuentes = ["https://ladedu.com/what-smart-punctuation-does-on-an-iphone/", "https://github.com/candrikanich/recruiting-compass-ios/pull/281"]

@@ -1,0 +1,66 @@
+id = "P-TURNSTILE-SIN-ESPERA"
+tipo = "patron"
+titulo = "Turnstile cargado al primer foco y un envío que no espera el token"
+aplica_si = "'turnstile' in rasgos"
+
+[deteccion]
+regex = ['turnstile\.render', "focusin", 'cf-turnstile-response']
+pistas = [
+  "¿Cuándo se descarga el script de Turnstile: al cargar la página, al primer foco o al enviar?",
+  "¿El envío espera el token (callback del widget o turnstile.getResponse) o manda el formulario sin él?",
+  "¿Qué dice el 403 sin token: invita a reintentar o manda a otro canal?",
+  "Quien pega un texto preparado y un agente de IA que rellena el formulario envían antes de que llegue el token.",
+]
+
+[regla]
+texto = "Turnstile se descarga al primer foco y el envío no espera su token: sin token, 403"
+friccion = true
+cw = ["sí", "sí", "sí", "no"]
+nota_cw = "El aviso no dice que basta reintentar; la causa, un token que no llegó, no se ve."
+
+[[parametros]]
+id = "token_no_listo_rapido_movil"
+texto = "Token sin llegar, si pega y envía rápido en celular"
+p50 = 0.35
+p10 = 0.15
+p90 = 0.55
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "token_no_listo_rapido_escritorio"
+texto = "Token sin llegar, si pega y envía rápido en escritorio"
+p50 = 0.15
+p10 = 0.05
+p90 = 0.30
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "token_no_listo_normal"
+texto = "Token sin llegar, a ritmo normal"
+p50 = 0.01
+p10 = 0.002
+p90 = 0.03
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "token_no_listo_agente"
+texto = "Token sin llegar, si un agente rellena y la persona envía"
+p50 = 0.60
+p10 = 0.30
+p90 = 0.85
+fuente = "prior:elicitacion"
+
+[[parametros]]
+id = "reintenta_tras_403"
+texto = "Reintenta tras el 403"
+p50 = 0.25
+p10 = 0.10
+p90 = 0.40
+fuente = "prior:elicitacion"
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+reglas = ["R4"]
+issue = "https://github.com/VolutusDevelopment/VolutusLandingPage/issues/76"
+fuentes = ["https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/widget-configurations/"]

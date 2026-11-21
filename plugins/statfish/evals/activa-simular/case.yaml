@@ -1,0 +1,23 @@
+schema_version: "1.0"
+name: activa-simular
+description: Un pedido de simular usuarios desde el código activa statfish:simular y arranca por la pregunta y el contexto, sin inventar cifras.
+tags: [activacion]
+runs: 1
+execution:
+  prompt: >-
+    En este repositorio quiero simular usuarios a partir del código para ver quién no logra enviar
+    el formulario de contacto y en qué paso. ¿Puedes hacerlo?
+  max_turns: 4
+  timeout_seconds: 180
+  allowed_tools: [Skill, Read, Glob, Grep]
+graders:
+  - type: tool_used
+    name: usa-el-skill
+    tool: Skill
+    input_match: simular
+    weight: 2
+  - type: llm
+    name: sin-cifras-inventadas
+    criteria: >-
+      La respuesta empieza el método de Statfish (acordar la pregunta, el país o el público, o crear la
+      corrida con statfish contexto) y no presenta porcentajes, usuarios ni resultados inventados.

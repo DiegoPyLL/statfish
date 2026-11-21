@@ -1,0 +1,31 @@
+id = "P-ESTADO-PERDIDO-ENTRE-PAGINAS"
+tipo = "patron"
+titulo = "Un llamado que lleva a un formulario de otra página sin lo marcado"
+aplica_si = "paginas > 1 and formularios > 0"
+
+[deteccion]
+regex = ['href=["\x27]/#', 'href=\{?["\x27]/[^"\x27]*#[a-z]', '(?i)sessionStorage']
+pistas = [
+  "Revisa cada botón «pedir», «cotizar» o «contactar» que lleve a otra página: ¿lleva lo que la persona marcó (servicio, opciones, estimado)?",
+  "Compara con los llamados que van a un formulario de la misma página: si allí sí llega escrito, la diferencia es la fricción.",
+]
+
+[regla]
+texto = "El llamado lleva a un formulario de otra página: el mensaje llega vacío y sin lo marcado"
+friccion = true
+cw = ["sí", "sí", "no", "no"]
+nota_cw = "Espera encontrar lo que marcó y llega a un formulario vacío."
+
+[[parametros]]
+id = "abandona_seleccion_perdida"
+texto = "Se va al perder lo marcado"
+p50 = 0.25
+p10 = 0.10
+p90 = 0.45
+fuente = "prior:elicitacion"
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+reglas = ["R8"]
+issue = "https://github.com/VolutusDevelopment/VolutusLandingPage/issues/78"

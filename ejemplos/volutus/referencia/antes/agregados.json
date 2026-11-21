@@ -1,0 +1,826 @@
+{
+ "semilla": 20261120,
+ "desenlaces_p50": {
+  "contacto": 0.21394470926975082,
+  "contacto_con_friccion": 0.018581117711479866,
+  "correo_directo": 0.003055918154228431,
+  "no_envia_whatsapp": 0.010696578809705419,
+  "abandono_sin_intento": 0.7410038596983168,
+  "abandono_por_friccion": 0.012338575247405103,
+  "perdida_silenciosa": 0.00037924110947916694
+ },
+ "metricas_p50": {
+  "contacto_total": 0.2355817451354591,
+  "perdida_por_codigo": 0.01271781635688427,
+  "con_friccion": 0.03435485222259257
+ },
+ "masa": {
+  "S1": 0.3658416666666667,
+  "S2": 0.09015,
+  "S3": 0.23965,
+  "S4": 0.09900833333333334,
+  "S5": 0.09065,
+  "S6": 0.049541666666666664,
+  "S7": 0.06445833333333334,
+  "S8": 0.0007
+ },
+ "por_segmento": {
+  "S1": {
+   "contacto": 0.19307471174816304,
+   "contacto_con_friccion": 0.012408360689953761,
+   "correo_directo": 0.002180295536468391,
+   "no_envia_whatsapp": 0.014689136241353836,
+   "abandono_sin_intento": 0.7674184643004035,
+   "abandono_por_friccion": 0.010194968007908534,
+   "perdida_silenciosa": 3.406347577503929e-05
+  },
+  "S2": {
+   "contacto": 0.1840866027718394,
+   "contacto_con_friccion": 0.01765430131189993,
+   "correo_directo": 0.0015995235193549194,
+   "no_envia_whatsapp": 0.006045400490107747,
+   "abandono_sin_intento": 0.7712297968662709,
+   "abandono_por_friccion": 0.019261049021332514,
+   "perdida_silenciosa": 0.0001233260191347753
+  },
+  "S3": {
+   "contacto": 0.20312651124299758,
+   "contacto_con_friccion": 0.009916887334662589,
+   "correo_directo": 0.001773297413890022,
+   "no_envia_whatsapp": 0.006650438149384452,
+   "abandono_sin_intento": 0.7736697320311539,
+   "abandono_por_friccion": 0.004863133827965792,
+   "perdida_silenciosa": 0.0
+  },
+  "S4": {
+   "contacto": 0.19454351280269455,
+   "contacto_con_friccion": 0.012911065653754569,
+   "correo_directo": 0.002168629651867827,
+   "no_envia_whatsapp": 0.015125947299710705,
+   "abandono_sin_intento": 0.7643941471676973,
+   "abandono_por_friccion": 0.010822387584988966,
+   "perdida_silenciosa": 3.430983923912128e-05
+  },
+  "S5": {
+   "contacto": 0.15355407330580872,
+   "contacto_con_friccion": 0.04520650537355025,
+   "correo_directo": 0.0019180400092817258,
+   "no_envia_whatsapp": 0.011256296494070613,
+   "abandono_sin_intento": 0.7692184638719939,
+   "abandono_por_friccion": 0.018846620945257783,
+   "perdida_silenciosa": 0.0
+  },
+  "S6": {
+   "contacto": 0.6986983616483705,
+   "contacto_con_friccion": 0.07137676090833221,
+   "correo_directo": 0.0075612104962161615,
+   "no_envia_whatsapp": 0.0,
+   "abandono_sin_intento": 0.19744322960473076,
+   "abandono_por_friccion": 0.01824592094196814,
+   "perdida_silenciosa": 0.0066745164003364135
+  },
+  "S7": {
+   "contacto": 0.15761508113909573,
+   "contacto_con_friccion": 0.017485386214250744,
+   "correo_directo": 0.013995680237767422,
+   "no_envia_whatsapp": 0.010244710654458946,
+   "abandono_sin_intento": 0.7697523083386788,
+   "abandono_por_friccion": 0.030596455762185493,
+   "perdida_silenciosa": 0.0003103776535229476
+  },
+  "S8": {
+   "contacto": 0.11409541862754916,
+   "contacto_con_friccion": 0.04861384181963261,
+   "correo_directo": 0.033987863641194827,
+   "no_envia_whatsapp": 0.007964692720982143,
+   "abandono_sin_intento": 0.7203291517857147,
+   "abandono_por_friccion": 0.07273563542278419,
+   "perdida_silenciosa": 0.0022733959821428567
+  }
+ },
+ "por_regla": {
+  "R4|contacto_con_friccion": 0.0014604968116841493,
+  "R4|correo_directo": 0.0015972906679344462,
+  "R4|abandono_por_friccion": 0.002966396954736137,
+  "R4b|correo_directo": 0.0005800023191282662,
+  "R4b|abandono_por_friccion": 0.001077147164095574,
+  "R5|correo_directo": 9.074277122185177e-05,
+  "R5|abandono_por_friccion": 0.0001685222894119599,
+  "R4b|contacto_con_friccion": 0.00040002963461674223,
+  "R8|abandono_por_friccion": 0.0013091064583332797,
+  "R8|contacto_con_friccion": 0.0033969076501403125,
+  "R1|contacto_con_friccion": 0.00902343236100778,
+  "R1|abandono_por_friccion": 0.0017506728639046923,
+  "R11|contacto_con_friccion": 0.002366852072460768,
+  "R11|correo_directo": 0.00041767977749310116,
+  "R9|contacto_con_friccion": 0.0016524113699755583,
+  "R9|abandono_por_friccion": 0.0035852552852173826,
+  "R1+R2|contacto_con_friccion": 4.646842034406894e-05,
+  "R1+R2|abandono_por_friccion": 4.189146373593752e-05,
+  "R6|contacto_con_friccion": 0.00023451939125329504,
+  "R6|abandono_por_friccion": 0.00025094550695945627,
+  "R7|correo_directo": 0.0003702026184500007,
+  "R7|abandono_por_friccion": 0.000555303927675,
+  "R12|abandono_por_friccion": 0.0006333333333333333,
+  "R21|perdida_silenciosa": 0.000357649732291667,
+  "R10|perdida_silenciosa": 2.1591377187499998e-05
+ },
+ "fidelidad": [
+  {
+   "variable": "relación: cliente con link",
+   "declarada": 0.05,
+   "muestra": 0.049541666666666664,
+   "n": 120000
+  },
+  {
+   "variable": "sin JavaScript",
+   "declarada": 0.005,
+   "muestra": 0.004533333333333334,
+   "n": 120000
+  },
+  {
+   "variable": "sin almacenamiento",
+   "declarada": 0.03,
+   "muestra": 0.029675,
+   "n": 120000
+  },
+  {
+   "variable": "movimiento reducido",
+   "declarada": 0.05,
+   "muestra": 0.050575,
+   "n": 120000
+  },
+  {
+   "variable": "nombre con apóstrofo",
+   "declarada": 0.004,
+   "muestra": 0.0037166666666666667,
+   "n": 120000
+  },
+  {
+   "variable": "nombre con guion o punto",
+   "declarada": 0.021,
+   "muestra": 0.021391666666666666,
+   "n": 120000
+  },
+  {
+   "variable": "iOS, dado celular (ancla 20,72 %)",
+   "declarada": 0.2072,
+   "muestra": 0.20723303133818505,
+   "n": 67330
+  },
+  {
+   "variable": "Windows, dado escritorio (ancla 85,02 %)",
+   "declarada": 0.8502,
+   "muestra": 0.8512145947109833,
+   "n": 51087
+  },
+  {
+   "variable": "celular, dado que llega por Google (ancla 49,12 %)",
+   "declarada": 0.4912,
+   "muestra": 0.4887640449438202,
+   "n": 36490
+  },
+  {
+   "variable": "Smart Punctuation, dado iOS o iPadOS",
+   "declarada": 0.95,
+   "muestra": 0.9478879860318313,
+   "n": 14891
+  }
+ ],
+ "marginales": {
+  "dispositivo": {
+   "movil": 0.5610833333333334,
+   "escritorio": 0.425725,
+   "tablet": 0.013191666666666668
+  },
+  "sistema": {
+   "android": 0.4501833333333333,
+   "windows": 0.36238333333333334,
+   "ios": 0.116275,
+   "macos": 0.037066666666666664,
+   "linux": 0.026275,
+   "ipados": 0.007816666666666666
+  },
+  "motor": {
+   "blink": 0.8223833333333334,
+   "webkit": 0.14040833333333333,
+   "gecko": 0.037208333333333336
+  },
+  "servicio": {
+   "web": 0.2818583333333333,
+   "tienda": 0.12599166666666667,
+   "gestion": 0.11633333333333333,
+   "automatizacion": 0.09843333333333333,
+   "datos": 0.097075,
+   "agente": 0.09360833333333334,
+   "app": 0.07629166666666666,
+   "prospeccion": 0.05544166666666667,
+   "no_sabe": 0.054966666666666664
+  },
+  "destino": {
+   "home": 0.455675,
+   "servicio": 0.23881666666666668,
+   "articulo": 0.22715,
+   "brief": 0.049541666666666664,
+   "ley": 0.028816666666666668
+  },
+  "canal_envio": {
+   "correo": 0.6577833333333334,
+   "whatsapp": 0.34221666666666667
+  },
+  "agente": {
+   "False": 0.99925,
+   "True": 0.00075
+  }
+ },
+ "cobertura_pares": {
+  "universo": 514,
+  "cubiertos": 514,
+  "faltan": []
+ },
+ "cobertura_arcos": {
+  "universo": 61,
+  "cubiertos_sorteo": 31,
+  "cubiertos_total": 61,
+  "faltan": []
+ },
+ "cobertura_superficies": {
+  "universo": [
+   "/",
+   "/servicios/desarrollo-web",
+   "/servicios/tiendas-online",
+   "/servicios/sistemas-de-gestion",
+   "/servicios/automatizacion-procesos",
+   "/servicios/agentes-ia",
+   "/servicios/desarrollo-software-a-medida",
+   "/servicios/prospeccion-de-clientes",
+   "/ley21719",
+   "un artículo",
+   "/brief-web",
+   "formulario de contacto",
+   "estimado",
+   "brief",
+   "WhatsApp",
+   "POST /api/contacto",
+   "POST /api/brief",
+   "R1",
+   "R1+R2",
+   "R4",
+   "R4b",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R9",
+   "R8b",
+   "R9a",
+   "R10",
+   "R11",
+   "R12",
+   "R13",
+   "R14",
+   "R15",
+   "R16",
+   "R17",
+   "R21"
+  ],
+  "vistas_en_sorteo": [
+   "/",
+   "/brief-web",
+   "/ley21719",
+   "/servicios/agentes-ia",
+   "/servicios/automatizacion-procesos",
+   "/servicios/desarrollo-web",
+   "/servicios/prospeccion-de-clientes",
+   "/servicios/sistemas-de-gestion",
+   "POST /api/brief",
+   "POST /api/contacto",
+   "R1",
+   "R12",
+   "R13",
+   "R14",
+   "R15",
+   "R17",
+   "R21",
+   "R7",
+   "WhatsApp",
+   "brief",
+   "estimado",
+   "formulario de contacto",
+   "un artículo"
+  ],
+  "vistas_total": [
+   "/",
+   "/brief-web",
+   "/ley21719",
+   "/servicios/agentes-ia",
+   "/servicios/automatizacion-procesos",
+   "/servicios/desarrollo-web",
+   "/servicios/prospeccion-de-clientes",
+   "/servicios/sistemas-de-gestion",
+   "POST /api/brief",
+   "POST /api/contacto",
+   "R1",
+   "R1+R2",
+   "R10",
+   "R11",
+   "R12",
+   "R13",
+   "R14",
+   "R15",
+   "R16",
+   "R17",
+   "R21",
+   "R4",
+   "R4b",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R8b",
+   "R9",
+   "R9a",
+   "WhatsApp",
+   "brief",
+   "estimado",
+   "formulario de contacto",
+   "un artículo"
+  ],
+  "faltan_sorteo": [
+   "/servicios/tiendas-online",
+   "/servicios/desarrollo-software-a-medida",
+   "R1+R2",
+   "R4",
+   "R4b",
+   "R5",
+   "R6",
+   "R8",
+   "R9",
+   "R8b",
+   "R9a",
+   "R10",
+   "R11",
+   "R16"
+  ],
+  "faltan_total": [
+   "/servicios/tiendas-online",
+   "/servicios/desarrollo-software-a-medida"
+  ]
+ },
+ "intervalos": {
+  "contacto_total": {
+   "p5": 0.1566013262970591,
+   "p50": 0.2287330892706663,
+   "p95": 0.3134675905313927
+  },
+  "perdida_por_codigo": {
+   "p5": 0.006229279406064083,
+   "p50": 0.011971425714546865,
+   "p95": 0.02128000316808227
+  },
+  "con_friccion": {
+   "p5": 0.01948556292564025,
+   "p50": 0.03230478463898662,
+   "p95": 0.05418332809141876
+  },
+  "masa_S1": {
+   "p5": 0.29833333333333334,
+   "p50": 0.38466666666666666,
+   "p95": 0.45766666666666667
+  },
+  "masa_S2": {
+   "p5": 0.026333333333333334,
+   "p50": 0.08066666666666666,
+   "p95": 0.15633333333333332
+  },
+  "masa_S3": {
+   "p5": 0.136,
+   "p50": 0.233,
+   "p95": 0.307
+  },
+  "masa_S4": {
+   "p5": 0.073,
+   "p50": 0.108,
+   "p95": 0.14566666666666667
+  },
+  "masa_S5": {
+   "p5": 0.009333333333333334,
+   "p50": 0.07433333333333333,
+   "p95": 0.23733333333333334
+  },
+  "masa_S6": {
+   "p5": 0.009666666666666667,
+   "p50": 0.043333333333333335,
+   "p95": 0.10733333333333334
+  },
+  "masa_S7": {
+   "p5": 0.024666666666666667,
+   "p50": 0.05733333333333333,
+   "p95": 0.109
+  },
+  "masa_S8": {
+   "p5": 0.0,
+   "p50": 0.0003333333333333333,
+   "p95": 0.003
+  }
+ },
+ "morris": [
+  {
+   "parametro": "resuelve_nombre_claro",
+   "rango": [
+    0.7,
+    0.95
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0033181017457919668,
+    "sigma": 0.0013000974093538668
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.003438028127199544,
+    "sigma": 0.0013524416009299525
+   }
+  },
+  {
+   "parametro": "pega_rapido_comparando",
+   "rango": [
+    0.05,
+    0.2
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.003400699662087496,
+    "sigma": 0.0010532239233302495
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0034006996620874743,
+    "sigma": 0.001053223923330247
+   }
+  },
+  {
+   "parametro": "js_off",
+   "rango": [
+    0.002,
+    0.015
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0022742124858759786,
+    "sigma": 0.00040370560512990926
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0024954238376704964,
+    "sigma": 0.00038683019292125515
+   }
+  },
+  {
+   "parametro": "contacta_comparando",
+   "rango": [
+    0.2,
+    0.45
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.036042181468991255,
+    "sigma": 0.0014471393579995268
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.00216963466019068,
+    "sigma": 0.0005368083679796014
+   }
+  },
+  {
+   "parametro": "envia_brief_prospecto",
+   "rango": [
+    0.25,
+    0.65
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.00224386768059841,
+    "sigma": 0.0005565521701019906
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0021562442020628104,
+    "sigma": 0.0005323504523163012
+   }
+  },
+  {
+   "parametro": "token_no_listo_rapido_movil",
+   "rango": [
+    0.15,
+    0.55
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0021359671353082823,
+    "sigma": 0.001399224336732618
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.002135967135308281,
+    "sigma": 0.0013992243367326007
+   }
+  },
+  {
+   "parametro": "abandona_seleccion_perdida",
+   "rango": [
+    0.1,
+    0.45
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.001974042956919252,
+    "sigma": 0.000774887141233967
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0020984389134817453,
+    "sigma": 0.0008255254522275666
+   }
+  },
+  {
+   "parametro": "usa_cta_brief_web",
+   "rango": [
+    0.25,
+    0.55
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.001720633339011317,
+    "sigma": 0.0009543223108413836
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0020468188064340143,
+    "sigma": 0.0009569048831616313
+   }
+  },
+  {
+   "parametro": "correo_directo_tras_error",
+   "rango": [
+    0.2,
+    0.5
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0019292020504326408,
+    "sigma": 0.001099033027963262
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0019292020504325966,
+    "sigma": 0.0010990330279632534
+   }
+  },
+  {
+   "parametro": "pide_cotizacion",
+   "rango": [
+    0.2,
+    0.5
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.02720452796986006,
+    "sigma": 0.004380242723591837
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0019181267579022649,
+    "sigma": 0.000758525956223276
+   }
+  },
+  {
+   "parametro": "nombre_empresa_signos",
+   "rango": [
+    0.01,
+    0.05
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0017515339826025406,
+    "sigma": 0.0009682075274381728
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0018042291123511731,
+    "sigma": 0.0010016341536679188
+   }
+  },
+  {
+   "parametro": "sale_explorando",
+   "rango": [
+    0.4,
+    0.7
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.024320557945199106,
+    "sigma": 0.0037374663647956087
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.001646770023375992,
+    "sigma": 0.0005937190163167578
+   }
+  },
+  {
+   "parametro": "estricta_base",
+   "rango": [
+    0.01,
+    0.06
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0015938177897418526,
+    "sigma": 0.0008109706028579052
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.001593817789741852,
+    "sigma": 0.0008109706028578904
+   }
+  },
+  {
+   "parametro": "reintenta_tras_403",
+   "rango": [
+    0.1,
+    0.4
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0015073572781480762,
+    "sigma": 0.0007239178449981225
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0015073572781481184,
+    "sigma": 0.0007239178449981028
+   }
+  },
+  {
+   "parametro": "vuelve_al_formulario",
+   "rango": [
+    0.2,
+    0.5
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0012883656238006802,
+    "sigma": 0.0006969996142391358
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0013713552388729437,
+    "sigma": 0.0007427851757912293
+   }
+  },
+  {
+   "parametro": "nombre_guion_punto",
+   "rango": [
+    0.01,
+    0.04
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0011847611794778862,
+    "sigma": 0.0007377575358714928
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.001216970202776385,
+    "sigma": 0.0007632352285708541
+   }
+  },
+  {
+   "parametro": "relacion_cliente_brief",
+   "rango": [
+    0.02,
+    0.1
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.04502642403961993,
+    "sigma": 0.0032910541103509687
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0012074460210205302,
+    "sigma": 0.0002858968888847035
+   }
+  },
+  {
+   "parametro": "turnstile_falla_estricta",
+   "rango": [
+    0.1,
+    0.5
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0011786909638813973,
+    "sigma": 0.0004911969959540821
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0011786909638814263,
+    "sigma": 0.0004911969959540946
+   }
+  },
+  {
+   "parametro": "usa_estimado_ley",
+   "rango": [
+    0.25,
+    0.55
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0016489177018276472,
+    "sigma": 0.0006351465750114835
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0010025272562973115,
+    "sigma": 0.0008784238824247566
+   }
+  },
+  {
+   "parametro": "token_no_listo_rapido_escritorio",
+   "rango": [
+    0.05,
+    0.3
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0006022285074184633,
+    "sigma": 0.0002559567929639119
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0006022285074184924,
+    "sigma": 0.00025595679296391637
+   }
+  },
+  {
+   "parametro": "nombre_apostrofo",
+   "rango": [
+    0.001,
+    0.01
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0003854924675842072,
+    "sigma": 0.00025052457051462747
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.00039713774330174566,
+    "sigma": 0.00025390535770027404
+   }
+  },
+  {
+   "parametro": "resuelve_nombre_opaco",
+   "rango": [
+    0.3,
+    0.8
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.00013107779609385501,
+    "sigma": 8.159071822282524e-05
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.000133522308593841,
+    "sigma": 8.5646237575795e-05
+   }
+  },
+  {
+   "parametro": "movil_si_recomendacion",
+   "rango": [
+    0.55,
+    0.85
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0005364203467192588,
+    "sigma": 6.84682527537476e-05
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 8.663851740976989e-05,
+    "sigma": 6.463867603642922e-05
+   }
+  },
+  {
+   "parametro": "smart_punct_on",
+   "rango": [
+    0.85,
+    0.99
+   ],
+   "contacto_total": {
+    "mu_estrella": 0.0,
+    "sigma": 0.0
+   },
+   "perdida_por_codigo": {
+    "mu_estrella": 0.0,
+    "sigma": 0.0
+   }
+  }
+ ],
+ "hipotesis": {
+  "base": {
+   "contacto_total": 0.2374091204010866,
+   "perdida_por_codigo": 0.01296709646487739,
+   "con_friccion": 0.03473921832014579
+  },
+  "R1+R2: aceptar ’, guion y punto en el nombre": {
+   "contacto_total": 0.2381706167639908,
+   "perdida_por_codigo": 0.012167244266552952,
+   "con_friccion": 0.03008346248086278
+  },
+  "R4: esperar el token antes de enviar": {
+   "contacto_total": 0.2401969339497727,
+   "perdida_por_codigo": 0.010179282916197574,
+   "con_friccion": 0.02946160431331305
+  },
+  "R8: llevar lo marcado y el servicio desde /ley21719": {
+   "contacto_total": 0.23856695766507124,
+   "perdida_por_codigo": 0.011743851879016482,
+   "con_friccion": 0.030301712786453175
+  },
+  "R9: «Cuéntanos tu proyecto» de la cabecera al formulario": {
+   "contacto_total": 0.24051541650580616,
+   "perdida_por_codigo": 0.009437832586906511,
+   "con_friccion": 0.029505348950446673
+  },
+  "R21+R10: el brief sin JS (o apurado) responde como el contacto": {
+   "contacto_total": 0.23764614804221157,
+   "perdida_por_codigo": 0.012730068823752399,
+   "con_friccion": 0.03473921832014577
+  },
+  "Todos": {
+   "contacto_total": 0.2456004572018386,
+   "perdida_por_codigo": 0.004247077857648538,
+   "con_friccion": 0.014377971988870891
+  }
+ }
+}

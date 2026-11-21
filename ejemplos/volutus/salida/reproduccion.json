@@ -1,0 +1,28 @@
+{
+ "motor_guardado": "0.1.0",
+ "motor_actual": "0.1.0",
+ "entradas_cambiadas": [],
+ "salidas": {
+  "salida/usuarios.json": "idéntico",
+  "salida/trazas.json": "idéntico",
+  "salida/resultados.json": "idéntico",
+  "informe.md": "idéntico",
+  "salida/issues/H-R1.md": "idéntico",
+  "salida/issues/H-R21.md": "idéntico",
+  "salida/issues/H-R4.md": "idéntico",
+  "salida/issues/H-R8.md": "idéntico",
+  "salida/issues/H-R9.md": "idéntico"
+ },
+ "evidencia": {
+  "commit_corrida": "76b713a27709786c77c2c219063f92ae0628496a",
+  "commit_actual": "76b713a27709786c77c2c219063f92ae0628496a",
+  "resumen": {
+   "citas": 162,
+   "unicas": 95,
+   "vigente": 162,
+   "vigentes_unicas": 95
+  },
+  "cambios": []
+ },
+ "hallazgos": []
+}

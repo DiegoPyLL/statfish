@@ -1,0 +1,16 @@
+# Instituto Nacional de Estadísticas de Chile: empresas activas.
+fuente = "ine"
+titulo_fuente = "INE"
+pais = "CL"
+periodo = "2025"
+consultado = 2026-11-20
+vigencia_meses = 12
+unidad = "empresas"
+
+[[anclas]]
+id = "ine-CL-empresas-activas-2025"
+titulo = "Empresas activas en Chile, 2025 (1.207.333, alza de 3,9 %)"
+url = "https://www.cnnchile.com/negocios/ine-registra-1207333-empresas-activas-chile-2025-alza-39/"
+plantilla_url = "https://www.ine.gob.cl/"
+valores = { empresas_activas = 1207333 }
+nota = "Cifra del INE reportada por CNN Chile."

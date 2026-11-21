@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""Lanzador de statfish: corre el motor que viaja con el plugin (Python 3.11 o más, sin dependencias)."""
+import os
+import sys
+
+if sys.version_info < (3, 11):
+    sys.exit('statfish necesita Python 3.11 o más (usa tomllib); este es ' + sys.version.split()[0])
+AQUI = os.path.dirname(os.path.realpath(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(AQUI), 'motor'))
+
+from statfish.cli import main  # noqa: E402
+
+sys.exit(main())

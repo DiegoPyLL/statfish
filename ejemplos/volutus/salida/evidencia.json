@@ -1,0 +1,986 @@
+{
+ "repo": "VolutusDevelopment/VolutusLandingPage",
+ "commit_corrida": "76b713a27709786c77c2c219063f92ae0628496a",
+ "commit_actual": "76b713a27709786c77c2c219063f92ae0628496a",
+ "citas": [
+  {
+   "origen": "recorrido.toml.superficies[/].evidencia[0]",
+   "cita": "src/paginas/Inicio.jsx:33",
+   "extracto": "cierre={<Contacto />}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[/servicios/*].evidencia[0]",
+   "cita": "src/paginas/Servicio.jsx:72-74",
+   "extracto": "cierre={<Contacto marcado={servicio.opcion} />}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[/servicios/*].evidencia[1]",
+   "cita": "src/paginas/Servicio.jsx:102",
+   "extracto": "estimado={<Estimado servicio={servicio.id} />}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[/servicios/desarrollo-web].evidencia[0]",
+   "cita": "src/data/paginas-de-servicio.js:66",
+   "extracto": "proyecto: '/brief-web',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[/servicios/desarrollo-web].evidencia[1]",
+   "cita": "src/paginas/Servicio.jsx:89",
+   "extracto": "href={pagina.proyecto ?? '#contacto'}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[/ley21719].evidencia[0]",
+   "cita": "src/paginas/Ley21719.jsx:264",
+   "extracto": "<a className=\"boton boton-primario\" href=\"/#contacto\">",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[/ley21719].evidencia[1]",
+   "cita": "src/paginas/Ley21719.jsx:429",
+   "extracto": "<Estimado servicio=\"datos\" contacto=\"/#contacto\" />",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[artículos].evidencia[0]",
+   "cita": "src/components/Articulo.jsx:48",
+   "extracto": "cierre={<Contacto marcado={servicioDeArticulo(PAGINAS[ruta])?.opcion} />}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[/brief-web].evidencia[0]",
+   "cita": "src/lib/meta.js:301-310",
+   "extracto": "// El brief que Volutus le manda a un cliente por link (paginas/Brief.jsx).",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[/brief-web].evidencia[1]",
+   "cita": "src/lib/brief/preguntas.js:89-93",
+   "extracto": "35 a 45 min",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.superficies[fuera de la pregunta].evidencia[0]",
+   "cita": "src/lib/meta.js:288-478",
+   "extracto": "'/404': {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[contacto].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:76-223",
+   "extracto": "toolname=\"escribir_a_volutus\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[contacto].evidencia[1]",
+   "cita": "src/lib/contacto.js:83-91",
+   "extracto": "export const LIMITES = { nombre: 60, correo: 100, proyecto: 2000 }",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[estimado].evidencia[0]",
+   "cita": "src/components/Estimado.jsx:48",
+   "extracto": "const escribeElMensaje = contacto === '#contacto'",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[estimado].evidencia[1]",
+   "cita": "src/components/Estimado.jsx:60-67",
+   "extracto": "toolname=\"estimar_precio\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[estimado].evidencia[2]",
+   "cita": "src/comportamiento/estimado.js:61-86",
+   "extracto": "// «Pedir esta cotización» deja lo marcado escrito en el mensaje del",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[brief].evidencia[0]",
+   "cita": "src/paginas/Brief.jsx:176-184",
+   "extracto": "action=\"/api/brief\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[brief].evidencia[1]",
+   "cita": "src/paginas/Brief.jsx:322-326",
+   "extracto": "<input type=\"hidden\" name=\"dispositivo\" />",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[brief].evidencia[2]",
+   "cita": "src/comportamiento/brief/brief.js:158-176",
+   "extracto": "function guardar() {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[validaciones compartidas].evidencia[0]",
+   "cita": "src/lib/contacto.js:6-8",
+   "extracto": "* El Worker vuelve a aplicar las reglas porque el endpoint es público. Una",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[validaciones compartidas].evidencia[1]",
+   "cita": "src/lib/contacto.js:89-91",
+   "extracto": "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[validaciones compartidas].evidencia[2]",
+   "cita": "src/lib/contacto.js:85-87",
+   "extracto": "// Sin espacios ni separadores de direcciones",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entradas[validaciones compartidas].evidencia[3]",
+   "cita": "src/lib/brief/reglas.js:30-32",
+   "extracto": "// Dígitos, espacios, guiones y paréntesis, con un «+» delante si es",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[camino común].evidencia[0]",
+   "cita": "worker/comun.js:3-8",
+   "extracto": "* Lo que comparten los formularios del Worker: el de contacto (index.js) y",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[camino común].evidencia[1]",
+   "cita": "worker/comun.js:76-80",
+   "extracto": "export function esMismoOrigen(request) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[camino común].evidencia[2]",
+   "cita": "worker/comun.js:90-99",
+   "extracto": "export async function dentroDelLimite(limite, ip, registro) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[camino común].evidencia[3]",
+   "cita": "worker/comun.js:107-116",
+   "extracto": "export async function leerFormulario(request, tope) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[camino común].evidencia[4]",
+   "cita": "worker/comun.js:130-152",
+   "extracto": "export async function pasaTurnstile(token, ip, env, accion) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[camino común].evidencia[5]",
+   "cita": "worker/comun.js:163-192",
+   "extracto": "export async function enviarCorreo(env, { para, responderA, asunto, texto, adjuntos = [] }, registro) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[límites].evidencia[0]",
+   "cita": "wrangler.jsonc:36-41",
+   "extracto": "\"ratelimits\": [",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[límites].evidencia[1]",
+   "cita": "wrangler.jsonc:46-50",
+   "extracto": "\"name\": \"LIMITE_BRIEF\",",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[trampa y apuro].evidencia[0]",
+   "cita": "worker/index.js:83-85",
+   "extracto": "if (limpiar(datos.get('hp_campo'), 200)) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[trampa y apuro].evidencia[1]",
+   "cita": "worker/brief.js:280-285",
+   "extracto": "if (limpiar(datos.get('hp_campo'), 200) || !(transcurrido >= TIEMPO_MINIMO)) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[sin token de Turnstile].evidencia[0]",
+   "cita": "worker/index.js:103-105",
+   "extracto": "if (!(await pasaTurnstile(limpiar(datos.get('cf-turnstile-response'), 4096), ip, env, TURNSTILE_ACCION))) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[sin token de Turnstile].evidencia[1]",
+   "cita": "worker/brief.js:296-298",
+   "extracto": "TURNSTILE_ACCION_BRIEF",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.servidor[respuesta].evidencia[0]",
+   "cita": "worker/comun.js:48-56",
+   "extracto": "export function responder(request, mensaje, estado) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[Turnstile].evidencia[0]",
+   "cita": "src/lib/turnstile.js:27-53",
+   "extracto": "const montar = () => {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[Turnstile].evidencia[1]",
+   "cita": "src/client.js:191-245",
+   "extracto": "form.addEventListener('submit', async (evento) => {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[sin JavaScript].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:23-25",
+   "extracto": "pero el envío exige el token",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[sin JavaScript].evidencia[1]",
+   "cita": "worker/index.js:34-40",
+   "extracto": "**Responde de dos maneras, y las dos hacen falta.**",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[sin JavaScript].evidencia[2]",
+   "cita": "src/paginas/Brief.jsx:326",
+   "extracto": "name=\"transcurrido\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[brief.js no carga].evidencia[0]",
+   "cita": "src/client.js:299-302",
+   "extracto": "if (form) import('./comportamiento/brief/brief.js').then((modulo) => modulo.default(form))",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[sin almacenamiento].evidencia[0]",
+   "cita": "src/lib/almacen.js:1-3",
+   "extracto": "// El almacenamiento del navegador puede no estar (modo privado, cookies",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[sin almacenamiento].evidencia[1]",
+   "cita": "src/comportamiento/brief/brief.js:163-166",
+   "extracto": "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[sin GPU, sin WebGL o con movimiento reducido].evidencia[0]",
+   "cita": "src/comportamiento/nubes.js:44-59",
+   "extracto": "Nada en vivo sin GPU de verdad. Si el pintor dibuja por software, o con",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[sin GPU, sin WebGL o con movimiento reducido].evidencia[1]",
+   "cita": "src/lib/movimiento.js:7",
+   "extracto": "export const quieto = () => matchMedia('(prefers-reduced-motion: reduce)').matches",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[iPhone y iPad].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:121-130",
+   "extracto": "toolparamdescription=\"Nombre de quien escribe\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[WhatsApp].evidencia[0]",
+   "cita": "src/client.js:202-214",
+   "extracto": "// Antes de cualquier `await`: así Safari lo cuenta como gesto de la",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[WhatsApp].evidencia[1]",
+   "cita": "src/lib/contacto.js:39-44",
+   "extracto": "export const mensajeDeWhatsapp = ({ nombre, correo, servicios, proyecto }) =>",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[agentes de IA (WebMCP)].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:40-43",
+   "extracto": "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo.",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.entorno[idioma].evidencia[0]",
+   "cita": "index.html:2",
+   "extracto": "<html lang=\"es-CL\">",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.contenido[servicios y estimados].evidencia[0]",
+   "cita": "src/lib/servicios.js:29-144",
+   "extracto": "export const SERVICIOS = [",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.contenido[servicios y estimados].evidencia[1]",
+   "cita": "src/lib/servicios.js:157-160",
+   "extracto": "export const OPCIONES_DE_CONTACTO = [",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.contenido[servicios y estimados].evidencia[2]",
+   "cita": "src/lib/precios.js:52-150",
+   "extracto": "export const ESTIMADOS = {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.contenido[servicios y estimados].evidencia[3]",
+   "cita": "src/data/uf.js:2",
+   "extracto": "export const UF = {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.contenido[servicios y estimados].evidencia[4]",
+   "cita": "src/paginas/Ley21719.jsx:33",
+   "extracto": "{ valor: '1 dic 2026', texto: 'Empieza a regir' },",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.inconsistencias[0].evidencia[0]",
+   "cita": "src/paginas/Brief.jsx:10-12",
+   "extracto": "* El brief para clientes (/brief-web): el cuestionario de marca y sitio web que",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.inconsistencias[0].evidencia[1]",
+   "cita": "src/data/paginas-de-servicio.js:66",
+   "extracto": "proyecto: '/brief-web',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.patrones[P-NOMBRE-SOLO-LETRAS].evidencia[0]",
+   "cita": "src/lib/contacto.js:89-91",
+   "extracto": "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.patrones[P-TURNSTILE-SIN-ESPERA].evidencia[0]",
+   "cita": "src/lib/turnstile.js:53",
+   "extracto": "form.addEventListener('focusin', montar, { once: true })",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.patrones[P-ANTIBOT-SILENCIO-SIN-JS].evidencia[0]",
+   "cita": "worker/brief.js:282-285",
+   "extracto": "const transcurrido = Number(datos.get('transcurrido'))",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.patrones[P-ESTADO-PERDIDO-ENTRE-PAGINAS].evidencia[0]",
+   "cita": "src/paginas/Ley21719.jsx:429",
+   "extracto": "<Estimado servicio=\"datos\" contacto=\"/#contacto\" />",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.patrones[P-MISMO-TEXTO-DOS-DESTINOS].evidencia[0]",
+   "cita": "src/data/paginas-de-servicio.js:66",
+   "extracto": "proyecto: '/brief-web',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.patrones[P-RESPUESTA-SIN-JS-SIN-ENLACE].evidencia[0]",
+   "cita": "worker/comun.js:32-46",
+   "extracto": "function paginaDeRespuesta(mensaje, estado) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.patrones[P-WEBMCP-SIN-ORIGIN-TRIAL].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:40-43",
+   "extracto": "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo.",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.descartadas[N-REANUDAR-CUENTA-TIEMPO].evidencia[0]",
+   "cita": "src/comportamiento/brief/brief.js:139",
+   "extracto": "let inicio = guardado?.inicio ?? Date.now()",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.descartadas[N-REANUDAR-CUENTA-TIEMPO].evidencia[1]",
+   "cita": "src/comportamiento/brief/brief.js:163",
+   "extracto": "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.descartadas[N-TOKEN-VENCE].evidencia[0]",
+   "cita": "src/lib/turnstile.js:42-50",
+   "extracto": "widget = window.turnstile.render(hueco, {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.descartadas[N-SIN-GPU-ROMPE].evidencia[0]",
+   "cita": "src/comportamiento/nubes.js:44-49",
+   "extracto": "Nada en vivo sin GPU de verdad. Si el pintor dibuja por software, o con",
+   "estado": "vigente"
+  },
+  {
+   "origen": "recorrido.toml.descartadas[issue-40-tope-500].evidencia[0]",
+   "cita": "src/lib/contacto.js:83",
+   "extracto": "export const LIMITES = { nombre: 60, correo: 100, proyecto: 2000 }",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[relacion].soporte[0]",
+   "cita": "src/lib/meta.js:301-310",
+   "extracto": "// El brief que Volutus le manda a un cliente por link (paginas/Brief.jsx).",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[canal].soporte[0]",
+   "cita": "public/robots.txt:4",
+   "extracto": "Content-Signal: search=yes, ai-input=yes, ai-train=yes",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[dispositivo].soporte[0]",
+   "cita": "CLAUDE.md:102-119",
+   "extracto": "## 5. Responsive Design",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[sistema].soporte[0]",
+   "cita": "CLAUDE.md:124",
+   "extracto": "El sitio debe funcionar bien en Safari de macOS, iOS y iPadOS",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[inapp].soporte[0]",
+   "cita": "src/client.js:202-214",
+   "extracto": "// Antes de cualquier `await`: así Safari lo cuenta como gesto de la",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[navegador].soporte[0]",
+   "cita": "CLAUDE.md:124",
+   "extracto": "El sitio debe funcionar bien en Safari de macOS, iOS y iPadOS",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[motor].soporte[0]",
+   "cita": "CLAUDE.md:124",
+   "extracto": "El sitio debe funcionar bien en Safari de macOS, iOS y iPadOS",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[movimiento_reducido].soporte[0]",
+   "cita": "src/lib/movimiento.js:7",
+   "extracto": "export const quieto = () => matchMedia('(prefers-reduced-motion: reduce)').matches",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[gpu].soporte[0]",
+   "cita": "src/comportamiento/nubes.js:44-56",
+   "extracto": "Nada en vivo sin GPU de verdad.",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[js_off].soporte[0]",
+   "cita": "src/components/Contacto.jsx:23-25",
+   "extracto": "pero el envío exige el token",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[js_off].soporte[1]",
+   "cita": "worker/index.js:34-40",
+   "extracto": "**Responde de dos maneras, y las dos hacen falta.**",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[almacen_bloqueado].soporte[0]",
+   "cita": "src/lib/almacen.js:1-3",
+   "extracto": "// El almacenamiento del navegador puede no estar (modo privado, cookies",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[estricta].soporte[0]",
+   "cita": "worker/comun.js:130-152",
+   "extracto": "export async function pasaTurnstile(token, ip, env, accion) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[agente].soporte[0]",
+   "cita": "src/components/Contacto.jsx:40-43",
+   "extracto": "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo.",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[smart_punct].soporte[0]",
+   "cita": "src/components/Contacto.jsx:121-130",
+   "extracto": "toolparamdescription=\"Nombre de quien escribe\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[nombre_tipo].soporte[0]",
+   "cita": "src/lib/contacto.js:89-91",
+   "extracto": "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[servicio].soporte[0]",
+   "cita": "src/lib/servicios.js:29-144",
+   "extracto": "export const SERVICIOS = [",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[pega_rapido].soporte[0]",
+   "cita": "src/lib/meta.js:192-198",
+   "extracto": "'/articulos/que-preparar-antes-de-cotizar': {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[canal_envio].soporte[0]",
+   "cita": "src/components/Contacto.jsx:93-114",
+   "extracto": "toolparamdescription=\"Por dónde se envía el mensaje: correo o WhatsApp\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[destino].soporte[0]",
+   "cita": "src/lib/meta.js:39-479",
+   "extracto": "export const PAGINAS = {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[js_brief_falla].soporte[0]",
+   "cita": "src/client.js:299-302",
+   "extracto": "if (form) import('./comportamiento/brief/brief.js').then((modulo) => modulo.default(form))",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.variables[ruta_servicio].soporte[0]",
+   "cita": "src/lib/servicios.js:29-144",
+   "extracto": "export const SERVICIOS = [",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.restricciones[0].evidencia[0]",
+   "cita": "CLAUDE.md:124",
+   "extracto": "El sitio debe funcionar bien en Safari de macOS, iOS y iPadOS",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.restricciones[2].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:40-43",
+   "extracto": "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo.",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.restricciones[3].evidencia[0]",
+   "cita": "src/lib/meta.js:301-310",
+   "extracto": "// El brief que Volutus le manda a un cliente por link (paginas/Brief.jsx).",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.restricciones[5].evidencia[0]",
+   "cita": "src/lib/servicios.js:132-143",
+   "extracto": "id: 'datos',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R1].evidencia[0]",
+   "cita": "src/lib/contacto.js:89-91",
+   "extracto": "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R1].evidencia[1]",
+   "cita": "src/client.js:82-85",
+   "extracto": "if (campo.name === 'nombre' && !NOMBRE_VALIDO.test(valor)) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R1].evidencia[2]",
+   "cita": "worker/index.js:99-101",
+   "extracto": "if (!NOMBRE_VALIDO.test(nombre) || !proyecto || !CORREO_VALIDO.test(correo)) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R1].evidencia[3]",
+   "cita": "src/comportamiento/brief/brief.js:350",
+   "extracto": "!NOMBRE_VALIDO.test(n) && ERRORES_BRIEF.nombreInvalido",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R1].evidencia[4]",
+   "cita": "worker/brief.js:292-294",
+   "extracto": "if (!NOMBRE_VALIDO.test(nombre) || !(correo || telefono)",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R1+R2].evidencia[0]",
+   "cita": "src/lib/contacto.js:89-91",
+   "extracto": "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R1+R2].evidencia[1]",
+   "cita": "src/components/Contacto.jsx:121-130",
+   "extracto": "toolparamdescription=\"Nombre de quien escribe\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R1+R2].evidencia[2]",
+   "cita": "src/client.js:82-85",
+   "extracto": "if (campo.name === 'nombre' && !NOMBRE_VALIDO.test(valor)) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R4].evidencia[0]",
+   "cita": "src/lib/turnstile.js:53",
+   "extracto": "form.addEventListener('focusin', montar, { once: true })",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R4].evidencia[1]",
+   "cita": "src/lib/turnstile.js:27-51",
+   "extracto": "script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R4].evidencia[2]",
+   "cita": "src/client.js:191-245",
+   "extracto": "form.addEventListener('submit', async (evento) => {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R4].evidencia[3]",
+   "cita": "worker/index.js:103-105",
+   "extracto": "if (!(await pasaTurnstile(limpiar(datos.get('cf-turnstile-response'), 4096), ip, env, TURNSTILE_ACCION))) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R4].evidencia[4]",
+   "cita": "worker/comun.js:137",
+   "extracto": "if (!token || token.length > 2048 || dominios.length === 0) return false",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R4b].evidencia[0]",
+   "cita": "worker/comun.js:130-152",
+   "extracto": "export async function pasaTurnstile(token, ip, env, accion) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R5].evidencia[0]",
+   "cita": "worker/index.js:121-123",
+   "extracto": "return responder(request, MENSAJES.fallo, 502)",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R5].evidencia[1]",
+   "cita": "worker/comun.js:163-192",
+   "extracto": "export async function enviarCorreo(env, { para, responderA, asunto, texto, adjuntos = [] }, registro) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R6].evidencia[0]",
+   "cita": "src/client.js:202-214",
+   "extracto": "// Antes de cualquier `await`: así Safari lo cuenta como gesto de la",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R7].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:23-25",
+   "extracto": "pero el envío exige el token",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R7].evidencia[1]",
+   "cita": "worker/index.js:34-40",
+   "extracto": "**Responde de dos maneras, y las dos hacen falta.**",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R7].evidencia[2]",
+   "cita": "worker/comun.js:32-46",
+   "extracto": "function paginaDeRespuesta(mensaje, estado) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R8].evidencia[0]",
+   "cita": "src/paginas/Ley21719.jsx:429",
+   "extracto": "<Estimado servicio=\"datos\" contacto=\"/#contacto\" />",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R8].evidencia[1]",
+   "cita": "src/paginas/Ley21719.jsx:264",
+   "extracto": "<a className=\"boton boton-primario\" href=\"/#contacto\">",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R8].evidencia[2]",
+   "cita": "src/components/Estimado.jsx:48",
+   "extracto": "const escribeElMensaje = contacto === '#contacto'",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R8].evidencia[3]",
+   "cita": "src/components/Estimado.jsx:204-207",
+   "extracto": "data-pedir={escribeElMensaje || undefined}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R8].evidencia[4]",
+   "cita": "src/paginas/Inicio.jsx:33",
+   "extracto": "cierre={<Contacto />}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R9].evidencia[0]",
+   "cita": "src/data/paginas-de-servicio.js:66",
+   "extracto": "proyecto: '/brief-web',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R9].evidencia[1]",
+   "cita": "src/paginas/Servicio.jsx:89",
+   "extracto": "href={pagina.proyecto ?? '#contacto'}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R9].evidencia[2]",
+   "cita": "src/components/Barra.jsx:158",
+   "extracto": "ancla('contacto')}>Cuéntanos tu proyecto</a>",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R9].evidencia[3]",
+   "cita": "src/lib/brief/preguntas.js:89-93",
+   "extracto": "35 a 45 min",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R8b].evidencia[0]",
+   "cita": "src/paginas/Ley21719.jsx:264",
+   "extracto": "<a className=\"boton boton-primario\" href=\"/#contacto\">",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R8b].evidencia[1]",
+   "cita": "src/paginas/Inicio.jsx:33",
+   "extracto": "cierre={<Contacto />}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R8b].evidencia[2]",
+   "cita": "src/components/Contacto.jsx:159-178",
+   "extracto": "{/* Opcional a propósito: sirve para repartir el mensaje, no para",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R9a].evidencia[0]",
+   "cita": "src/data/paginas-de-servicio.js:66",
+   "extracto": "proyecto: '/brief-web',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R9a].evidencia[1]",
+   "cita": "src/paginas/Servicio.jsx:89",
+   "extracto": "href={pagina.proyecto ?? '#contacto'}",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R10].evidencia[0]",
+   "cita": "src/lib/brief/reglas.js:38-40",
+   "extracto": "// Menos que esto entre abrir la página y enviar no lo hace una persona: el",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R10].evidencia[1]",
+   "cita": "worker/brief.js:280-285",
+   "extracto": "if (limpiar(datos.get('hp_campo'), 200) || !(transcurrido >= TIEMPO_MINIMO)) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R10].evidencia[2]",
+   "cita": "src/comportamiento/brief/brief.js:669-680",
+   "extracto": "if (!respuesta.ok) throw new Error((respuesta.status < 500 && mensaje) || FALLO)",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R11].evidencia[0]",
+   "cita": "src/comportamiento/brief/brief.js:408",
+   "extracto": "turnstile.montar()",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R11].evidencia[1]",
+   "cita": "src/comportamiento/brief/brief.js:52-53",
+   "extracto": "No pudimos enviar tu brief. Tus respuestas siguen guardadas en este equipo",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R11].evidencia[2]",
+   "cita": "src/comportamiento/brief/brief.js:681-684",
+   "extracto": "fallo.querySelector('.brief-fallo-texto').textContent = error.name === 'Error' ? error.message : FALLO",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R12].evidencia[0]",
+   "cita": "src/lib/almacen.js:1-3",
+   "extracto": "// El almacenamiento del navegador puede no estar (modo privado, cookies",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R12].evidencia[1]",
+   "cita": "src/comportamiento/brief/brief.js:163-166",
+   "extracto": "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R13].evidencia[0]",
+   "cita": "src/comportamiento/nubes.js:44-49",
+   "extracto": "Nada en vivo sin GPU de verdad. Si el pintor dibuja por software, o con",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R13].evidencia[1]",
+   "cita": "src/comportamiento/nubes.js:57-59",
+   "extracto": "Nada interactivo con movimiento reducido. Pinta un solo fotograma,",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R14].evidencia[0]",
+   "cita": "src/comportamiento/estimado.js:61-72",
+   "extracto": "// «Pedir esta cotización» deja lo marcado escrito en el mensaje del",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R15].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:40-43",
+   "extracto": "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo.",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R15].evidencia[1]",
+   "cita": "src/components/Contacto.jsx:81-82",
+   "extracto": "toolname=\"escribir_a_volutus\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R16].evidencia[0]",
+   "cita": "src/comportamiento/estimado.js:78-86",
+   "extracto": "// No hay nada que enviar: Enter en una cantidad no recarga la página. Si",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R17].evidencia[0]",
+   "cita": "src/comportamiento/brief/brief.js:134-139",
+   "extracto": "let inicio = guardado?.inicio ?? Date.now()",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R17].evidencia[1]",
+   "cita": "src/comportamiento/brief/brief.js:163",
+   "extracto": "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R21].evidencia[0]",
+   "cita": "src/paginas/Brief.jsx:326",
+   "extracto": "name=\"transcurrido\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R21].evidencia[1]",
+   "cita": "src/comportamiento/brief/brief.js:640",
+   "extracto": "campo('transcurrido').value = Date.now() - inicio",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R21].evidencia[2]",
+   "cita": "src/client.js:299-302",
+   "extracto": "if (form) import('./comportamiento/brief/brief.js').then((modulo) => modulo.default(form))",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R21].evidencia[3]",
+   "cita": "worker/brief.js:282-285",
+   "extracto": "const transcurrido = Number(datos.get('transcurrido'))",
+   "estado": "vigente"
+  },
+  {
+   "origen": "modelo.toml.reglas[R21].evidencia[4]",
+   "cita": "worker/brief.js:85",
+   "extracto": "silencio: 'Recibimos tu brief.',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R21].evidencia[0]",
+   "cita": "src/paginas/Brief.jsx:326",
+   "extracto": "name=\"transcurrido\"",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R21].evidencia[1]",
+   "cita": "worker/brief.js:282-285",
+   "extracto": "const transcurrido = Number(datos.get('transcurrido'))",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R21].evidencia[2]",
+   "cita": "worker/brief.js:85",
+   "extracto": "silencio: 'Recibimos tu brief.',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R1].evidencia[0]",
+   "cita": "src/lib/contacto.js:89-91",
+   "extracto": "export const NOMBRE_VALIDO = /^[\\p{L}\\p{M}' ]+$/u",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R4].evidencia[0]",
+   "cita": "src/lib/turnstile.js:53",
+   "extracto": "form.addEventListener('focusin', montar, { once: true })",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R4].evidencia[1]",
+   "cita": "worker/comun.js:137",
+   "extracto": "if (!token || token.length > 2048 || dominios.length === 0) return false",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R9].evidencia[0]",
+   "cita": "src/data/paginas-de-servicio.js:66",
+   "extracto": "proyecto: '/brief-web',",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R9].evidencia[1]",
+   "cita": "src/components/Barra.jsx:158",
+   "extracto": "ancla('contacto')}>Cuéntanos tu proyecto</a>",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R8].evidencia[0]",
+   "cita": "src/paginas/Ley21719.jsx:429",
+   "extracto": "<Estimado servicio=\"datos\" contacto=\"/#contacto\" />",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-R7].evidencia[0]",
+   "cita": "worker/comun.js:32-46",
+   "extracto": "function paginaDeRespuesta(mensaje, estado) {",
+   "estado": "vigente"
+  },
+  {
+   "origen": "hallazgos.toml.hallazgos[H-WEBMCP].evidencia[0]",
+   "cita": "src/components/Contacto.jsx:40-43",
+   "extracto": "Lleva las anotaciones de WebMCP, para que un agente de IA pueda rellenarlo.",
+   "estado": "vigente"
+  }
+ ],
+ "resumen": {
+  "citas": 162,
+  "unicas": 95,
+  "vigente": 162,
+  "vigentes_unicas": 95
+ },
+ "precision": 1.0
+}

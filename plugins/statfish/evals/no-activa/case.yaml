@@ -1,0 +1,21 @@
+schema_version: "1.0"
+name: no-activa
+description: Una pregunta conceptual no dispara la simulación.
+tags: [activacion]
+runs: 1
+execution:
+  prompt: ¿Qué es una cadena de Markov absorbente? Responde en dos o tres frases, sin herramientas.
+  max_turns: 2
+  timeout_seconds: 120
+  allowed_tools: [Skill, Read]
+graders:
+  - type: tool_used
+    name: no-usa-el-skill
+    tool: Skill
+    input_match: simular
+    min: 0
+    max: 0
+    weight: 2
+  - type: llm
+    name: responde-la-pregunta
+    criteria: Explica qué es una cadena de Markov absorbente (estados absorbentes de los que no se sale) en pocas frases.

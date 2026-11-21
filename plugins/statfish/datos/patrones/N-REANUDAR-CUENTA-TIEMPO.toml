@@ -1,0 +1,17 @@
+id = "N-REANUDAR-CUENTA-TIEMPO"
+tipo = "descartada"
+titulo = "«Quien retoma un formulario largo otro día cae en el filtro de tiempo»"
+aplica_si = "'almacenamiento-local' in rasgos"
+como_descartar = "Si la hora de inicio se guarda junto con las respuestas, el tiempo cuenta desde la primera visita y quien vuelve no cae en el filtro."
+
+[deteccion]
+regex = ['(?i)inicio|started_?at|start_?time']
+pistas = ["Mira qué se guarda en el almacenamiento: si incluye la hora de inicio, la hipótesis no aplica."]
+
+[[casos]]
+repo = "VolutusDevelopment/VolutusLandingPage"
+commit = "76b713a"
+evidencia = [
+  { cita = "src/comportamiento/brief/brief.js:139", extracto = "let inicio = guardado?.inicio ?? Date.now()" },
+  { cita = "src/comportamiento/brief/brief.js:163", extracto = "const listo = almacen.escribir(clave, JSON.stringify({ respuestas: respuestas(), paso, inicio" },
+]

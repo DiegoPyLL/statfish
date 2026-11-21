@@ -1,0 +1,21 @@
+{
+  "name": "statfish",
+  "version": "0.1.0",
+  "description": "Simula usuarios a partir del código de un producto: red de perfiles, cadena de uso, cobertura por pares e informe reproducible. El LLM lee el código y verbaliza priors; el motor determinista muestrea y calcula.",
+  "author": {
+    "name": "Diego Peña y Lillo"
+  },
+  "repository": "https://github.com/DiegoPyLL/statfish",
+  "license": "UNLICENSED",
+  "keywords": [
+    "simulacion",
+    "usuarios-sinteticos",
+    "qa",
+    "producto",
+    "cadena-de-markov",
+    "red-bayesiana"
+  ],
+  "network": {
+    "hosts": []
+  }
+}

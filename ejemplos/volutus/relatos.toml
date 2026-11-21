@@ -1,0 +1,206 @@
+# Relatos (etapa 5): una línea por usuario, escrita después del sorteo y solo con sus atributos.
+# La huella es la de salida/usuarios.json: si el usuario cambia, el informe marca el relato como desactualizado.
+
+[[relatos]]
+id = "U01"
+huella = "ad2bccb45206"
+nombre = "Marcelo Sánchez"
+texto = "Tiene una consultora chica en la Araucanía. Un colega le pasó el link por WhatsApp y está mirando si le convendría vender sus asesorías en línea."
+
+[[relatos]]
+id = "U02"
+huella = "4103659c0dd8"
+nombre = "Luis Soto"
+texto = "Vende artículos de pesca en Coquimbo y quiere su primera página. Ya lo decidió: escribe por WhatsApp desde el computador."
+
+[[relatos]]
+id = "U03"
+huella = "e00fcd792b51"
+nombre = "Claudia Álvarez"
+texto = "Profesora jubilada que hace clases particulares en el Maule. Buscaba cuánto cuesta una página y se va desde la portada."
+
+[[relatos]]
+id = "U04"
+huella = "c242388b867b"
+nombre = "Ignacio Rojas"
+texto = "Socio de un estudio contable chico en el Biobío. Llega a una guía sobre planillas y escribe desde el formulario del artículo, que ya trae el servicio marcado."
+
+[[relatos]]
+id = "U05"
+huella = "f78d688aef75"
+nombre = "Tomás Vásquez"
+texto = "Distribuye insumos de aseo y busca clientes nuevos. Lee un artículo y no escribe."
+
+[[relatos]]
+id = "U06"
+huella = "80feb739a7d3"
+nombre = "Cristóbal López"
+texto = "Tiene una ferretería en Coquimbo. Llega desde Instagram con el texto ya escrito en sus notas, lo pega y envía; esta vez el token alcanzó a llegar."
+
+[[relatos]]
+id = "U07"
+huella = "a02da3c8c5d9"
+nombre = "Claudia González"
+texto = "Lleva una tienda de ropa en Santiago con pedidos por WhatsApp. Calcula un estimado de automatización y lo deja para después."
+
+[[relatos]]
+id = "U08"
+huella = "d3a61b3bc573"
+nombre = "Valentina Díaz"
+texto = "Administra restaurantes en la Araucanía. Un asistente de IA le nombró a Volutus cuando preguntó por la Ley 21.719; se va desde la portada. Con movimiento reducido la nube queda quieta, sin problema (R13)."
+
+[[relatos]]
+id = "U09"
+huella = "240811db1612"
+nombre = "Gonzalo Castillo"
+texto = "Jefe comercial de una fábrica de envases. Un asistente le recomendó la página de prospección y se va sin buscar más."
+
+[[relatos]]
+id = "U10"
+huella = "0e5ee1a15997"
+nombre = "Andrea Gutiérrez"
+texto = "Dueña de una constructora en Antofagasta. Ve un post en Instagram, calcula la prospección desde el navegador de la app y escribe por WhatsApp."
+
+[[relatos]]
+id = "U11"
+huella = "981c34935410"
+nombre = "Paula Tapia"
+texto = "Vende repuestos en Arica con el inventario en un cuaderno. Llega a sistemas de gestión y se va."
+
+[[relatos]]
+id = "U12"
+huella = "c99d8cba5871"
+nombre = "Constanza Sepúlveda"
+texto = "Hace tortas por encargo en el Maule. Escribe la dirección de memoria y se va desde la portada."
+
+[[relatos]]
+id = "U13"
+huella = "82cbcc2f3e8e"
+nombre = "Jean-Pierre Hernández"
+texto = "Dueño de una cafetería en Santiago y cliente de Volutus. Navega con JavaScript apagado en Firefox. Llena el brief entero y la página le dice «Recibimos tu brief.», pero no llega nada (R21)."
+
+[[relatos]]
+id = "U14"
+huella = "9e9b33f4abb7"
+nombre = "Taller 2 Ruedas"
+texto = "Un taller de bicicletas en Coquimbo. Quien llena el brief escribe el nombre del negocio en «Tu nombre». Lo llena en dos sesiones en un navegador sin almacenamiento y al volver no queda nada (R12)."
+
+[[relatos]]
+id = "U15"
+huella = "962c9dc80eb0"
+nombre = "Constanza D'Amico"
+texto = "Transportista independiente de Santiago. Llega desde Instagram a la guía de la ley; su apellido lleva apóstrofo y su iPhone lo escribe `’`."
+
+[[relatos]]
+id = "U16"
+huella = "d3f8dba460b0"
+nombre = "Fernanda O'Neill"
+texto = "Abogada independiente que lee con Safari y JavaScript apagado. Lee un artículo sobre datos y se va."
+
+[[relatos]]
+id = "U17"
+huella = "f7188a920f21"
+nombre = "Héctor Díaz"
+texto = "Dueño de una sanguchería en Antofagasta. Abre el link desde Facebook en un teléfono viejo y se va desde la portada."
+
+[[relatos]]
+id = "U18"
+huella = "0d8ac48a6a71"
+nombre = "Matías D'Etigny"
+texto = "Encargado de una tienda en Antofagasta que usa un agente de IA en Chrome. Llega a `/ley21719` y se va."
+
+[[relatos]]
+id = "U19"
+huella = "c387a5fb77fd"
+nombre = "Nicolás Araya"
+texto = "Kinesiólogo independiente en Coquimbo, con Firefox en modo estricto. Consulta la Ley 21.719 y se va."
+
+[[relatos]]
+id = "U20"
+huella = "9d28a55f252f"
+nombre = "Ma. Paz Sánchez"
+texto = "Tiene un centro de estética en Santiago y firma «Ma. Paz». Llega a prospección y se va."
+
+[[relatos]]
+id = "U21"
+huella = "0cb38a11cdab"
+nombre = "Jean-Baptiste Gutiérrez"
+texto = "Emprendedor de 25 años con una tienda de accesorios. Viene de Instagram decidido a pedir una página. Sin JavaScript, el envío nativo le responde «Faltan datos o el correo no es válido…» por el guion de su nombre, y se va (R7, R1)."
+
+[[relatos]]
+id = "U22"
+huella = "70aee22fad15"
+nombre = "Tomás O'Brien"
+texto = "Ingeniero de una consultora pequeña, con Linux y JavaScript apagado. Un asistente le citó un artículo y se va."
+
+[[relatos]]
+id = "U23"
+huella = "5ff0e4a65122"
+nombre = "Macarena Sepúlveda"
+texto = "Pastelera independiente y clienta de Volutus. Usa un agente de IA para llenar el brief; esta vez lo envía con calma y llega con número de referencia."
+
+[[relatos]]
+id = "U24"
+huella = "f0ea5715a777"
+nombre = "Jean-Pierre Muñoz"
+texto = "Nutricionista joven con consulta en Coquimbo. Le recomendaron la guía de la Ley 21.719 por WhatsApp; navega sin JavaScript."
+
+[[relatos]]
+id = "U25"
+huella = "81a595d9bd72"
+nombre = "Nicolás Torres"
+texto = "Vende productos importados en Antofagasta. Llega a desarrollo web listo para encargar su sitio y escribe por WhatsApp."
+
+[[relatos]]
+id = "U26"
+huella = "7077b26139d4"
+nombre = "Rocío O'Ryan"
+texto = "Dueña de una picada en Santiago y clienta de Volutus. Llena el brief en su iPhone con JavaScript desactivado: «Recibimos tu brief.», y no llega nada (R21)."
+
+[[relatos]]
+id = "U27"
+huella = "fcc5573e6503"
+nombre = "Marie-Ange Vásquez"
+texto = "Gerenta de una constructora pequeña; firma «Marie-Ange». El formulario le pide «Usa solo letras.»: cambia su nombre y envía (R1)."
+
+[[relatos]]
+id = "U28"
+huella = "b27bafd1789a"
+nombre = "Claudio O'Brien"
+texto = "Arquitecto con oficina chica. En Android el apóstrofo es recto y pasa. Calcula el estimado y lo envía con el mensaje ya escrito (R14)."
+
+[[relatos]]
+id = "U29"
+huella = "74b7d4823b37"
+nombre = "Claudia O'Neill"
+texto = "Tiene una distribuidora de huevos en Santiago y usa Opera con JavaScript apagado. Mira automatización y se va."
+
+[[relatos]]
+id = "U30"
+huella = "8200acb7f2c7"
+nombre = "Patricio Flores"
+texto = "Administra un bar en Santiago. Un asistente le habló de agentes de IA; calcula el estimado y lo deja para después."
+
+[[relatos]]
+id = "U31"
+huella = "536dd9a19888"
+nombre = "Patricia D'Etigny"
+texto = "Dueña de un restaurante en Valparaíso. Lee un artículo sobre datos con JavaScript apagado y no escribe."
+
+[[relatos]]
+id = "U32"
+huella = "a796d0b14f48"
+nombre = "Francisca O'Brien"
+texto = "Vende vinos de Ñuble y recibió el brief, pero no lo termina."
+
+[[relatos]]
+id = "U33"
+huella = "d9c6c6a9b83d"
+nombre = "Ma. Paz Reyes"
+texto = "Psicóloga en el Biobío que prueba un agente de IA en Chrome. Lee una guía sobre agentes y no escribe."
+
+[[relatos]]
+id = "U34"
+huella = "a7d4ed2c0d4a"
+nombre = "Andrés Silva"
+texto = "Tiene una amasandería en el Maule y usa un agente de IA en Chrome. Mira prospección y no escribe."

@@ -1,0 +1,27 @@
+schema_version: "1.0"
+name: validar-modelo-roto
+description: Ante un modelo con un error, el agente corre statfish validar, lee el error y propone el arreglo sin inventar.
+tags: [comandos]
+runs: 1
+context:
+  scaffold_script: scaffold.sh
+execution:
+  prompt: >-
+    En ./corrida hay una corrida de Statfish. Valida su modelo con el motor de Statfish y dime qué está mal
+    y cómo lo arreglarías. No cambies archivos.
+  max_turns: 8
+  timeout_seconds: 240
+  allowed_tools: [Skill, Bash, Read, Glob, Grep]
+graders:
+  - type: tool_used
+    name: corre-validar
+    tool: Bash
+    input_match: validar
+  - type: regex
+    name: nombra-la-distribucion
+    pattern: canal
+  - type: llm
+    name: diagnostico-correcto
+    criteria: >-
+      Dice que la distribución «canal» no suma 1 (suma 0,9) y propone corregir sus probabilidades para que
+      sumen 1, sin afirmar otros errores que no existen.

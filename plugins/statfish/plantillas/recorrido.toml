@@ -1,0 +1,31 @@
+# Recorrido del código (etapa 1): bitácora, mapa, checklist de patrones e hipótesis descartadas.
+# Toda afirmación lleva evidencia { cita = "archivo:línea", extracto = "texto citado" }; la verifica
+# `statfish evidencia`. El ejemplo completo está en ejemplos/volutus/recorrido.toml.
+
+[recorrido]
+regla = "Primero el índice (rutas, formularios, endpoints, límites) y después la lectura dirigida por la pregunta. Sin evidencia no hay hallazgo."
+cambios_en_el_repo = "Ninguno: solo lectura."
+
+# [[bitacora]]
+# paso = "Índice"
+# leido = ["src/rutas.js", "src/formularios/Contacto.jsx"]
+# lineas = 600
+#
+# [[superficies]]
+# id = "/contacto"
+# que = "Formulario de contacto"
+# evidencia = [{ cita = "src/paginas/Contacto.jsx:12", extracto = "<form" }]
+#
+# [[patrones]]                    # uno por cada patrón que lista `statfish patrones`
+# id = "P-NOMBRE-SOLO-LETRAS"
+# estado = "presente"             # presente | ausente | no_verificable
+# evidencia = [{ cita = "src/lib/validar.js:20", extracto = "const NOMBRE = /^[a-z ]+$/i" }]
+#
+# [[descartadas]]                 # hipótesis que el código descartó
+# id = "N-TOKEN-VENCE"
+# texto = "Un mensaje largo vence el token del captcha"
+# por_que = "El widget renueva el token solo"
+# evidencia = [{ cita = "src/lib/captcha.js:40", extracto = "refresh-expired" }]
+#
+# [no_dice]
+# texto = "Lo que el código no dice: quién llega, cuántos, con qué intención."

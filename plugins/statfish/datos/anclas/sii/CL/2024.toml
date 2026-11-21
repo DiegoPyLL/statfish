@@ -1,0 +1,17 @@
+# Servicio de Impuestos Internos de Chile: estadísticas de empresas por tamaño (año comercial 2024).
+fuente = "sii"
+titulo_fuente = "SII, Estadísticas de empresas"
+pais = "CL"
+periodo = "2024"
+consultado = 2026-11-20
+vigencia_meses = 12
+unidad = "%"
+
+[[anclas]]
+id = "sii-CL-empresas-tamano-2024"
+titulo = "Empresas con ventas por tamaño, Chile, 2024"
+url = "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html"
+plantilla_url = "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html"
+valores = { micro = 74.2, pequena = 21.2, mediana = 3.1, grande = 1.5 }
+nota = "Solo empresas con ventas; no cuenta a los independientes. La Región Metropolitana concentra cerca del 43 %. Leído vía BCN (2026) e INE (2025)."
+fuentes_secundarias = ["https://obtienearchivo.bcn.cl/obtienearchivo?id=repositorio%2F10221%2F38964%2F1%2FTamano_de_empresas.pdf"]
